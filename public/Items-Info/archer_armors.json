@@ -1,0 +1,119 @@
+[
+    {
+        "name": "Green Shirt",
+        "power": 0,
+        "defense": 5,
+        "level": 1,
+        "price": 230,
+        "url": "Item-Images/archer-armors/1.webp",
+        "class":"archer"
+    },
+    {
+        "name": "archer-Shirt",
+        "power": 1,
+        "defense": 10,
+        "level": 7,
+        "price": 1395,
+        "url": "Item-Images/archer-armors/2.webp",
+        "class":"archer"
+    },
+    {
+        "name": "Leather archer-Armor",
+        "power": 4,
+        "defense": 21,
+        "level": 24,
+        "price": 9664,
+        "url": "Item-Images/archer-armors/3.webp",
+        "class":"archer"
+    },
+    {
+        "name": "Leather Armor",
+        "power": 3,
+        "defense": 25,
+        "level": 28,
+        "price": 15126,
+        "url": "Item-Images/archer-armors/4.webp",
+        "class":"archer"
+    },
+    {
+        "name": "Apollos Armor",
+        "power": 5,
+        "defense": 36,
+        "level": 43,
+        "price": 39077,
+        "url": "Item-Images/archer-armors/5.webp",
+        "class":"archer"
+    },
+    {
+        "name": "Flak Jacket",
+        "power": 6,
+        "defense": 43,
+        "level": 53,
+        "price": 62025,
+        "url": "Item-Images/archer-armors/6.webp",
+        "class":"archer"
+    },
+    {
+        "name": "Fish Scale Armor",
+        "power": 8,
+        "defense": 53,
+        "level": 67,
+        "price": 106905,
+        "url": "Item-Images/archer-armors/7.webp",
+        "class":"archer"
+    },
+    {
+        "name": "Protector Armor",
+        "power": 10,
+        "defense": 68,
+        "level": 88,
+        "price": 204309,
+        "url": "Item-Images/archer-armors/8.webp",
+        "class":"archer"
+    },
+    {
+        "name": "Reinforced Bush Armor",
+        "power": 11,
+        "defense": 73,
+        "level": 95,
+        "price": 245762,
+        "url": "Item-Images/archer-armors/9.webp",
+        "class":"archer"
+    },
+    {
+        "name": "Biological Armor",
+        "power": 15,
+        "defense": 106,
+        "level": 139,
+        "price": 647736,
+        "url": "Item-Images/archer-armors/10.webp",
+        "class":"archer"    
+    },
+    {
+        "name": "Achilles Armor",
+        "power": 16,
+        "defense": 114,
+        "level": 150,
+        "price": 782570,
+        "url": "Item-Images/archer-armors/11.webp",
+        "class":"archer"
+    },
+    {
+        "name": "Archaic Armor",
+        "power": 17,
+        "defense": 126,
+        "level": 166,
+        "price": 1014816,
+        "url": "Item-Images/archer-armors/12.webp",
+        "class":"archer"
+    },
+    {
+        "name": "Reef Armor",
+        "power": 18,
+        "defense": 137,
+        "level": 180,
+        "price": 1261268,
+        "url": "Item-Images/archer-armors/13.webp",
+        "class":"archer"
+    }
+]

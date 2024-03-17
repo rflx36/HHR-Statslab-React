@@ -1,0 +1,209 @@
+[
+    {
+        "name": "Blue Beanie",
+        "power": 0,
+        "defense": 7,
+        "level": 2,
+        "price": 551,
+        "url": "Item-Images/mage-helmets/1.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Brown Wizard Hat",
+        "power": 1,
+        "defense": 10,
+        "level": 7,
+        "price": 1395,
+        "url": "Item-Images/mage-helmets/2.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Santa Claus Hat",
+        "power": 5,
+        "defense": 9,
+        "level": 11,
+        "price": 2140,
+        "url": "Item-Images/mage-helmets/22.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Red Wizard Hat",
+        "power": 3,
+        "defense": 12,
+        "level": 12,
+        "price": 2273,
+        "url": "Item-Images/mage-helmets/3.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Tiara",
+        "power": 7,
+        "defense": 8,
+        "level": 12,
+        "price": 1095,
+        "url": "Item-Images/mage-helmets/4.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Blue Wizard Hat",
+        "power": 3,
+        "defense": 13,
+        "level": 13,
+        "price": 2791,
+        "url": "Item-Images/mage-helmets/5.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Witch Hat",
+        "power": 4,
+        "defense": 14,
+        "level": 16,
+        "price": 3415,
+        "url": "Item-Images/mage-helmets/6.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Blue Wizard Belt Hat",
+        "power": 5,
+        "defense": 16,
+        "level": 19,
+        "price": 4860,
+        "url": "Item-Images/mage-helmets/7.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Jester Hat",
+        "power": 8,
+        "defense": 18,
+        "level": 25,
+        "price": 6869,
+        "url": "Item-Images/mage-helmets/8.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Sorcerer Hat",
+        "power": 7,
+        "defense": 22,
+        "level": 29,
+        "price": 11138,
+        "url": "Item-Images/mage-helmets/9.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Sorcerer Copter Hat",
+        "power": 7,
+        "defense": 25,
+        "level": 32,
+        "price": 15406,
+        "url": "Item-Images/mage-helmets/10.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Wizard Hat Mask",
+        "power": 7,
+        "defense": 31,
+        "level": 40,
+        "price": 26715,
+        "url": "Item-Images/mage-helmets/11.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Alchemy Helmet",
+        "power": 8,
+        "defense": 50,
+        "level": 64,
+        "price": 91939,
+        "url": "Item-Images/mage-helmets/12.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Royal Helmet",
+        "power": 8,
+        "defense": 58,
+        "level": 73,
+        "price": 135026,
+        "url": "Item-Images/mage-helmets/13.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Mechanical Rabbit Helm",
+        "power": 8,
+        "defense": 62,
+        "level": 78,
+        "price": 160507,
+        "url": "Item-Images/mage-helmets/14.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Astro Helmet",
+        "power": 8,
+        "defense": 67,
+        "level": 84,
+        "price": 196268,
+        "url": "Item-Images/mage-helmets/15.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Blue Crystal Helmet",
+        "power": 9,
+        "defense": 70,
+        "level": 89,
+        "price": 220049,
+        "url": "Item-Images/mage-helmets/16.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Pink Crystal Helmet",
+        "power": 10,
+        "defense": 74,
+        "level": 95,
+        "price": 254350,
+        "url": "Item-Images/mage-helmets/17.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Metal Cat Helmet",
+        "power": 10,
+        "defense": 78,
+        "level": 100,
+        "price": 291542,
+        "url": "Item-Images/mage-helmets/18.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Neon Magic Helmet",
+        "power": 13,
+        "defense": 85,
+        "level": 112,
+        "price": 365119,
+        "url": "Item-Images/mage-helmets/19.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Egyptian Helmet",
+        "power": 15,
+        "defense": 105,
+        "level": 138,
+        "price": 632023,
+        "url": "Item-Images/mage-helmets/20.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Relic Helmet",
+        "power": 17,
+        "defense": 124,
+        "level": 163,
+        "price": 973594,
+        "url": "Item-Images/mage-helmets/21.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Element Helmet",
+        "power": 18,
+        "defense": 137,
+        "level": 180,
+        "price": 1261268,
+        "url": "Item-Images/mage-helmets/23.webp",
+        "class": "mage"
+    }
+]

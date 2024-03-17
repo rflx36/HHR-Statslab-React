@@ -1,0 +1,74 @@
+[
+    {
+        "name": "White Shoes",
+        "power": 0,
+        "defense": 4,
+        "level": 1,
+        "price": 129,
+        "url": "Item-Images/warrior-shoes/1.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Boots",
+        "power": 1,
+        "defense": 14,
+        "level": 12,
+        "price": 3344,
+        "url": "Item-Images/warrior-shoes/2.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Coconut Shoes",
+        "power": 1,
+        "defense": 25,
+        "level": 25,
+        "price": 15093,
+        "url": "Item-Images/warrior-shoes/3.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Steel Boots",
+        "power": 5,
+        "defense": 49,
+        "level": 59,
+        "price": 86943,
+        "url": "Item-Images/warrior-shoes/4.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Knight Boots",
+        "power": 4,
+        "defense": 54,
+        "level": 64,
+        "price": 111835,
+        "url": "Item-Images/warrior-shoes/5.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Samurai Plank Shoes",
+        "power": 6,
+        "defense": 74,
+        "level": 90,
+        "price": 253765,
+        "url": "Item-Images/warrior-shoes/6.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Magnesium Boots",
+        "power": 7,
+        "defense": 89,
+        "level": 109,
+        "price": 410030,
+        "url": "Item-Images/warrior-shoes/7.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Zinc Shoes",
+        "power": 8,
+        "defense": 94,
+        "level": 116,
+        "price": 472727,
+        "url": "Item-Images/warrior-shoes/8.webp",
+        "class": "warrior"
+    }
+]

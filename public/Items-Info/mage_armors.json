@@ -1,0 +1,191 @@
+[
+    {
+        "name": "Blue Shirt",
+        "power": 0,
+        "defense": 8,
+        "level": 4,
+        "price": 780,
+        "url": "Item-Images/mage-armors/1.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Ballerina Outfit",
+        "power": 1,
+        "defense": 10,
+        "level": 7,
+        "price": 1395,
+        "url": "Item-Images/mage-armors/2.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Brown Wizard Robe",
+        "power": 1,
+        "defense": 10,
+        "level": 7,
+        "price": 1395,
+        "url": "Item-Images/mage-armors/3.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Red Wizard Robe",
+        "power": 3,
+        "defense": 12,
+        "level": 12,
+        "price": 2273,
+        "url": "Item-Images/mage-armors/4.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Princess Dress",
+        "power": 7,
+        "defense": 11,
+        "level": 16,
+        "price": 2100,
+        "url": "Item-Images/mage-armors/5.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Blue Wizard Robe",
+        "power": 4,
+        "defense": 14,
+        "level": 16,
+        "price": 3415,
+        "url": "Item-Images/mage-armors/6.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Mocap Suit",
+        "power": 4,
+        "defense": 16,
+        "level": 18,
+        "price": 4803,
+        "url": "Item-Images/mage-armors/7.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Jester Suit",
+        "power": 5,
+        "defense": 18,
+        "level": 22,
+        "price": 6555,
+        "url": "Item-Images/mage-armors/8.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Cursed Robe",
+        "power": 5,
+        "defense": 20,
+        "level": 24,
+        "price": 8579,
+        "url": "Item-Images/mage-armors/9.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Sorcerer Robe",
+        "power": 6,
+        "defense": 24,
+        "level": 30,
+        "price": 13782,
+        "url": "Item-Images/mage-armors/10.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Magician Armor",
+        "power": 6,
+        "defense": 36,
+        "level": 44,
+        "price": 39156,
+        "url": "Item-Images/mage-armors/11.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Alchemy Armor",
+        "power": 8,
+        "defense": 50,
+        "level": 64,
+        "price": 91939,
+        "url": "Item-Images/mage-armors/12.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Royal Armor",
+        "power": 8,
+        "defense": 58,
+        "level": 73,
+        "price": 135026,
+        "url": "Item-Images/mage-armors/13.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Mechanical Rabbit Suit",
+        "power": 8,
+        "defense": 62,
+        "level": 78,
+        "price": 160507,
+        "url": "Item-Images/mage-armors/14.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Astro Suit",
+        "power": 8,
+        "defense": 67,
+        "level": 84,
+        "price": 196268,
+        "url": "Item-Images/mage-armors/15.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Blue Crystal Armor",
+        "power": 9,
+        "defense": 70,
+        "level": 89,
+        "price": 220049,
+        "url": "Item-Images/mage-armors/16.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Pink Crystal Armor",
+        "power": 10,
+        "defense": 75,
+        "level": 96,
+        "price": 263355,
+        "url": "Item-Images/mage-armors/17.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Neon Magic Armor",
+        "power": 13,
+        "defense": 85,
+        "level": 112,
+        "price": 365119,
+        "url": "Item-Images/mage-armors/18.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Egyptian Armor",
+        "power": 15,
+        "defense": 105,
+        "level": 138,
+        "price": 632023,
+        "url": "Item-Images/mage-armors/19.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Relic Armor",
+        "power": 17,
+        "defense": 124,
+        "level": 163,
+        "price": 973594,
+        "url": "Item-Images/mage-armors/20.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Element Armor",
+        "power": 18,
+        "defense": 137,
+        "level": 180,
+        "price": 1261268,
+        "url": "Item-Images/mage-armors/21.webp",
+        "class": "mage"
+    }
+]

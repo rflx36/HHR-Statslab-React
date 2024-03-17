@@ -1,0 +1,182 @@
+[
+    {
+        "name": "Blue Jeans",
+        "power": 0,
+        "defense": 9,
+        "level": 5,
+        "price": 1059,
+        "url": "Item-Images/mage-pants/1.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Brown Wizard Pants",
+        "power": 1,
+        "defense": 10,
+        "level": 7,
+        "price": 1395,
+        "url": "Item-Images/mage-pants/2.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Red Wizard Pants",
+        "power": 3,
+        "defense": 12,
+        "level": 12,
+        "price": 2273,
+        "url": "Item-Images/mage-pants/3.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Blue Wizard Pants",
+        "power": 4,
+        "defense": 13,
+        "level": 14,
+        "price": 2830,
+        "url": "Item-Images/mage-pants/4.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Mocap Pants",
+        "power": 4,
+        "defense": 14,
+        "level": 16,
+        "price": 3415,
+        "url": "Item-Images/mage-pants/5.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Princess Stockings",
+        "power": 7,
+        "defense": 11,
+        "level": 16,
+        "price": 2100,
+        "url": "Item-Images/mage-pants/6.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Jester Pants",
+        "power": 5,
+        "defense": 18,
+        "level": 22,
+        "price": 6555,
+        "url": "Item-Images/mage-pants/7.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Cursed Pants",
+        "power": 5,
+        "defense": 18,
+        "level": 22,
+        "price": 6555,
+        "url": "Item-Images/mage-pants/8.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Sorcerer Pants",
+        "power": 6,
+        "defense": 22,
+        "level": 28,
+        "price": 11034,
+        "url": "Item-Images/mage-pants/9.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Magician Legs",
+        "power": 6,
+        "defense": 36,
+        "level": 44,
+        "price": 39156,
+        "url": "Item-Images/mage-pants/10.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Alchemy Legs",
+        "power": 8,
+        "defense": 50,
+        "level": 64,
+        "price": 91939,
+        "url": "Item-Images/mage-pants/11.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Royal Legs",
+        "power": 8,
+        "defense": 58,
+        "level": 73,
+        "price": 135026,
+        "url": "Item-Images/mage-pants/12.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Mechanical Rabbit Legs",
+        "power": 8,
+        "defense": 62,
+        "level": 78,
+        "price": 160507,
+        "url": "Item-Images/mage-pants/13.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Astro Pants",
+        "power": 8,
+        "defense": 67,
+        "level": 84,
+        "price": 196268,
+        "url": "Item-Images/mage-pants/14.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Blue Crystal Legs",
+        "power": 9,
+        "defense": 70,
+        "level": 89,
+        "price": 220049,
+        "url": "Item-Images/mage-pants/15.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Pink Crystal Legs",
+        "power": 10,
+        "defense": 75,
+        "level": 95,
+        "price": 263355,
+        "url": "Item-Images/mage-pants/16.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Neon Magic Legs",
+        "power": 13,
+        "defense": 85,
+        "level": 112,
+        "price": 365119,
+        "url": "Item-Images/mage-pants/17.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Egyptian Legs",
+        "power": 15,
+        "defense": 105,
+        "level": 138,
+        "price": 632023,
+        "url": "Item-Images/mage-pants/18.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Relic Legs",
+        "power": 17,
+        "defense": 124,
+        "level": 163,
+        "price": 973594,
+        "url": "Item-Images/mage-pants/19.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Element Legs",
+        "power": 18,
+        "defense": 137,
+        "level": 180,
+        "price": 1261268,
+        "url": "Item-Images/mage-pants/20.webp",
+        "class": "mage"
+    }
+]

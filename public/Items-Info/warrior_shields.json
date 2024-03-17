@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Wood Scrap Shield",
+        "defense": 10,
+        "level": 10,
+        "price": 1393,
+        "url": "Item-Images/warrior-shields/1.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Garbage Can Lid",
+        "defense": 18,
+        "level": 20,
+        "price": 6424,
+        "url": "Item-Images/warrior-shields/2.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Stop Sign",
+        "defense": 26,
+        "level": 31,
+        "price": 16711,
+        "url": "Item-Images/warrior-shields/3.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Smiley Tin Shield",
+        "defense": 35,
+        "level": 43,
+        "price": 36195,
+        "url": "Item-Images/warrior-shields/4.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Wood Metal Shield",
+        "defense": 48,
+        "level": 59,
+        "price": 82280,
+        "url": "Item-Images/warrior-shields/5.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Bronze Shield",
+        "defense": 65,
+        "level": 82,
+        "price": 180985,
+        "url": "Item-Images/warrior-shields/6.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Crystal Heart Shield",
+        "defense": 74,
+        "level": 93,
+        "price": 253554,
+        "url": "Item-Images/warrior-shields/7.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Protector Shield",
+        "defense": 81,
+        "level": 102,
+        "price": 320722,
+        "url": "Item-Images/warrior-shields/8.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Stone Shield",
+        "defense": 86,
+        "level": 109,
+        "price": 374769,
+        "url": "Item-Images/warrior-shields/9.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Ancient Shield",
+        "defense": 165,
+        "level": 212,
+        "price": 2039512,
+        "url": "Item-Images/warrior-shields/10.webp",
+        "class": "warrior"
+    }
+]
