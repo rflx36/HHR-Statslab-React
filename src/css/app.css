@@ -1,0 +1,90 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    /* user-select: none; */
+}
+
+body{
+    background-color: #2F3136;
+}
+
+
+
+.loader-cont {
+    background: #575757;
+    border: 2px #272827 solid;
+    border-radius: 15px;
+    margin: auto;
+    right: 0;
+    width: 960px;
+    height: 540px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transition: .3s ease;
+    display: flex;
+    z-index: 5;
+}
+
+
+#loading-cache-cont {
+    user-select: none;
+    border-radius: 15px;
+    margin: auto;
+    right: 0;
+    height: 540px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: block;
+    overflow: hidden;
+
+}
+
+#loading-cache-cont img {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: -1;
+    filter: opacity(0.1);
+    opacity: 0.01;
+
+}
+
+
+.cont {
+    background: #496648;
+    border: 2px #073506 solid;
+    border-radius: 15px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    /* top: 0; */
+    width: 960px;
+    height: 540px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.cont h1{
+    font-family: Comicy;
+    height: 30px;
+    margin: 5px;
+    color: white;
+    text-align: center;
+    -webkit-text-stroke: 1px #000000;
+    font-weight: 500;
+}
+
+
+@font-face {
+    font-family: Comicy;
+    src: url(/Fonts/Comicy.ttf);
+}
+/* 800×1280 px tablet resolution */

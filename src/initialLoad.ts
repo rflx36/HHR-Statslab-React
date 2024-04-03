@@ -2,6 +2,7 @@ let reloads = 0;
 let startTime = 0, endTime = 0;
 
 let resolveEnd: () => void;
+export let data_items:  Array<Array<any>>;
 export async function StartLoading() {
     startTime = performance.now();
     Load();
@@ -37,18 +38,18 @@ function Load() {
             _file_locations.push("./Items-Info/" + _class[i] + "_" + _equips[j] + ".json");
         }
     }
-
     RequestItems(_file_locations);
 }
 
 async function RequestItems(urls: Array<string>) {
     try {
         const promises = urls.map(url => fetch(url).then(resp => { return resp.json() }).catch(BadRequestHandler));
-       
+
         const response = await Promise.all(promises);
 
         ParsedData(response);
-
+        console.log(JSON.stringify(response));
+        data_items = response;
     }
     catch (err) {
         console.log("Error Fetching Data");
@@ -58,7 +59,7 @@ async function RequestItems(urls: Array<string>) {
 
 
 
-export function ParsedData(data: Array<Array<any>>) {
+function ParsedData(data: Array<Array<any>>) {
 
     let loader_img_cache_container = document.getElementById("loading-cache-cont");
     let images = ``;
