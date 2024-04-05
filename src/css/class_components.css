@@ -1,0 +1,76 @@
+
+.cont-class-selection {
+    position: absolute;
+    background: #278C0D;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 2px solid #17590D;
+    width: 936px;
+    height: 486px;
+    display: flex;
+    z-index: 3;
+}
+
+.cont-class-selection div {
+    flex-grow: 1;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.cont-class-selection div button {
+    width: 200px;
+    height: 200px;
+    background-size: 200px;
+    background-position: center;
+    background-color: #3DB81E;
+    border: 2px #073506 solid;
+    border-radius: 5px;
+    margin-top: 50px;
+    cursor: pointer;
+    transition: .3s cubic-bezier(0.18, 0.85, 0.18, 0.84);
+}
+
+.cont-class-selection p {
+    margin-top: 220px;
+    font-size: 35px;
+    transition: .3s cubic-bezier(0.18, 0.85, 0.18, 0.84);
+    cursor: pointer;
+}
+
+.cont-class-selection div:hover button {
+    background-color: #95DF91;
+}
+
+.cont-class-selection div:hover p {
+    color: yellow;
+    font-size: 40px;
+}
+
+.cont-class-selection div:hover {
+
+    background: #369c1c;
+    border-radius: 50px;
+    height: calc(100% - 20px);
+    
+    
+    transition: .3s cubic-bezier(0.18, 0.85, 0.18, 0.84),  border-radius 1s cubic-bezier(0.11, 0.8, 0.13, 0.76);
+}
+
+
+.class-warrior {
+    background-image: url(src/assets/UI/icon-warrior.png);
+}
+
+.class-archer {
+    background-image: url(src/assets/UI/icon-archer.png);
+}
+
+.class-cowboy {
+    background-image: url(src/assets/UI/icon-cowboy.png);
+}
+
+.class-mage {
+    background-image: url(src/assets/UI/icon-mage.png);
+}

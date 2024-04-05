@@ -1,13 +1,18 @@
 
-import { useEffect, useState } from "react";
-import { StatProvider } from "./StatContext";
+import { useContext, useEffect, useState } from "react";
+import { ContextStates, StatProvider } from "./StatContext";
 import { StartLoading } from "./initialLoad";
-import './css/app.css';
-import TestButton from "./components/button_container";
+import ContainerMain from "./components/main_components";
+import ContainerClass from "./components/class_components";
 
+import './css/app.css';
+import ContainerDetail from "./components/detail_components";
+import ContainerItem from "./components/item_components";
+import ContainerSave from "./components/save_components";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(false);
+
   useEffect(() => {
     const InitialLoad = async () => { await StartLoading(); setLoading(true); }
     InitialLoad();
@@ -25,19 +30,41 @@ function App() {
             </div>
           </>
         ) : (
-          <>
-            <StatProvider>
-              <div className="cont">
-                <h1 id="cont-title-id">REBORN STAT LAB</h1>
-
-              <TestButton/>
-              </div>
-            </StatProvider>
-          </>
+          <StatProvider>
+            <div className="cont">
+              <h1 id="cont-title-id">REBORN STAT LAB</h1>
+              <AppPages />
+            </div>
+          </StatProvider>
         )
       }
     </>
   )
 }
 
-export default App
+export default App;
+
+function AppPages() {
+  const ui_state = useContext(ContextStates);
+  let current_page = ContainerClass(); // initial : "class"
+  switch (ui_state?.get.page) {
+
+    case "main":
+      current_page = ContainerMain();
+      break;
+
+    case "detail":
+      current_page = ContainerDetail();
+      break;
+
+    case "item":
+      current_page = ContainerItem();
+      break;
+
+    case "save":
+      current_page = ContainerSave();
+      break;
+
+  }
+  return current_page;
+}

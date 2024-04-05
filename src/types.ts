@@ -32,6 +32,7 @@ export interface SkillsType {
 }
 
 export interface BaseStatsType {
+
     current_level: number,
     current_points: number,
     current_hp: number,
@@ -44,11 +45,24 @@ export interface BaseStatsType {
     current_total_enchantment_cost: number,
     current_fatk_p: number,
     current_fatk_s: number,
-    current_fdef: number
+    current_fdef: number,
+    current_class: ClassType,
+    current_hander: HanderType
 
 }
+export interface UIStateType {
+    page: "main" | "item" | "save" | "detail" | "class",
+    monster: "hide" | "show" | "show variants" | "environment",
+    shield: boolean,
+    booster: boolean,
+    enchanted: boolean,
+    all: boolean,
+    point: boolean
+}
+
 export type ClassType = "archer" | "cowboy" | "mage" | "warrior";
 export type HanderType = "single handed" | "two handed" | "shielded";
+
 
 
 export interface BaseContextType {
@@ -65,3 +79,11 @@ export interface SkillsContextType {
     get: SkillsType,
     set: React.Dispatch<React.SetStateAction<SkillsType>>
 }
+export interface UIStateContextType {
+    get: UIStateType,
+    set: React.Dispatch<React.SetStateAction<UIStateType>>
+}
+
+// export interface StatesType {
+//     toggle_enchanted : boolean,
+//     toggle_all :boolean,

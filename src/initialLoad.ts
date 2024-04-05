@@ -35,7 +35,7 @@ function Load() {
             if (j == 5 && i != 3) {
                 continue;
             }
-            _file_locations.push("./Items-Info/" + _class[i] + "_" + _equips[j] + ".json");
+            _file_locations.push("./src/assets/Items-Info/" + _class[i] + "_" + _equips[j] + ".json");
         }
     }
     RequestItems(_file_locations);
@@ -66,7 +66,7 @@ function ParsedData(data: Array<Array<any>>) {
     try {
         for (let items of data) {
             for (let item of items) {
-                images += `<img src='${item.url}'>`;
+                images += `<img src='./src/assets/${item.url}'>`;
             }
         }
     }
