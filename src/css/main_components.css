@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: Confetti;
     src: url(src/assets/Fonts/PartyConfettiRegular.ttf);
@@ -104,8 +103,9 @@
     background-size: 30px;
     background-repeat: no-repeat;
 }
-.stat-info-cont .confirm-button:hover{
-    background-size:  35px;
+
+.stat-info-cont .confirm-button:hover {
+    background-size: 35px;
 }
 
 .level-set {
@@ -147,7 +147,7 @@
 
 .icon-minus {
     width: 50px;
-    background-image: url(UI/icon-minus.png);
+    background-image: url(src/assets/UI/icon-minus.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
@@ -165,7 +165,7 @@
 
 .icon-plus {
     width: 60px;
-    background-image: url(UI/icon-plus.png);
+    background-image: url(src/assets/UI/icon-plus.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
@@ -337,7 +337,7 @@
 }
 
 #fish-bg {
-    background-image: url(UI/icon-fish.png);
+    background-image: url(src/assets/UI/icon-fish.png);
     width: 30px;
     height: 30px;
     background-repeat: no-repeat;
@@ -347,7 +347,7 @@
 }
 
 #coin-bg {
-    background-image: url(UI/icon-coin.png);
+    background-image: url(src/assets/UI/icon-coin.png);
     width: 30px;
     height: 30px;
     background-repeat: no-repeat;
@@ -361,7 +361,7 @@
 }
 
 #close-item-selection {
-    background-image: url(UI/icon-close.png);
+    background-image: url(src/assets/UI/icon-close.png);
     width: 38px;
     height: 38px;
     z-index: 3;
@@ -381,7 +381,7 @@
 
 
 #close-detailed-damage {
-    background-image: url(UI/icon-close.png);
+    background-image: url(src/assets/UI/icon-close.png);
     width: 38px;
     height: 38px;
     z-index: 3;
@@ -400,54 +400,54 @@
 }
 
 #item-sheath-primary {
-    background-image: url(UI/icon-single-handed.png);
+    background-image: url(src/assets/UI/icon-single-handed.png);
     background-size: contain;
     background-position: center;
 }
 
 #item-sheath-secondary {
-    background-image: url(UI/icon-single-handed.png);
+    background-image: url(src/assets/UI/icon-single-handed.png);
     display: none;
     background-size: contain;
     background-position: center;
 }
 
 #item-accessories {
-    background-image: url(UI/icon-accessories.png);
+    background-image: url(src/assets/UI/icon-accessories.png);
 }
 
 #item-helmet {
-    background-image: url(UI/icon-helmets.png);
+    background-image: url(src/assets/UI/icon-helmets.png);
 
     background-position: center;
 }
 
 #item-armor {
-    background-image: url(UI/icon-armor.png);
+    background-image: url(src/assets/UI/icon-armor.png);
 
     background-position: center;
 }
 
 #item-pants {
-    background-image: url(UI/icon-pants.png);
+    background-image: url(src/assets/UI/icon-pants.png);
 
     background-position: center;
 }
 
 #item-shoes {
-    background-image: url(UI/icon-shoes.png);
+    background-image: url(src/assets/UI/icon-shoes.png);
 
     background-position: center;
 }
 
 #item-weapon-primary {
-    background-image: url(UI/icon-single-handed.png);
+    background-image: url(src/assets/UI/icon-single-handed.png);
     background-position: center;
     background-size: contain;
 }
 
 #item-weapon-secondary {
-    background-image: url(UI/icon-single-handed.png);
+    background-image: url(src/assets/UI/icon-single-handed.png);
     background-position: center;
     background-size: contain;
     display: none;

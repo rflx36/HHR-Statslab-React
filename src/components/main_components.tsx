@@ -37,16 +37,21 @@ export default function ContainerMain() {
 function StatCont() {
     return (
         <div className='cont-stats'>
-            <StatInfo name='hp' min={15} />
-            <StatInfo name='mp' min={0} />
-            <StatInfo name='atk' min={1} />
-            <StatInfo name='def' min={1} />
-            <StatInfo name='dex' min={1} />
+            <StatInfo name='hp' />
+            <StatInfo name='mp' />
+            <StatInfo name='atk' />
+            <StatInfo name='def' />
+            <StatInfo name='dex' />
         </div>
     )
 }
 
-function StatInfo(props: { name: string, min: number }) {
+
+
+
+
+
+function StatInfo(props: { name: string }) {
     const stat = useContext(ContextBaseStats);
 
 
@@ -98,44 +103,69 @@ function StatInfo(props: { name: string, min: number }) {
     const UpdateValue = (x: ChangeEvent<HTMLInputElement>) => {
         let value = parseInt((x.target.value.replace(/^0+/, '')).replace(/\D/g, ''));
         let n = GetDecoded(value); // n = stat value
-        if (n < 0) {
-            console.log("Thats Lower value!!");
+
+        let points_release = GetStatValue() - n;
+        let points = stat?.get.current_points || 0;
+        let points_stack = points + points_release;
+
+        if (points_stack < 0 || n < 0 || isNaN(n)) {
             stat?.set(x => ({ ...x }));
             return;
         }
         switch (props.name) {
             case "hp":
-                stat?.set(x => ({ ...x, current_hp: n }));
+                stat?.set(x => ({ ...x, current_hp: n, current_points: points_stack }));
                 break;
             case "mp":
-                stat?.set(x => ({ ...x, current_mp: n }));
+                stat?.set(x => ({ ...x, current_mp: n, current_points: points_stack }));
                 break;
             case "atk":
-                stat?.set(x => ({ ...x, current_atk: n }));
+                stat?.set(x => ({ ...x, current_atk: n, current_points: points_stack }));
                 break;
             case "def":
-                stat?.set(x => ({ ...x, current_def: n }));
+                stat?.set(x => ({ ...x, current_def: n, current_points: points_stack }));
                 break;
             case "dex":
-                stat?.set(x => ({ ...x, current_dex: n }));
+                stat?.set(x => ({ ...x, current_dex: n, current_points: points_stack }));
                 break;
         }
     }
+
+    const ModifyStat = (Condition: boolean) => {
+        const state_value = Condition ? 1 : -1;
+        switch (props.name) {
+            case "hp":
+                stat?.set(x => ({ ...x, current_hp: x.current_hp + state_value, current_points: x.current_points - state_value }));
+                break;
+            case "mp":
+                stat?.set(x => ({ ...x, current_mp: x.current_mp + state_value, current_points: x.current_points - state_value }));
+                break;
+            case "atk":
+                stat?.set(x => ({ ...x, current_atk: x.current_atk + state_value, current_points: x.current_points - state_value }));
+                break;
+            case "def":
+                stat?.set(x => ({ ...x, current_def: x.current_def + state_value, current_points: x.current_points - state_value }));
+                break;
+            case "dex":
+                stat?.set(x => ({ ...x, current_dex: x.current_dex + state_value, current_points: x.current_points - state_value }));
+                break;
+        }
+    }
+
     return (
         <div className='stat-info-cont'>
             <p>{props.name.toLocaleUpperCase()}:</p>
 
-            <input id={input_name} type='number' onBlur={UpdateValue} defaultValue={GetStatValue()} ></input>
-            <button className='icon-minus' style={
-                // (stat_value > props.min)
-                (0 > props.min)
+            <input id={input_name} type='number' onBlur={UpdateValue} defaultValue={GetEncoded()} ></input>
+            <button className='icon-minus' onClick={() => ModifyStat(false)} style={
+                (GetStatValue() > 0)
                     ? { opacity: 1, cursor: 'pointer' }
-                    : { opacity: 0, cursor: 'default' }
+                    : { opacity: 0, cursor: 'default', pointerEvents: 'none' }
             }></button>
-            <button className='icon-plus' style={
+            <button className='icon-plus' onClick={() => ModifyStat(true)} style={
                 (stat?.get.current_points || 0 > 0)
                     ? { opacity: 1, cursor: 'pointer' }
-                    : { opacity: 0, cursor: 'default' }
+                    : { opacity: 0, cursor: 'default', pointerEvents: 'none' }
             }></button>
         </div>
     )
@@ -151,6 +181,7 @@ function StatInfo(props: { name: string, min: number }) {
 function SetCont() {
     const stat = useContext(ContextBaseStats);
     const ui_state = useContext(ContextStates);
+
     const UpdateLevel = (event: ChangeEvent<HTMLInputElement>) => {
 
         let level_value = parseInt(event.target.value);
@@ -162,7 +193,16 @@ function SetCont() {
             points_value = 0;
         }
 
-        stat?.set(stat => ({ ...stat, current_level: level_value, current_points: points_value }));
+        stat?.set(stat => ({
+            ...stat,
+            current_level: level_value,
+            current_points: points_value,
+            current_hp: 0,
+            current_mp: 0,
+            current_atk: 0,
+            current_def: 0,
+            current_dex: 0
+        }));
         //console.log(level_value); disable equip items if level is NAN
         ui_state?.set(ui => ({ ...ui, point: false }));// on interaction of stat 
 
@@ -183,7 +223,7 @@ function SetCont() {
                 </div>
                 <p id="class-label">Class: {stat?.get.current_class}</p>
 
-                <SetButton name='Reset Points' enabled={ui_state?.get.point} />
+                <SetButton name='Reset Points' />
                 <SetButton name='Change Class' />
                 <SetButton name='Tutorial' />
                 <ToggleCont />
@@ -193,9 +233,10 @@ function SetCont() {
 }
 
 
-function SetButton(props: { name: string, enabled?: boolean }) {
+function SetButton(props: { name: string }) {
     const page = useContext(ContextStates);
     const stat = useContext(ContextBaseStats);
+
 
     const Trigger = () => {
         switch (props.name) {
@@ -229,8 +270,12 @@ function SetButton(props: { name: string, enabled?: boolean }) {
     }
     let id_name = String((props.name).replace(/ /g, "-")).toLocaleLowerCase();
 
-    if (id_name == "reset-points" && !props.enabled) {
-        id_name += "-disabled";
+    if (id_name == "reset-points") {
+        
+        if ((stat?.get.current_points || 0) / 3 >= (stat?.get.current_level || 0) - 1 ){
+            id_name += "-disabled";
+        }
+     
     }
     return (
         <div className="set-button" id={id_name} onClick={Trigger}  >
