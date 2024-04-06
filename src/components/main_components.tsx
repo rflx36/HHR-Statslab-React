@@ -1,39 +1,97 @@
 
 
 
-import { ChangeEvent, useContext, } from 'react';
+import React, { ChangeEvent, useContext, } from 'react';
 import '../css/main_components.css';
 import { ContextBaseStats, ContextEquips, ContextStates } from '../StatContext';
+import { ItemSlot } from '../types';
 
 
 
 export default function ContainerMain() {
-    // const stat = useContext(ContextBaseStats);
 
-    // const testing = () =>
-    // {
-    //     // stat?.set(x => (SetProperty(x,"current_atk","10"))) 
-    //     console.log((SetProperty({...stat?.get},"current_atk","10")));
-    // }
     return (
         <div className='cont-all'>
 
             <div className="shield-guard-bg" id="shield-guard-bg-id">
 
             </div>
-
-            <div className="cont-items">
-
-            </div>
+            <ItemsCont />
             <StatCont />
             <SetCont />
-            {/* <p>stat atk:{stat?.get.current_atk}</p>
-            <button onClick={testing}>Add 10</button> */}
+
         </div>
     );
 }
 
+function ItemsCont() {
+    const equips = useContext(ContextEquips);
 
+
+    return (
+        <div className='cont-items'>
+            <div className='item-cont item-sheath'>
+                <ItemCont
+                    slot="primary sheated"
+                    id='item-sheath-primary'
+                    hasEnchants={equips?.get.sheated_primary_weapon.enchanted}
+                    url={equips?.get.sheated_primary_weapon.url}
+                />
+                {(equips?.get.sheated_primary_weapon.weapon_type == "single handed")
+                    && (
+                        <ItemCont
+                            slot="secondary sheated"
+                            id='item-sheath-secondary'
+                            hasEnchants={equips?.get.sheated_secondary_weapon.enchanted}
+                            url={equips?.get.sheated_secondary_weapon.url}
+                        />
+                    )}
+                <p>Sheath</p>
+            </div>
+            <div className='item-cont item-set'>
+                <ItemCont slot="helmet" id='item-helmet' url={equips?.get.selected_helmet.url} />
+                <ItemCont slot="armor" id='item-armor' url={equips?.get.selected_armor.url} />
+                <ItemCont slot="pants" id='item-pants' url={equips?.get.selected_pants.url} />
+                <ItemCont slot="shoes" id='item-shoes' url={equips?.get.selected_shoes.url} />
+            </div>
+            <div className='item-cont item-weapon'>
+                <ItemCont
+                    slot="primary"
+                    id='item-weapon-primary'
+                    hasEnchants={equips?.get.selected_primary_weapon.enchanted}
+                    url={equips?.get.selected_primary_weapon.url} />
+                {
+                    (equips?.get.selected_primary_weapon.weapon_type == "single handed")
+                    && (
+                        < ItemCont
+                            slot="secondary"
+                            id='item-weapon-secondary'
+                            hasEnchants={equips?.get.selected_secondary_weapon.enchanted}
+                            url={equips?.get.selected_secondary_weapon.url} />
+                    )}
+
+            </div>
+
+        </div>
+    )
+}
+function ItemCont(props: { id: string, slot: ItemSlot, hasEnchants?: boolean, url?: string }) {
+    const ui_state = useContext(ContextStates);
+
+    const LoadItems = () => {
+        ui_state?.set(x => ({ ...x, item: props.slot, page: "item" }));
+    }
+    let bg_style = {};
+    if (props.url != "") {
+        bg_style = { backgroundImage: "url(./src/assets/" + props.url + ")" }
+    }
+    return (
+
+        <button id={props.id} onClick={LoadItems} style={bg_style}>
+            {(props.hasEnchants != undefined) && (<div className='weapon-enchanted'></div>)}
+        </button>
+    )
+}
 function StatCont() {
     return (
         <div className='cont-stats'>
@@ -42,6 +100,13 @@ function StatCont() {
             <StatInfo name='atk' />
             <StatInfo name='def' />
             <StatInfo name='dex' />
+            <div className='stat-br'></div>
+            <StatResult name='crit multiplier' value='' />
+            <StatResult name='speed' value='' />
+            <StatResult name='final attack' value='' />
+            <StatResult name='final defense' value='' />
+            <StatResult name='total' isCost={true} value='' />
+            <StatResult name='enchantment' isCost={false} value='' />
         </div>
     )
 }
@@ -49,6 +114,27 @@ function StatCont() {
 
 
 
+
+
+function StatResult(props: { name: string, value: string, isCost?: boolean }) {
+    let cont_name = "stat-result-cont";
+    let text_name = props.name;
+    let img_display;
+    let cost = props.isCost;
+    if (cost != undefined) {
+        cont_name = "stat-" + ((cost) ? "cost" : "enchantment") + "-cont";
+        text_name = ((cost) ? "total" : "enchantment") + " cost";
+        img_display = ((cost) ? "coin" : "fish") + "-bg";
+    }
+    return (
+        <div className={cont_name}>
+            <p>{text_name}:</p>
+            <p>{props.value}</p>
+            {(cost != undefined) &&
+                (<div id={img_display}></div>)}
+        </div>
+    );
+}
 
 
 function StatInfo(props: { name: string }) {
@@ -269,16 +355,16 @@ function SetButton(props: { name: string }) {
         }
     }
     let id_name = String((props.name).replace(/ /g, "-")).toLocaleLowerCase();
-
+    let is_eligible = false;
     if (id_name == "reset-points") {
-        
-        if ((stat?.get.current_points || 0) / 3 >= (stat?.get.current_level || 0) - 1 ){
+        is_eligible = ((stat?.get.current_points || 0) / 3 >= (stat?.get.current_level || 0) - 1);
+        if (is_eligible) {
             id_name += "-disabled";
         }
-     
+
     }
     return (
-        <div className="set-button" id={id_name} onClick={Trigger}  >
+        <div className="set-button" id={id_name} onClick={is_eligible ? () => { return } : Trigger}  >
             <p>{props.name}</p>
         </div>
     )

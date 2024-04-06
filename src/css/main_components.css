@@ -90,23 +90,12 @@
 .stat-info-cont input {
     width: 200px;
     outline: none;
+    margin-top: 0 !important;
+    padding-top: 5px;
+    margin-left: -5px;
+    text-indent: 5px;
 }
 
-.stat-info-cont .confirm-button {
-    width: 35px;
-    border: none;
-    height: 31px;
-    background-position: center;
-    background-color: transparent;
-    cursor: pointer;
-    background-image: url(/src/assets/UI/icon-confirm.png);
-    background-size: 30px;
-    background-repeat: no-repeat;
-}
-
-.stat-info-cont .confirm-button:hover {
-    background-size: 35px;
-}
 
 .level-set {
     background: #5CB8E1;
@@ -145,6 +134,10 @@
     margin-right: 60px;
 }
 
+.cont-stats .stat-info-cont:nth-child(1) {
+    margin-top: 0;
+}
+
 .icon-minus {
     width: 50px;
     background-image: url(src/assets/UI/icon-minus.png);
@@ -160,7 +153,6 @@
 .icon-minus:hover {
     background-size: 35px;
 }
-
 
 
 .icon-plus {
@@ -407,9 +399,10 @@
 
 #item-sheath-secondary {
     background-image: url(src/assets/UI/icon-single-handed.png);
-    display: none;
+   
     background-size: contain;
     background-position: center;
+    margin-left: 5px;
 }
 
 #item-accessories {
@@ -450,7 +443,7 @@
     background-image: url(src/assets/UI/icon-single-handed.png);
     background-position: center;
     background-size: contain;
-    display: none;
+   margin-left:  5px;
 }
 
 

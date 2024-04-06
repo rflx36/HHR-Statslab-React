@@ -2,7 +2,7 @@ import React from "react";
 
 export interface ItemType {
     name: string,
-    attack: number,
+    power: number,
     defense: number,
     price: number,
     class: "archer" | "cowboy" | "mage" | "warrior" | null,
@@ -53,6 +53,7 @@ export interface BaseStatsType {
 export interface UIStateType {
     page: "main" | "item" | "save" | "detail" | "class",
     monster: "hide" | "show" | "show variants" | "environment",
+    item: ItemSlot,
     shield: boolean,
     booster: boolean,
     enchanted: boolean,
@@ -61,8 +62,8 @@ export interface UIStateType {
 }
 
 export type ClassType = "archer" | "cowboy" | "mage" | "warrior";
-export type HanderType = "single handed" | "two handed" | "shielded";
-
+export type HanderType = "single handed" | "two handed" | "shielded" | "unequiped";
+export type ItemSlot = "primary" | "secondary" | "primary sheated" | "secondary sheated" | "helmet" |"armor" | "pants" | "shoes" | "accessories";
 
 
 export interface BaseContextType {

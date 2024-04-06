@@ -2,7 +2,7 @@ let reloads = 0;
 let startTime = 0, endTime = 0;
 
 let resolveEnd: () => void;
-export let data_items:  Array<Array<any>>;
+export let data_items: Array<Array<any>>;
 export async function StartLoading() {
     startTime = performance.now();
     Load();
@@ -26,16 +26,17 @@ function EndLoading() {
 
 
 function Load() {
-    let _class = ["archer", "cowboy", "mage", "warrior"];
-    let _equips = ["armors", "helmets", "pants", "shoes", "weapons", "shields"];
+    let _class = ["warrior", "archer", "cowboy", "mage"];
+    let _equips = ["helmets", "armors", "pants", "shoes", "weapons", "shields"];
     let _file_locations = new Array<string>;
 
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 6; j++) {
-            if (j == 5 && i != 3) {
+            if (j == 5 && i != 0) {
                 continue;
             }
             _file_locations.push("./src/assets/Items-Info/" + _class[i] + "_" + _equips[j] + ".json");
+           
         }
     }
     RequestItems(_file_locations);
@@ -48,7 +49,8 @@ async function RequestItems(urls: Array<string>) {
         const response = await Promise.all(promises);
 
         ParsedData(response);
-        console.log(JSON.stringify(response));
+        // console.log(JSON.stringify(response));
+        console.log(response);
         data_items = response;
     }
     catch (err) {

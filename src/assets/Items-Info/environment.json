@@ -12,19 +12,19 @@
     },
     {
         "name":"Saw",
-        "attack":350,
+        "power":350,
         "hp":0,
         "url":"static/statslab/UI/pve_2.png"
     },
     {
         "name":"Swinging Axe",
-        "attack":420,
+        "power":420,
         "hp":0,
         "url":"static/statslab/UI/pve_3.png"
     },
     {
         "name":"Guillotine",
-        "attack":490,
+        "power":490,
         "hp":0,
         "url":"static/statslab/UI/pve_4.png"
     }

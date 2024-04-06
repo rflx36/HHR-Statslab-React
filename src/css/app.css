@@ -106,8 +106,8 @@ p {
     z-index: 3;
     background-size: 40px;
     background-position: center;
-    right: 0;
-    top: 0;
+    right: -20px;
+    top: -50px;
     position: absolute;
     border-radius: 100px;
     border: 2px solid black;
@@ -115,6 +115,8 @@ p {
 }
 
 
-
+.close-button:hover{
+    opacity: 0.7;
+}
 
 /* 800×1280 px tablet resolution */
