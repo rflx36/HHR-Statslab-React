@@ -7,6 +7,7 @@ export interface ItemType {
     price: number,
     class: "archer" | "cowboy" | "mage" | "warrior" | null,
     url: string,
+    level: number,
     weapon_type?: HanderType,
     enchanted?: boolean
 }
@@ -63,7 +64,7 @@ export interface UIStateType {
 
 export type ClassType = "archer" | "cowboy" | "mage" | "warrior";
 export type HanderType = "single handed" | "two handed" | "shielded" | "unequiped";
-export type ItemSlot = "primary" | "secondary" | "primary sheated" | "secondary sheated" | "helmet" |"armor" | "pants" | "shoes" | "accessories";
+export type ItemSlot = "primary" | "secondary" | "primary sheated" | "secondary sheated" | "helmet" | "armor" | "pants" | "shoes" | "accessories";
 
 
 export interface BaseContextType {

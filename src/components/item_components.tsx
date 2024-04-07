@@ -126,8 +126,8 @@ function Item(props: PrequisitesType) {
     }
     let isEligible = ((stat?.get.current_level || 0) >= props.level);
 
-
     const SetItem = () => {
+        let isEnchanted = isPow && (props.defense || 0) == 0 && ui_state?.get.enchanted;
         const ItemInfo: ItemType = {
             name: props.name,
             power: props.power || 0,
@@ -135,8 +135,9 @@ function Item(props: PrequisitesType) {
             price: props.price,
             class: props.class,
             url: props.url,
+            level: props.level,
             weapon_type: props.type,
-            enchanted: (isPow && props.defense == 0) && ui_state?.get.enchanted
+            enchanted: isEnchanted
         }
         switch (props.slot) {
             case "primary":
@@ -195,8 +196,8 @@ function Item(props: PrequisitesType) {
                 {(props.type == "two handed") && (<p className="details-p">TWO HANDED</p>)}
 
                 <p className="details-p" id="underleveled">Required level: {props.level}</p>
-                <p className="details-p">Price: {props.price}</p>
-                {(isEnchantable) && (<p className="details-p details-enchanted">Enchantment Cost: {Math.round(Math.sqrt(props.price) * 2)}</p>)}
+                <p className="details-p">Price: {props.price.toLocaleString('en-US')}</p>
+                {(isEnchantable) && (<p className="details-p details-enchanted">Enchantment Cost: {Math.round(Math.sqrt(props.price) * 2).toLocaleString('en-US')}</p>)}
             </div>
         </div>
 

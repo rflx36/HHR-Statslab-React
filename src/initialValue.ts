@@ -7,7 +7,8 @@ export const InitialItemTypeValue: ItemType = {
     defense: 0,
     price: 0,
     class: null,
-    url: ""
+    url: "",
+    level:0,
 }
 export const InitialWeaponTypeValue: ItemType = {
     ...InitialItemTypeValue,
