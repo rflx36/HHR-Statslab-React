@@ -11,6 +11,10 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    /* width: 105px; */
+    position: relative;
+    left: 0;
+    margin-right: auto;
 }
 
 .cont-all {
@@ -22,6 +26,7 @@
     display: flex;
     padding: 10px;
     height: 466px;
+    justify-content: flex-end;
 }
 
 .item-cont button {
@@ -395,6 +400,7 @@
     background-image: url(src/assets/UI/icon-single-handed.png);
     background-size: contain;
     background-position: center;
+    transform: rotateZ(180deg) scaleX(-1);
 }
 
 #item-sheath-secondary {
@@ -403,6 +409,7 @@
     background-size: contain;
     background-position: center;
     margin-left: 5px;
+    transform: rotateZ(180deg);
 }
 
 #item-accessories {

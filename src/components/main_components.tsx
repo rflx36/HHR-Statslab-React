@@ -1,9 +1,9 @@
 
 
 
-import React, { ChangeEvent, useContext, } from 'react';
+import { ChangeEvent, useContext, useMemo, } from 'react';
 import '../css/main_components.css';
-import { ContextBaseStats, ContextEquips, ContextStates } from '../StatContext';
+import { ContextBaseStats, ContextEquips, ContextSkills, ContextStates } from '../StatContext';
 import { ItemSlot } from '../types';
 
 
@@ -46,9 +46,10 @@ function ItemsCont() {
                             url={equips?.get.sheated_secondary_weapon.url}
                         />
                     )}
-                <p>Sheath</p>
+
             </div>
             <div className='item-cont item-set'>
+                <ItemCont slot="accessories" id='item-accessories' url={equips?.get.selected_accessories.url} />
                 <ItemCont slot="helmet" id='item-helmet' url={equips?.get.selected_helmet.url} />
                 <ItemCont slot="armor" id='item-armor' url={equips?.get.selected_armor.url} />
                 <ItemCont slot="pants" id='item-pants' url={equips?.get.selected_pants.url} />
@@ -87,12 +88,136 @@ function ItemCont(props: { id: string, slot: ItemSlot, hasEnchants?: boolean, ur
     }
     return (
 
-        <button id={props.id} onClick={LoadItems} style={bg_style}>
+        <button id={props.id} onClick={LoadItems} style={bg_style} title={props.id.replace("item-", "")}>
             {(props.hasEnchants != undefined) && (<div className='weapon-enchanted'></div>)}
         </button>
     )
 }
 function StatCont() {
+    const stat = useContext(ContextBaseStats);
+    const equips = useContext(ContextEquips);
+    const skills = useContext(ContextSkills);
+
+
+
+    const CalculateFinalDefense = () => {
+        let n = ((stat?.get.current_def || 0) + 8) * (2 +
+            (equips?.get.selected_helmet.defense || 0) +
+            (equips?.get.selected_armor.defense || 0) +
+            (equips?.get.selected_pants.defense || 0) +
+            (equips?.get.selected_shoes.defense || 0) +
+            (equips?.get.selected_accessories.defense || 0) +
+            ((equips?.get.selected_secondary_weapon.defense || 0) * ((skills?.get.shield_guard || 0) + Math.floor(((skills?.get.shield_expert || 0) * 5) / 100))) +
+            ((equips?.get.selected_primary_weapon.defense || 0) * ((skills?.get.shield_guard || 0) + Math.floor(((skills?.get.shield_expert || 0) * 5) / 100)))
+        );
+        if (skills?.get.is_shield_guarded && (equips?.get.selected_secondary_weapon.defense || 0) > 0) {
+            n = Math.floor(n * (1 + (skills.get.shield_guard * 0.03)));
+        }
+        return n;
+    }
+
+    const CalculateFinalAttack = () => {
+        let sheath_bonus_damage = 0;
+        if (equips?.get.sheated_primary_weapon.power || 0 != 0) {
+            let sheath_primary = equips?.get.sheated_primary_weapon.power || 0;
+            let sheath_secondary = equips?.get.sheated_secondary_weapon.power || 0;
+
+
+            if (equips?.get.sheated_primary_weapon.class != stat?.get.current_class) {
+                sheath_primary *= 0.25;
+            }
+            if (equips?.get.sheated_secondary_weapon.class != stat?.get.current_class) {
+                sheath_secondary *= 0.25;
+            }
+
+            if (equips?.get.sheated_primary_weapon.weapon_type == "two handed") {
+                sheath_bonus_damage = Math.floor(sheath_primary * 0.25);
+            }
+            else {
+                sheath_bonus_damage = Math.floor((sheath_primary * 0.06) + (sheath_secondary * 0.06));
+            }
+
+        }
+
+        let base_damage = (1 + (stat?.get.current_atk || 0) +
+            ((equips?.get.selected_helmet.class === stat?.get.current_class) ? equips?.get.selected_helmet.power || 0 : 0) +
+            ((equips?.get.selected_armor.class === stat?.get.current_class) ? equips?.get.selected_armor.power || 0 : 0) +
+            ((equips?.get.selected_pants.class === stat?.get.current_class) ? equips?.get.selected_pants.power || 0 : 0) +
+            ((equips?.get.selected_shoes.class === stat?.get.current_class) ? equips?.get.selected_shoes.power || 0 : 0) +
+            ((equips?.get.selected_accessories.class === stat?.get.current_class) ? equips?.get.selected_accessories.power || 0 : 0) +
+            (sheath_bonus_damage));
+
+        let primary = (equips?.get.selected_primary_weapon.power || 0) * base_damage;
+        let secondary = (equips?.get.selected_secondary_weapon.power || 0) * base_damage;
+
+
+        if (equips?.get.selected_primary_weapon.weapon_type == "two handed") {
+            return primary.toLocaleString('en-US');
+        }
+        else {
+            return primary.toLocaleString('en-US') + " & " + secondary.toLocaleString('en-US');
+        }
+    }
+    const CalculateSpeed = () => {
+        let speed = 100;
+
+        if (equips?.get.sheated_primary_weapon.name != "" && equips?.get.sheated_primary_weapon.weapon_type != "two handed") {
+            speed += 5;
+        }
+        if (equips?.get.sheated_secondary_weapon.name != "") {
+            speed += 5;
+        }
+        return String(speed)+"%";
+    }
+    const GetCrit = () => {
+
+        let dex_crit_chance = [
+            1.00, 1.21, 1.37, 1.50, 1.62, 1.72, 1.82, 1.91, 2.00, 2.08, 2.16, 2.23, 2.30, 2.37, 2.44,
+            2.50, 2.56, 2.62, 2.68, 2.74, 2.79, 2.85, 2.90, 2.95, 3.00, 3.05, 3.10, 3.15, 3.19, 3.24,
+            3.28, 3.33, 3.37, 3.42, 3.46, 3.50, 3.54, 3.58, 3.62, 3.66, 3.70, 3.74, 3.78, 3.82, 3.85,
+            3.89, 3.92, 3.96, 4.00, 4.04, 4.08, "", "", "", "", "", "", "", "", 4.37, "", "", "", "", 4.53, "",
+            4.59, "", "", 4.68, "", "", "", "", "", "", "", "", "", "", 5.00
+        ];
+        return String(dex_crit_chance[stat?.get.current_dex || 0]) +"x";
+    }
+    const CalculateTotalPrice = () => {
+        let cost =
+            (equips?.get.selected_accessories.price || 0) +
+            (equips?.get.selected_helmet.price || 0) +
+            (equips?.get.selected_armor.price || 0) +
+            (equips?.get.selected_pants.price || 0) +
+            (equips?.get.selected_shoes.price || 0) +
+            (equips?.get.selected_primary_weapon.price || 0) +
+            (equips?.get.selected_secondary_weapon.price || 0) +
+            (equips?.get.sheated_primary_weapon.price || 0) +
+            (equips?.get.sheated_secondary_weapon.price || 0);
+
+        return cost;
+    }
+    const CalculateTotalEnchantment = () => {
+        const GEV = (n: number) => { return Math.round(Math.sqrt(n) * 2) };
+        let cost =
+            GEV(equips?.get.selected_accessories.price || 0) +
+            GEV(equips?.get.selected_helmet.price || 0) +
+            GEV(equips?.get.selected_armor.price || 0) +
+            GEV(equips?.get.selected_pants.price || 0) +
+            GEV(equips?.get.selected_shoes.price || 0) +
+            GEV(equips?.get.selected_primary_weapon.price || 0) +
+            GEV(equips?.get.selected_secondary_weapon.price || 0) +
+            GEV(equips?.get.sheated_primary_weapon.price || 0) +
+            GEV(equips?.get.sheated_secondary_weapon.price || 0);
+
+        return cost;
+    }
+
+    const fdef = useMemo(() => CalculateFinalDefense(), [stat?.get]); // cache unchanged properties
+    const fatk = useMemo(() => CalculateFinalAttack(), [stat?.get]);
+    const speed = CalculateSpeed();
+    const crit = GetCrit();
+    const total_price = CalculateTotalPrice();
+    const total_enchantment = CalculateTotalEnchantment();
+
+
     return (
         <div className='cont-stats'>
             <StatInfo name='hp' />
@@ -101,12 +226,12 @@ function StatCont() {
             <StatInfo name='def' />
             <StatInfo name='dex' />
             <div className='stat-br'></div>
-            <StatResult name='crit multiplier' value='' />
-            <StatResult name='speed' value='' />
-            <StatResult name='final attack' value='' />
-            <StatResult name='final defense' value='' />
-            <StatResult name='total' isCost={true} value='' />
-            <StatResult name='enchantment' isCost={false} value='' />
+            <StatResult name='crit multiplier' value={crit} />
+            <StatResult name='speed' value={speed} />
+            <StatResult name='final attack' value={fatk} />
+            <StatResult name='final defense' value={String(fdef)} />
+            <StatResult name='total' isCost={true} value={String(total_price)} />
+            <StatResult name='enchantment' isCost={false} value={String(total_enchantment)} />
         </div>
     )
 }
@@ -129,9 +254,14 @@ function StatResult(props: { name: string, value: string, isCost?: boolean }) {
     return (
         <div className={cont_name}>
             <p>{text_name}:</p>
-            <p>{props.value}</p>
-            {(cost != undefined) &&
-                (<div id={img_display}></div>)}
+            
+            {(cost == undefined) ?
+                (<p>{props.value}</p>) :
+                (<div>
+                    <p>{props.value}</p>
+                    <div id={img_display}></div>
+                </div>)
+            }
         </div>
     );
 }

@@ -30,15 +30,16 @@ function Load() {
     let _equips = ["helmets", "armors", "pants", "shoes", "weapons", "shields"];
     let _file_locations = new Array<string>;
 
-    for (let i = 0; i < 4; i++) {
-        for (let j = 0; j < 6; j++) {
-            if (j == 5 && i != 0) {
+    for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 4; j++) {
+            if (i == 5 && j != 0) {
                 continue;
             }
-            _file_locations.push("./src/assets/Items-Info/" + _class[i] + "_" + _equips[j] + ".json");
+            _file_locations.push("./src/assets/Items-Info/" + _class[j] + "_" + _equips[i] + ".json");
            
         }
     }
+    _file_locations.push("./src/assets/Items-Info/accessories.json");
     RequestItems(_file_locations);
 }
 

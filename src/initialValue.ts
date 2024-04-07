@@ -30,7 +30,7 @@ export const InitialEquip: EquipsType = {
 
 export const InitialSkills: SkillsType = {
     is_shield_guarded: false,
-    shield_guard: 0,
+    shield_guard: 1,
     shield_expert: 0,
     attack_booster: 0,
     class_skills: [0, 0, 0, 0, 0, 0, 0, 0]
@@ -51,7 +51,7 @@ export const InitialBaseStats: BaseStatsType = {
     current_fatk_s: 0,
     current_fdef: 16,
     current_class: "warrior",
-    current_hander: "single handed"
+    current_hander: "unequiped"
 }
 
 
