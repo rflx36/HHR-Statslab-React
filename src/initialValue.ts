@@ -1,4 +1,4 @@
-import { BaseStatsType, EquipsType, ItemType, SkillsType, UIStateType } from "./types"
+import { BaseStatsType, EquipsType, ItemType, PVEType, SkillsType, UIStateType } from "./types"
 
 
 export const InitialItemTypeValue: ItemType = {
@@ -8,7 +8,7 @@ export const InitialItemTypeValue: ItemType = {
     price: 0,
     class: null,
     url: "",
-    level:0,
+    level: 0,
 }
 export const InitialWeaponTypeValue: ItemType = {
     ...InitialItemTypeValue,
@@ -34,7 +34,10 @@ export const InitialSkills: SkillsType = {
     shield_guard: 1,
     shield_expert: 0,
     attack_booster: 0,
-    class_skills: [0, 0, 0, 0, 0, 0, 0, 0]
+    warrior_skills: [0,0,0,0,0],
+    archer_skills: [0,0,0],
+    cowboy_skills:  [0,0,0],
+    mage_skills: [0,0,0]
 }
 
 export const InitialBaseStats: BaseStatsType = {
@@ -57,10 +60,16 @@ export const InitialBaseStats: BaseStatsType = {
 
 
 
+const InitialPVEStat: PVEType = {
+    name: "",
+    hp: 0,
+    url: "",
+}
 
 export const InitialUIState: UIStateType = {
     page: "class",
     monster: "hide",
+    monster_detail: InitialPVEStat,
     item: "primary",
     shield: false,
     booster: false,
@@ -68,3 +77,12 @@ export const InitialUIState: UIStateType = {
     all: false,
     point: false
 }
+
+
+export const dex_crit_chance = [
+    1.00, 1.21, 1.37, 1.50, 1.62, 1.72, 1.82, 1.91, 2.00, 2.08, 2.16, 2.23, 2.30, 2.37, 2.44,
+    2.50, 2.56, 2.62, 2.68, 2.74, 2.79, 2.85, 2.90, 2.95, 3.00, 3.05, 3.10, 3.15, 3.19, 3.24,
+    3.28, 3.33, 3.37, 3.42, 3.46, 3.50, 3.54, 3.58, 3.62, 3.66, 3.70, 3.74, 3.78, 3.82, 3.85,
+    3.89, 3.92, 3.96, 4.00, 4.04, 4.08, "", "", "", "", "", "", "", "", 4.37, "", "", "", "", 4.53, "",
+    4.59, "", "", 4.68, "", "", "", "", "", "", "", "", "", "", 5.00
+];

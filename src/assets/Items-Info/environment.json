@@ -2,30 +2,42 @@
     {
         "name":"Red Mushroom Elevator",
         "defense":36,
-        "url":"static/statslab/UI/pve_0.png"
+        "url":"src/assets/UI/pve_0.png"
     },
     {
         "name":"Boulder",
         "defense":60,
         "hp":500,
-        "url":"static/statslab/UI/pve_1.png"
+        "url":"src/assets/UI/pve_1.png"
     },
     {
         "name":"Saw",
         "power":350,
         "hp":0,
-        "url":"static/statslab/UI/pve_2.png"
+        "url":"src/assets/UI/pve_2.png"
     },
     {
         "name":"Swinging Axe",
         "power":420,
         "hp":0,
-        "url":"static/statslab/UI/pve_3.png"
+        "url":"src/assets/UI/pve_3.png"
     },
     {
         "name":"Guillotine",
         "power":490,
         "hp":0,
-        "url":"static/statslab/UI/pve_4.png"
+        "url":"src/assets/UI/pve_4.png"
+    },
+    {
+        "name":"Flame thrower",
+        "power":140,
+        "hp":0,
+        "url":"src/assets/UI/pve_5.png"
+    },
+    {
+        "name":"Poison Water",
+        "power":0, 
+        "hp":0,
+        "url":"src/assets/UI/pve_6.png"
     }
 ]

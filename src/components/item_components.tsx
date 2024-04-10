@@ -142,12 +142,18 @@ function Item(props: PrequisitesType) {
         switch (props.slot) {
             case "primary":
                 equips?.set(x => ({ ...x, selected_primary_weapon: ItemInfo }));
+                if (props.type == "two handed"){
+                    equips?.set(x => ({...x,selected_secondary_weapon:InitialWeaponTypeValue}));
+                }
                 break;
-            case "secondary":
+            case "secondary":   
                 equips?.set(x => ({ ...x, selected_secondary_weapon: ItemInfo }));
                 break;
             case "primary sheated":
                 equips?.set(x => ({ ...x, sheated_primary_weapon: ItemInfo }));
+                if (props.type == "two handed"){
+                    equips?.set(x => ({...x,sheated_secondary_weapon:InitialWeaponTypeValue}));
+                }
                 break;
             case "secondary sheated":
                 equips?.set(x => ({ ...x, sheated_secondary_weapon: ItemInfo }));
@@ -239,6 +245,7 @@ function ItemRemove(props: { slot: ItemSlot }) {
                 break;
 
         }
+        
         ui_state?.set(x => ({ ...x, page: "main" }));
     }
 

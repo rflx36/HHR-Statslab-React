@@ -29,7 +29,10 @@ export interface SkillsType {
     shield_guard: number,
     shield_expert: number,
     attack_booster: number,
-    class_skills: Array<number>
+    warrior_skills: Array<number>,
+    archer_skills: Array<number>,
+    cowboy_skills: Array<number>,
+    mage_skills: Array<number>
 }
 
 export interface BaseStatsType {
@@ -54,12 +57,25 @@ export interface BaseStatsType {
 export interface UIStateType {
     page: "main" | "item" | "save" | "detail" | "class",
     monster: "hide" | "show" | "show variants" | "environment",
+    monster_detail: PVEType
     item: ItemSlot,
     shield: boolean,
     booster: boolean,
     enchanted: boolean,
     all: boolean,
     point: boolean
+
+}
+
+
+export interface PVEType {
+    name: string,
+    hp: number,
+    atk?: number,
+    def?: number,
+    url: string,
+    variant_atk?: number,
+    variant_def?: number
 }
 
 export type ClassType = "archer" | "cowboy" | "mage" | "warrior";
@@ -85,6 +101,7 @@ export interface UIStateContextType {
     get: UIStateType,
     set: React.Dispatch<React.SetStateAction<UIStateType>>
 }
+
 
 // export interface StatesType {
 //     toggle_enchanted : boolean,

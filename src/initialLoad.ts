@@ -36,10 +36,14 @@ function Load() {
                 continue;
             }
             _file_locations.push("./src/assets/Items-Info/" + _class[j] + "_" + _equips[i] + ".json");
-           
+
         }
     }
-    _file_locations.push("./src/assets/Items-Info/accessories.json");
+    let _others = ["accessories", "skills", "monsters", "environment"];
+    for (let i = 0; i < _others.length ; i++) {
+
+        _file_locations.push("./src/assets/Items-Info/"+_others[i] +".json");
+    }
     RequestItems(_file_locations);
 }
 

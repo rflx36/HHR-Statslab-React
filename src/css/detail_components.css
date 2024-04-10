@@ -1,0 +1,455 @@
+.cont-detailed-damage {
+    position: absolute;
+    background: #278C0D;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 2px solid #17590D;
+    width: 936px;
+    height: 486px;
+
+    z-index: 3;
+    flex-direction: row-reverse;
+    display: flex;
+}
+
+.cont-detailed-damage .cont-damage {
+    width: 486px;
+    height: calc(100% - 14px);
+    background: #3DB81E;
+    margin: 5px;
+    border-radius: 5px;
+    border: #083807 2px solid;
+
+}
+
+.cont-detailed-damage .cont-damage .base-damage-detail-cont {
+    height: 95px;
+}
+
+.cont-detailed-damage .cont-damage .base-damage-detail-cont .base-info-detail-cont {
+
+    display: flex;
+    width: 100%;
+}
+
+.cont-detailed-damage .cont-damage .base-damage-detail-cont .base-info-detail-cont .base-info-detail {
+    width: 100%;
+
+}
+
+.cont-detailed-damage .cont-damage .base-damage-detail-cont .base-info-detail-cont .base-info-detail p {
+    overflow: hidden;
+    font-family: 'Confetti';
+    text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000, 1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
+    -webkit-text-stroke: 0px;
+    color: #fbfb1e;
+    font-size: 25px;
+    background: #32a215;
+    /* border: 1px solid black; */
+    /* box-sizing: border-box; */
+    height: 30px;
+    /* box-sizing: border-box; */
+    margin: 5px;
+    margin-left: 0px;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.cont-detailed-damage .cont-damage .base-damage-detail-cont .base-info-detail-cont .base-info-detail p span {
+    font-family: 'Comicy';
+    color: #adff98;
+    transform: translateX(-55px) translateY(4px);
+    position: absolute;
+    font-size: 25px;
+}
+
+.cont-detailed-damage .cont-damage .base-damage-detail-cont img {
+    background-color: #32a215;
+    border-radius: 5px;
+    margin: 5px;
+    transform: scaleX(-1);
+}
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont {
+    display: flex;
+    width: 100%;
+    position: relative;
+
+
+    #skill-class-warrior {
+        background: #A2542E;
+    }
+
+    #skill-class-mage {
+        background: #365499;
+    }
+
+    #skill-class-cowboy {
+        background: #708341;
+    }
+
+    #skill-class-archer {
+        background: #36C02E;
+    }
+
+}
+
+
+
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont .dealt-element-cont {
+    width: calc(50% - 7.5px);
+    height: 40px;
+    background: #32a215;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont .skill-damage-list-cont {
+    position: absolute;
+    z-index: 5;
+    border: 2px solid #0000006b;
+    border-radius: 5px;
+    width: calc(100% - 14px);
+    margin: 5px;
+    top: 60px;
+    display: flex;
+    flex-flow: wrap;
+    padding-bottom: 5px;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0s;
+    transform: translateY(-50px);
+}
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont .skill-damage-list-cont h6 {
+    width: 100%;
+    text-align: center;
+    font-family: 'Confetti';
+    font-size: 15px;
+    height: 15px;
+    opacity: 0.5;
+}
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont .skill-damage-list-cont .skill-dealt-element-cont {
+    width: calc(50% - 7.5px);
+    height: 40px;
+    background: #0000002b;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont .skill-damage-list-cont .skill-dealt-element-cont p {
+    margin: 5px;
+
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-size: 25px;
+}
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont:hover {
+    >.skill-damage-list-cont {
+        transform: translateY(0px);
+        opacity: 1;
+        transition: .3s cubic-bezier(0.11, 0.8, 0.13, 0.84)
+    }
+
+    >.dealt-cont {
+        background: #00000038;
+    }
+}
+
+.element-fire {
+    background: linear-gradient(0deg, #D61709 0%, #F8A52A 100%);
+}
+
+.element-electric {
+    background: linear-gradient(0deg, #FFEE37 0%, #FFFBC6 100%);
+}
+
+.element-poison {
+    background: linear-gradient(0deg, #1F801A 0%, #5FE162 100%);
+}
+
+.element-ice {
+    background: linear-gradient(0deg, #60AFFF 0%, #C1E1FF 100%);
+    ;
+}
+
+#element-reserved {
+    text-shadow: none !important;
+    color: black !important;
+    opacity: 0.3;
+    -webkit-text-fill-color: black !important;
+    -webkit-text-stroke: 0px !important;
+    width: 100%;
+    text-align: center;
+}
+
+#hp-val {
+    padding-left: 60px;
+    color: #adff98;
+    /* margin-left: 35px; */
+    font-size: 30px;
+}
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont .dealt-element-cont p {
+    margin: 5px;
+
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-size: 25px;
+}
+
+
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont .dealt-cont {
+    width: calc(50% - 7.5px);
+    height: 40px;
+    background: #32a215;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 20px;
+    transition: .3s cubic-bezier(0.21, 0.74, 0.2, 0.73);
+
+}
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont .dealt-cont label {
+    position: absolute;
+    top: -20px;
+    font-family: 'Confetti';
+    opacity: 0.5;
+    width: 300px;
+}
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont .dealt-cont img {
+    margin: 5px;
+}
+
+.cont-detailed-damage .cont-damage .skill-damage-detail-cont .damage-dealt-m-cont .dealt-cont p {
+    margin: 5px;
+    background: linear-gradient(0deg, #FF8309 0%, #FFC420 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+}
+
+.cont-detailed-damage .cont-skills {
+    background: #6DA95C;
+    height: calc(100% - 10px);
+    width: 440px;
+    margin: 5px;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.cont-detailed-damage .cont-skills::-webkit-scrollbar {
+    width: 0px;
+}
+
+.cont-detailed-damage .cont-skills .skill-detail-cont {
+    height: 100px;
+    width: calc(100% - 10px);
+    background: #3db81e;
+    margin: 5px;
+    display: flex;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #00000045;
+    overflow: hidden;
+}
+
+.cont-detailed-damage .cont-skills .skill-detail-cont img {
+    width: 90px;
+    height: 90px;
+    margin: 4px;
+    border-radius: 4px;
+}
+
+.cont-detailed-damage .damage-dealt-m-cont .skill-class-warrior {
+    background: #A2542E;
+}
+
+.cont-detailed-damage .damage-dealt-m-cont .skill-class-mage {
+    background: #365499;
+}
+
+.cont-detailed-damage .damage-dealt-m-cont .skill-class-cowboy {
+    background: #708341;
+}
+
+.cont-detailed-damage .damage-dealt-m-cont .skill-class-archer {
+    background: #36C02E;
+}
+
+
+
+.cont-detailed-damage .damage-dealt-m-cont .skill-detail-cont .skill-detail-more-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cont-detailed-damage .cont-skills .skill-detail-cont .skill-detail-more-cont p {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.cont-detailed-damage .cont-skills .skill-detail-cont .skill-detail-more-cont .range-level-cont {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cont-detailed-damage .cont-skills .skill-detail-cont .skill-detail-more-cont .range-level-cont p {
+
+    font-family: 'Confetti';
+    color: yellow;
+    text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000, 1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
+    -webkit-text-stroke: 0px;
+    font-size: 25px;
+    height: 30px;
+    width: 70px;
+}
+
+.cont-detailed-damage .cont-skills .skill-detail-cont .skill-detail-more-cont .range-level-cont .mana-cont {
+    width: 57.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-detailed-damage .cont-skills .skill-detail-cont .skill-detail-more-cont .range-level-cont .mana-cont .mana-icon {
+    width: 25px;
+    background-size: contain;
+    height: 25px;
+    background-position: center;
+    background-image: url(src/assets/UI/icon-mana.png);
+    background-repeat: no-repeat;   
+}
+
+.cont-detailed-damage .cont-skills .skill-detail-cont .skill-detail-more-cont .range-level-cont .mana-cont p {
+    color: #417ce1;
+    width: 30px;
+}
+
+.cont-detailed-damage .cont-skills .skill-detail-cont .skill-detail-more-cont input {
+    background: #00000070;
+    outline: none;
+    -webkit-appearance: none;
+    height: 15px;
+    appearance: none;
+    border-radius: 15px;
+    border: 1.5px solid black;
+    overflow: hidden;
+    width: 175px;
+    margin: 5px;
+}
+
+.cont-detailed-damage .cont-skills .skill-detail-cont .skill-detail-more-cont input::-webkit-slider-runnable-track {
+
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+
+.cont-detailed-damage .cont-skills .skill-detail-cont .skill-detail-more-cont input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background: #FBFB1E;
+
+    border-radius: 15px;
+    box-shadow: -100px 0 0 95px #fbfb1e84;
+    cursor: pointer;
+
+}
+
+.cont-detailed-damage .cont-skills .skill-detail-cont .skill-detail-more-cont input::-webkit-slider-thumb:hover {
+
+    background: #f8f86e;
+}
+
+.cont-detailed-damage .cont-skills .disable-skill-cont {
+
+    pointer-events: none;
+    opacity: 0.25;
+}
+
+.skill-number-identifier {
+    text-shadow: none !important;
+    color: black !important;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+}
+
+.display-one-hit {
+    position: absolute;
+    left: 40px;
+    font-family: 'Comicy';
+    color: red;
+    -webkit-text-stroke: yellow 1px;
+}
+
+
+
+#active-skills-info {
+    font-family: 'Confetti';
+    -webkit-text-stroke: 0px;
+    color: black;
+    opacity: 0.5;
+    font-size: 15px;
+    text-align: center;
+    margin: 5px;
+}
+
+#active-elements-info {
+    font-family: 'Confetti';
+    -webkit-text-stroke: 0px;
+    color: black;
+    opacity: 0.5;
+    font-size: 15px;
+    text-align: center;
+    margin: 5px;
+}
+
+
+.cont-detailed-damage .cont-skills .skill-class-warrior {
+    background: #A2542E;
+}
+
+.cont-detailed-damage .cont-skills .skill-class-mage {
+    background: #365499;
+}
+
+.cont-detailed-damage .cont-skills .skill-class-cowboy {
+    background: #708341;
+}
+
+.cont-detailed-damage .cont-skills .skill-class-archer {
+    background: #36C02E;
+}

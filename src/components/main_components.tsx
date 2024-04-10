@@ -1,16 +1,16 @@
 
 
 
-import { ChangeEvent, useContext, useMemo, } from 'react';
+import { ChangeEvent, useContext, useEffect, useMemo, } from 'react';
 import '../css/main_components.css';
 import { ContextBaseStats, ContextEquips, ContextSkills, ContextStates } from '../StatContext';
 import { ItemSlot } from '../types';
-import { InitialItemTypeValue, InitialWeaponTypeValue } from '../initialValue';
+import { dex_crit_chance, InitialItemTypeValue, InitialWeaponTypeValue } from '../initialValue';
+
 
 
 
 export default function ContainerMain() {
-
     return (
         <div className='cont-all'>
 
@@ -37,10 +37,17 @@ function BoosterCont() {
     )
 }
 function ShieldCont() {
+    const equips = useContext(ContextEquips);
     return (
-        <div className='shield-skill-cont'>
-            <SkillCont name='Shield' max={15} />
-        </div>
+        <>
+            {
+                (((equips?.get.selected_secondary_weapon.defense || 0) > 0) ||
+                    ((equips?.get.sheated_primary_weapon.defense || 0) > 0)) &&
+                (<div className='shield-skill-cont'>
+                    <SkillCont name='Shield' max={15} />
+                </div>)
+            }
+        </>
     )
 }
 
@@ -64,6 +71,7 @@ function SkillCont(props: { name: string, max: number }) {
         }
         stat?.set(x => ({ ...x }));
     }
+
     return (
         <div className='skill-cont'>
             <p>{props.name} Skill</p>
@@ -97,7 +105,7 @@ function ItemsCont() {
         }));
         stat?.set(x => ({ ...x }));
     }
-
+    
     return (
         <div className='cont-items'>
             <div className='item-cont item-sheath'>
@@ -106,7 +114,7 @@ function ItemsCont() {
                     id='item-sheath-primary'
                     hasEnchants={equips?.get.sheated_primary_weapon.enchanted}
                     url={equips?.get.sheated_primary_weapon.url}
-                    isEligible={(equips?.get.sheated_primary_weapon.level || 0) >= c_l}
+                    isEligible={(equips?.get.sheated_primary_weapon.level || 0) <= c_l}
                 />
                 {(equips?.get.sheated_primary_weapon.weapon_type == "single handed")
                     && (
@@ -115,7 +123,7 @@ function ItemsCont() {
                             id='item-sheath-secondary'
                             hasEnchants={equips?.get.sheated_secondary_weapon.enchanted}
                             url={equips?.get.sheated_secondary_weapon.url}
-                            isEligible={(equips?.get.sheated_secondary_weapon.level || 0) >= c_l}
+                            isEligible={(equips?.get.sheated_secondary_weapon.level || 0) <= c_l}
                         />
                     )}
 
@@ -125,31 +133,31 @@ function ItemsCont() {
                     slot="accessories"
                     id='item-accessories'
                     url={equips?.get.selected_accessories.url}
-                    isEligible={(equips?.get.selected_accessories.level || 0) >= c_l}
+                    isEligible={(equips?.get.selected_accessories.level || 0) <= c_l}
                 />
                 <ItemCont
                     slot="helmet"
                     id='item-helmet'
                     url={equips?.get.selected_helmet.url}
-                    isEligible={(equips?.get.selected_helmet.level || 0) >= c_l}
+                    isEligible={(equips?.get.selected_helmet.level || 0) <= c_l}
                 />
                 <ItemCont
                     slot="armor"
                     id='item-armor'
                     url={equips?.get.selected_armor.url}
-                    isEligible={(equips?.get.selected_armor.level || 0) >= c_l}
+                    isEligible={(equips?.get.selected_armor.level || 0) <= c_l}
                 />
                 <ItemCont
                     slot="pants"
                     id='item-pants'
                     url={equips?.get.selected_pants.url}
-                    isEligible={(equips?.get.selected_pants.level || 0) >= c_l}
+                    isEligible={(equips?.get.selected_pants.level || 0) <= c_l}
                 />
                 <ItemCont
                     slot="shoes"
                     id='item-shoes'
                     url={equips?.get.selected_shoes.url}
-                    isEligible={(equips?.get.selected_shoes.level || 0) >= c_l}
+                    isEligible={(equips?.get.selected_shoes.level || 0) <= c_l}
                 />
             </div>
             <div className='item-cont item-weapon'>
@@ -158,7 +166,7 @@ function ItemsCont() {
                     id='item-weapon-primary'
                     hasEnchants={equips?.get.selected_primary_weapon.enchanted}
                     url={equips?.get.selected_primary_weapon.url}
-                    isEligible={(equips?.get.sheated_primary_weapon.level || 0) >= c_l}
+                    isEligible={(equips?.get.sheated_primary_weapon.level || 0) <= c_l}
                 />
 
                 {
@@ -169,7 +177,7 @@ function ItemsCont() {
                             id='item-weapon-secondary'
                             hasEnchants={equips?.get.selected_secondary_weapon.enchanted}
                             url={equips?.get.selected_secondary_weapon.url}
-                            isEligible={(equips?.get.selected_secondary_weapon.level || 0) >= c_l}
+                            isEligible={(equips?.get.selected_secondary_weapon.level || 0) <= c_l}
                         />
                     )}
 
@@ -187,7 +195,8 @@ function ItemCont(props: { id: string, slot: ItemSlot, hasEnchants?: boolean, ur
     let bg_style = {};
     if (props.url != "") {
         bg_style = { backgroundImage: "url(./src/assets/" + props.url + ")" };
-        if (props.isEligible) {
+
+        if (props.isEligible != true) {
             bg_style = { filter: "grayscale(1)", backgroundImage: "url(./src/assets/" + props.url + ")" };
         }
 
@@ -221,11 +230,10 @@ function StatCont() {
             n = Math.floor(n * (1 + (skills.get.shield_guard * 0.03)));
         }
         n = Math.floor(n);
-
-        return n.toLocaleString('en-US');
+        return n;
     }
 
-    const CalculateFinalAttack = () => {
+    const CalculateFinalAttack = (type: string) => {
         let sheath_bonus_damage = 0;
         if (equips?.get.sheated_primary_weapon.power || 0 != 0) {
             let sheath_primary = equips?.get.sheated_primary_weapon.power || 0;
@@ -262,6 +270,7 @@ function StatCont() {
         primary = Math.floor(primary * (1 + ((skills?.get.attack_booster || 0) / 100)));
         secondary = Math.floor(secondary * (1 + ((skills?.get.attack_booster || 0) / 100)));
 
+
         if (equips?.get.selected_primary_weapon.class != stat?.get.current_class) {
             primary = Math.floor(primary * 0.25);
         }
@@ -269,11 +278,11 @@ function StatCont() {
             secondary = Math.floor(secondary * 0.25);
         }
 
-        if (equips?.get.selected_primary_weapon.weapon_type == "two handed") {
-            return primary.toLocaleString('en-US');
+        if (type == "p") {
+            return primary;
         }
         else {
-            return primary.toLocaleString('en-US') + " & " + secondary.toLocaleString('en-US');
+            return secondary;
         }
     }
     const CalculateSpeed = () => {
@@ -289,13 +298,7 @@ function StatCont() {
     }
     const GetCrit = () => {
 
-        let dex_crit_chance = [
-            1.00, 1.21, 1.37, 1.50, 1.62, 1.72, 1.82, 1.91, 2.00, 2.08, 2.16, 2.23, 2.30, 2.37, 2.44,
-            2.50, 2.56, 2.62, 2.68, 2.74, 2.79, 2.85, 2.90, 2.95, 3.00, 3.05, 3.10, 3.15, 3.19, 3.24,
-            3.28, 3.33, 3.37, 3.42, 3.46, 3.50, 3.54, 3.58, 3.62, 3.66, 3.70, 3.74, 3.78, 3.82, 3.85,
-            3.89, 3.92, 3.96, 4.00, 4.04, 4.08, "", "", "", "", "", "", "", "", 4.37, "", "", "", "", 4.53, "",
-            4.59, "", "", 4.68, "", "", "", "", "", "", "", "", "", "", 5.00
-        ];
+        
         let value = (dex_crit_chance[stat?.get.current_dex || 0] != undefined) ? String(dex_crit_chance[stat?.get.current_dex || 0]) + "x" : "Unknown";
         return value;
     }
@@ -336,11 +339,23 @@ function StatCont() {
     }
 
     const fdef = useMemo(() => CalculateFinalDefense(), [stat?.get]); // cache unchanged properties
-    const fatk = useMemo(() => CalculateFinalAttack(), [stat?.get]);
+    const fatk_p = useMemo(() => CalculateFinalAttack("p"), [stat?.get]);
+    const fatk_s = useMemo(() => CalculateFinalAttack("s"), [stat?.get]);
     const speed = CalculateSpeed();
     const crit = GetCrit();
     const total_price = CalculateTotalPrice();
     const total_enchantment = CalculateTotalEnchantment();
+
+    useEffect(() => {
+
+        stat?.set(x => ({
+            ...x,
+            current_fdef: fdef,
+            current_fatk_p: fatk_p,
+            current_fatk_s: fatk_s
+        }));
+    }, [fdef, fatk_p, fatk_s]);
+    const fatk_display = (equips?.get.selected_primary_weapon.weapon_type == "two handed") ? fatk_p.toLocaleString('en-US') : (fatk_p.toLocaleString('en-US') + " & " + fatk_s.toLocaleString('en-US'));
 
 
     return (
@@ -353,8 +368,8 @@ function StatCont() {
             <div className='stat-br'></div>
             <StatResult name='crit multiplier' value={crit} />
             <StatResult name='speed' value={speed} />
-            <StatResult name='final attack' value={fatk} />
-            <StatResult name='final defense' value={fdef} />
+            <StatResult name='final attack' value={fatk_display} />
+            <StatResult name='final defense' value={fdef.toLocaleString('en-US')} />
             <StatResult name='total' isCost={true} value={total_price} />
             <StatResult name='enchantment' isCost={false} value={total_enchantment} />
         </div>
@@ -635,7 +650,7 @@ function ToggleCont() {
 }
 
 function ToggleButton(props: { name: string }) {
-
+    const ui_state = useContext(ContextStates);
     if (props.name === "guard") {
         let equips = useContext(ContextEquips);
         if (!equips?.get.selected_secondary_weapon.defense || 0 > 0) {
@@ -644,9 +659,55 @@ function ToggleButton(props: { name: string }) {
 
     }
     let toggle_name = "toggle-" + props.name + "-";
+    let bg = {};
+    const ToggleButton = () => {
+
+        if (props.name == "saves") {
+            ui_state?.set(x => ({ ...x, page: "save" }));
+
+        }
+        else if (props.name == "monster") {
+            let monster_button_state = ui_state?.get.monster;
+            switch (monster_button_state) {
+                case "hide":
+                    ui_state?.set(x => ({ ...x, monster: "show" }));
+
+                    break;
+                case "show":
+
+                    ui_state?.set(x => ({ ...x, monster: "show variants" }));
+
+                    break;
+                case "show variants":
+
+                    ui_state?.set(x => ({ ...x, monster: "environment" }));
+                    break;
+                case "environment":
+
+                    ui_state?.set(x => ({ ...x, monster: "hide" }));
+                    break;
+            }
+        }
+    }
+    if (props.name == "monster") {
+        switch (ui_state?.get.monster) {
+            case "hide":
+                bg = { backgroundImage: "url(src/assets/UI/monster-toggle-hide.png)" };
+                break;
+            case "show":
+                bg = { backgroundImage: "url(src/assets/UI/monster-toggle-show.png)" };
+                break;
+            case "show variants":
+                bg = { backgroundImage: "url(src/assets/UI/monster-toggle-variant.png)" };
+                break;
+            case "environment":
+                bg = { backgroundImage: "url(src/assets/UI/pve-toggle.png)" };
+                break;
+        }
+    }
     return (
-        <div className={toggle_name + "button"} id={toggle_name + "button-id"}>
-            <div className={toggle_name + "image"} id={toggle_name + "img"}></div>
+        <div className={toggle_name + "button"} id={toggle_name + "button-id"} onClick={ToggleButton}>
+            <div style={bg} className={toggle_name + "image"} id={toggle_name + "img"}></div>
         </div>
     )
 }

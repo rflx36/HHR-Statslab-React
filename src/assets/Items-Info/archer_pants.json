@@ -54,12 +54,21 @@
         "class": "archer"
     },
     {
+        "name": "Strong Legs",
+        "power": 9,
+        "defense": 63,
+        "level": 80,
+        "price": 167466,
+        "url": "Item-Images/archer-pants/7.webp",
+        "class": "archer"
+    },
+    {
         "name": "Protector Legs",
         "power": 10,
         "defense": 68,
         "level": 88,
         "price": 204309,
-        "url": "Item-Images/archer-pants/7.webp",
+        "url": "Item-Images/archer-pants/8.webp",
         "class": "archer"
     },
     {
@@ -68,7 +77,7 @@
         "defense": 73,
         "level": 95,
         "price": 245762,
-        "url": "Item-Images/archer-pants/8.webp",
+        "url": "Item-Images/archer-pants/9.webp",
         "class": "archer"
     },
     {
@@ -77,7 +86,7 @@
         "defense": 106,
         "level": 139,
         "price": 647736,
-        "url": "Item-Images/archer-pants/9.webp",
+        "url": "Item-Images/archer-pants/10.webp",
         "class": "archer"
     },
     {
@@ -86,7 +95,7 @@
         "defense": 114,
         "level": 150,
         "price": 782570,
-        "url": "Item-Images/archer-pants/10.webp",
+        "url": "Item-Images/archer-pants/11.webp",
         "class": "archer"
     },
     {
@@ -95,7 +104,7 @@
         "defense": 126,
         "level": 166,
         "price": 1014816,
-        "url": "Item-Images/archer-pants/11.webp",
+        "url": "Item-Images/archer-pants/12.webp",
         "class": "archer"
     },
     {
@@ -104,7 +113,7 @@
         "defense": 137,
         "level": 180,
         "price": 1261268,
-        "url": "Item-Images/archer-pants/12.webp",
+        "url": "Item-Images/archer-pants/13.webp",
         "class": "archer"
     }
 ]
