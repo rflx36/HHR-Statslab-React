@@ -20,7 +20,7 @@
         "weapon_type": "two handed",
         "is_multiply": false,
         "url": "src/assets/UI/skill_2.webp",
-        "base_mp": 0,
+        "base_mp": 2,
         "mp_increase": 0
     },
     {

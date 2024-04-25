@@ -1,6 +1,4 @@
-
-
-*{
+* {
     padding: 0;
     margin: 0;
     /* user-select: none; */
@@ -11,7 +9,7 @@
     src: url(/Fonts/Comicy.ttf);
 }
 
-body{
+body {
     background-color: #2F3136;
 }
 
@@ -87,7 +85,7 @@ p {
     bottom: 0;
 }
 
-.cont h1{
+.cont h1 {
     font-family: Comicy;
     height: 30px;
     margin: 5px;
@@ -115,8 +113,18 @@ p {
 }
 
 
-.close-button:hover{
+.close-button:hover {
     opacity: 0.7;
 }
 
 /* 800×1280 px tablet resolution */
+/* 
+@media only screen and (max-width:600px) {
+    .cont {
+        width: calc(100% - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        height: calc(100% - 70px);
+    }
+
+} */

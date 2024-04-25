@@ -142,5 +142,14 @@
         "price": 2042676,
         "url": "Item-Images/warrior-armors/16.webp",
         "class": "warrior"
+    },
+    {
+        "name": "Chain Armor",
+        "defense": 170,
+        "power": 18,
+        "level": 220,
+        "price": 2207791,
+        "url": "Item-Images/warrior-armors/17.webp",
+        "class": "warrior"
     }
 ]

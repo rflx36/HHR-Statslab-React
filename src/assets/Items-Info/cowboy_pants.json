@@ -97,5 +97,14 @@
         "price": 1284767,
         "url": "Item-Images/cowboy-pants/11.webp",
         "class": "cowboy"
+    },
+    {
+        "name": "Calibre Legs",
+        "power": 18,
+        "defense": 143,
+        "level": 187,
+        "price": 1409530,
+        "url": "Item-Images/cowboy-pants/12.webp",
+        "class": "cowboy"
     }
 ]

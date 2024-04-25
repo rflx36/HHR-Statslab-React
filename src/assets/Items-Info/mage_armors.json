@@ -187,5 +187,14 @@
         "price": 1261268,
         "url": "Item-Images/mage-armors/21.webp",
         "class": "mage"
+    },
+    {
+        "name": "Analytic Armor",
+        "power": 19,
+        "defense": 144,
+        "level": 190,
+        "price": 1435788,
+        "url": "Item-Images/mage-armors/22.webp",
+        "class": "mage"
     }
 ]

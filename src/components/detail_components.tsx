@@ -155,18 +155,27 @@ function DamageContainer() {
     const skills = useContext(ContextSkills);
 
     const monster_hp = ui_state?.get.monster_detail.hp || 0;
-    const player_fatk = stat?.get.current_fatk_p || 0;
+    let player_fatk = stat?.get.current_fatk_p || 0;
+
+    if (stat?.get.current_class == "archer") {
+        player_fatk *= ((ui_state?.get.charge || 0) / 100); // 60% - 140% damage based off charge
+    }
+    else if (stat?.get.current_class == "cowboy") {
+        player_fatk *= ((ui_state?.get.range || 0) / 100); // bullet damage reduced based off distance travel
+    }
+    player_fatk = Math.round(player_fatk);
+    
     const monster_fdef = (ui_state?.get.monster_detail.def || 0) * ((ui_state?.get.monster_detail.def || 0) + (ui_state?.get.monster_detail.variant_def || 0));
     const crit_multiplier = parseInt(String(dex_crit_chance[stat?.get.current_dex || 0]));
-    const base_damage = GetDamage(player_fatk, monster_fdef); 
+    const base_damage = GetDamage(player_fatk, monster_fdef);
     const base_damage_crit = Math.floor(base_damage * crit_multiplier);
 
     let skills_data = data_items[22].filter((arr: any) => arr.class == stat?.get.current_class);
 
 
     let bonus_enchant = 1;
-    bonus_enchant += (equips?.get.sheated_primary_weapon.enchanted) ? 0.25 : 0;
-    bonus_enchant += (equips?.get.sheated_secondary_weapon.enchanted) ? 0.25 : 0;
+    bonus_enchant += (equips?.get.sheated_primary_weapon.enchanted) ? 0.125 : 0;
+    bonus_enchant += (equips?.get.sheated_secondary_weapon.enchanted) ? 0.125 : 0;
     let skill_stat: Array<number> = [];
     switch (stat?.get.current_class) {
         case "warrior":
@@ -235,7 +244,7 @@ function DamageContainer() {
                                 />
                                 <ElementCont
                                     type="ice"
-                                    title=""
+                                    title="Reduces Enemy % armor based of % health you deal - Special thanks to SamSam for helping me on this one out"
                                     damage={base_damage}
                                     b_enchant={bonus_enchant}
                                     is_skill={false}
@@ -265,6 +274,7 @@ function DamageContainer() {
                 {
                     skills_data.map((e, i) => {
                         if (stat?.get.current_class == "cowboy") {
+
                             if (!(equips?.get.selected_primary_weapon.name != "" || equips.get.selected_secondary_weapon.name != "")) {
                                 return;
                             }
@@ -303,6 +313,7 @@ function DamageContainer() {
                                 m_hp={ui_state?.get.monster_detail.hp || 0}
                                 key={i}
                                 m_fdef={monster_fdef}
+                                p_fatk={player_fatk}
                             />
 
                         )
@@ -318,6 +329,8 @@ function DamageContainer() {
 function ElementCont(props: { type: string, title: string, damage: number, b_enchant: number, is_skill: boolean, m_hp: number, fatk?: number, m_fdef?: number, base_val?: number, val_increase?: number, skill_lvl?: number }) {
 
     let damage = 0;
+    let fdef = props.m_fdef || 0;
+    let fatk = props.fatk || 0;
     switch (props.type) {
         case "fire":
             damage = (props.damage * 0.1) * (props.b_enchant || 1);
@@ -326,22 +339,29 @@ function ElementCont(props: { type: string, title: string, damage: number, b_enc
             damage = (props.damage * 0.35) * (props.b_enchant || 1);
             break;
         case "poison":
-            let PoisonDamage = GetDamage((props.fatk || 0), Math.floor((props.m_fdef || 0) / 6));
+            let PoisonDamage = GetDamage((fatk), Math.floor((props.m_fdef || 0) / 6));
             PoisonDamage = Math.round(Math.sqrt(PoisonDamage) / 2);
 
             damage = PoisonDamage;
-            if (props.is_skill) {
-                damage = Math.round(damage * ((props.base_val || 0) + ((props.val_increase || 0) * (props.skill_lvl || 0))));
-            }
+            // if (props.is_skill) {
+            //     damage = Math.round(damage * ((props.base_val || 0) + ((props.val_increase || 0) * (props.skill_lvl || 0))));
+            // }
 
             break;
         case "ice":
-            let IcePercentSunder = Math.round(100 * (GetDamage((props.fatk || 0), props.m_fdef || 0) / props.m_hp)) / 100;
-            let IceDamage = GetDamage((props.fatk || 0), IcePercentSunder * (props.m_fdef || 0));
-            damage = IceDamage;
-            if (props.is_skill){
+            // let IcePercentSunder = Math.round(100 * (GetDamage((props.fatk || 0), props.m_fdef || 0) / props.m_hp)) / 100;
+            // let IceDamage = GetDamage((props.fatk || 0), IcePercentSunder * (props.m_fdef || 0));
+            // damage = IceDamage;
 
+            let IcePercentSunder = Math.round(100 * (GetDamage(fatk, fdef) / props.m_hp)) / 100;
+            if (IcePercentSunder < 1) {
+                let IceDamage = GetDamage(fatk, fdef - (fdef * IcePercentSunder));
+                damage = IceDamage;
+            } else {
+                damage = GetDamage(fatk, 0);
             }
+            console.log("hp: " + props.m_hp);
+            console.log("sunder: " + (IcePercentSunder * 100) + "%");
             break;
     }
 
@@ -363,13 +383,14 @@ function ElementCont(props: { type: string, title: string, damage: number, b_enc
 
 
 
-function SkillDamageCont(props: { m_fdef?: number, p_enchanted: boolean, class: string, skill_name: string, base_value: number, value_increase: number, skill_level: number, is_multiply: boolean, damage: number, crit: number, b_enchant: number, m_hp: number }) {
+function SkillDamageCont(props: { p_fatk?: number, m_fdef?: number, p_enchanted: boolean, class: string, skill_name: string, base_value: number, value_increase: number, skill_level: number, is_multiply: boolean, damage: number, crit: number, b_enchant: number, m_hp: number }) {
 
     let base_damage = props.damage;
 
 
     let skill_damage = Math.round(base_damage * (props.base_value + (props.value_increase * props.skill_level)));
     let skill_damage_crit = Math.floor(skill_damage * props.crit);
+    let p_fatk = Math.round((props.p_fatk || 0) * (props.base_value + (props.value_increase * props.skill_level)));
 
     let hit_identifier = (skill_damage >= props.m_hp) ? "1 Hit" : "";
     let hit_identifier_crit = (skill_damage_crit >= props.m_hp) ? "1 Hit" : "";
@@ -383,6 +404,7 @@ function SkillDamageCont(props: { m_fdef?: number, p_enchanted: boolean, class: 
         if (props.skill_name == "guard arrow") {
             base_damage *= 0.1;
         }
+        p_fatk = props.p_fatk || 0;
         skill_damage = Math.floor(base_damage);
         skill_damage_crit = Math.floor(base_damage * props.crit);
         hit_identifier = ((skill_damage * (props.skill_level + 1)) >= props.m_hp) ? "1 Shot" : "";
@@ -442,7 +464,7 @@ function SkillDamageCont(props: { m_fdef?: number, p_enchanted: boolean, class: 
                             b_enchant={props.b_enchant}
                             is_skill={true}
                             m_hp={props.m_hp}
-                            fatk={base_damage}
+                            fatk={p_fatk}
                             m_fdef={props.m_fdef || 0}
                             base_val={props.base_value}
                             val_increase={props.value_increase}

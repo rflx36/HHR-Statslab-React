@@ -55,7 +55,7 @@ export interface BaseStatsType {
 
 }
 export interface UIStateType {
-    page: "main" | "item" | "save" | "detail" | "class",
+    page: "main" | "item" | "save" | "detail" | "class" | "help",
     monster: "hide" | "show" | "show variants" | "environment",
     monster_detail: PVEType
     item: ItemSlot,
@@ -63,8 +63,12 @@ export interface UIStateType {
     booster: boolean,
     enchanted: boolean,
     all: boolean,
-    point: boolean
-
+    point: boolean,
+    save: "save" | "load" | "update",
+    charge: number,
+    range: number,
+    current: string,
+    save_session: string,
 }
 
 

@@ -124,5 +124,14 @@
         "price": 1261268,
         "url": "Item-Images/archer-armors/14.webp",
         "class":"archer"
+    },
+    {
+        "name": "Earth Armor",
+        "power":19,
+        "defense": 144,
+        "level": 190,
+        "price": 1435788,
+        "url" : "Item-Images/archer-armors/15.webp",
+        "class": "archer"
     }
 ]

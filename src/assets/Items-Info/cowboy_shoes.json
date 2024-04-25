@@ -3,7 +3,7 @@
         "name": "cowboy Shoes",
         "power": 1,
         "defense": 10,
-        "level": 7,
+        "level": 11,
         "price": 1395,
         "url": "Item-Images/cowboy-shoes/1.webp",
         "class": "cowboy"
@@ -12,7 +12,7 @@
         "name": "Pirate Boots",
         "power": 3,
         "defense": 18,
-        "level": 19,
+        "level": 29,
         "price": 6458,
         "url": "Item-Images/cowboy-shoes/2.webp",
         "class": "cowboy"
@@ -21,7 +21,7 @@
         "name": "Aluminum cowboy Boots",
         "power": 4,
         "defense": 38,
-        "level": 44,
+        "level": 67,
         "price": 44897,
         "url": "Item-Images/cowboy-shoes/3.webp",
         "class": "cowboy"
@@ -30,7 +30,7 @@
         "name": "Solar Shoes",
         "power": 6,
         "defense": 54,
-        "level": 66,
+        "level": 100,
         "price": 111972,
         "url": "Item-Images/cowboy-shoes/4.webp",
         "class": "cowboy"
@@ -39,7 +39,7 @@
         "name": "Valor Boots",
         "power": 7,
         "defense": 83,
-        "level": 102,
+        "level": 155,
         "price": 342036,
         "url": "Item-Images/cowboy-shoes/5.webp",
         "class": "cowboy"
@@ -48,9 +48,18 @@
         "name": "Guard Boots",
         "power": 9,
         "defense": 91,
-        "level": 114,
+        "level": 173,
         "price": 434691,
         "url": "Item-Images/cowboy-shoes/6.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Calibre Boots",
+        "power": 9,
+        "defense": 95,
+        "level": 180,
+        "price": 486061,
+        "url": "Item-Images/cowboy-shoes/7.webp",
         "class": "cowboy"
     }
 ]

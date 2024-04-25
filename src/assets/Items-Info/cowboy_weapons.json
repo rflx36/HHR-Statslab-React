@@ -238,5 +238,25 @@
         "twohanded": true,
         "url": "Item-Images/cowboy-weapons/24.webp",
         "class": "cowboy"
+    },
+    {
+        "name": "Calibre SMG",
+        "power": 61,
+        "level": 191,
+        "rpm": 320,
+        "price": 1661765,
+        "twohanded": false,
+        "url": "Item-Images/cowboy-weapons/25.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Calibre Cannon",
+        "power": 252,
+        "level": 191,
+        "rpm": 125,
+        "price": 2599979,
+        "twohanded": true,
+        "url": "Item-Images/cowboy-weapons/26.webp",
+        "class": "cowboy"
     }
 ]

@@ -115,5 +115,14 @@
         "price": 1261268,
         "url": "Item-Images/archer-pants/13.webp",
         "class": "archer"
+    },
+    {
+        "name": "Earth legs",
+        "power": 19,
+        "defense": 144,
+        "level": 190,
+        "price": 1435788,
+        "url": "Item-Images/archer-pants/14.webp",
+        "class": "archer"
     }
 ]

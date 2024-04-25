@@ -29,7 +29,7 @@ function MonsterCont() {
     }
     return (
         <>
-            {(data.length > 0  &&ui_state?.get.page != "class" ) && (
+            {(data.length > 0 && ui_state?.get.page != "class" && ui_state?.get.page != "save" && ui_state?.get.page != "help") && (
                 <div className="monster-stat-cont">
                     <div className="monster-cont">
                         {data.map((e, i) => {
@@ -57,15 +57,25 @@ function MonsterCont() {
 function IndexContainers(props: PVEType) {
     const stat = useContext(ContextBaseStats);
     const ui_state = useContext(ContextStates);
+
     let damage = (props.atk || 0) * ((props.atk || 0) + (props.variant_atk || 0));
     let defense = (props.def || 0) * ((props.def || 0) + (props.variant_def || 0));
 
     if (props.name.includes("Sasquatch")) {
         damage *= 2.5;
     }
+    let fatk = stat?.get.current_fatk_p || 0;
 
-    const dmg = GetDamage(damage, (stat?.get.current_fdef || 0));
-    const def = GetDamage((stat?.get.current_fatk_p || 0), defense);
+    if (stat?.get.current_class == "archer") {
+        fatk *= ((ui_state?.get.charge || 0) / 100); // 60% - 140% damage based off charge
+    }
+    else if (stat?.get.current_class == "cowboy") {
+        fatk *= ((ui_state?.get.range || 0) / 100); // bullet damage reduced based off distance travel
+    }
+
+    let dmg = GetDamage(damage, (stat?.get.current_fdef || 0));
+    let def = GetDamage(fatk, defense);
+
 
     const pve_damage = AbbrevFormat(dmg);
     const pve_def = AbbrevFormat(def);
@@ -73,18 +83,19 @@ function IndexContainers(props: PVEType) {
     const col = ((dmg >= 0) ? ' linear-gradient(rgb(236, 0, 2) 0%, rgb(169, 0, 11) 100%)' : '#00EA00');
 
 
-    
+
     const ViewDetail = () => {
-        if (props.name == ui_state?.get.monster_detail.name && ui_state.get.page == "detail"){
+        if (props.name == ui_state?.get.monster_detail.name && ui_state.get.page == "detail" ) {
             return;
         }
-
+        if (ui_state?.get.monster == "environment"){
+            return;
+        }
         const PVEDetail = { ...props };
-       
+
         ui_state?.set(x => ({ ...x, monster_detail: PVEDetail, page: "detail" }));
 
     }
-
     return (
         <div className="monster-index" onClick={ViewDetail}>
             <div className="monster-image" title={props.name} style={{ backgroundImage: "url(" + props.url + ")" }}></div>
@@ -106,6 +117,7 @@ function IndexContainers(props: PVEType) {
         </div>
     )
 }
+
 
 export function GetDamage(attacker: number, defender: number) {
     return Math.round(5 * ((attacker + 30) / (defender + 30)));

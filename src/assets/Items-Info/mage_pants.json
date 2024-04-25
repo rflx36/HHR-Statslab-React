@@ -178,5 +178,14 @@
         "price": 1261268,
         "url": "Item-Images/mage-pants/20.webp",
         "class": "mage"
+    },
+    {
+        "name": "Analytic Legs",
+        "power": 19,
+        "defense": 144,
+        "level": 190,
+        "price": 1435788,
+        "url": "Item-Images/mage-pants/21.webp",
+        "class": "mage"
     }
 ]

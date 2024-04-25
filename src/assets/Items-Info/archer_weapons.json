@@ -187,5 +187,14 @@
         "url": "Item-Images/archer-weapons/21.webp",
         "class": "archer",
         "twohanded":true
+    },
+    {
+        "name": "Harpoon Bow",
+        "power": 257,
+        "level": 200,
+        "price": 2908546,
+        "url": "Item-Images/archer-weapons/22.webp",
+        "class": "archer",
+        "twohanded":true
     }
 ]

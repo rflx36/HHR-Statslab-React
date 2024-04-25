@@ -268,7 +268,9 @@
 #tutorial:hover {
     background-color: #e17204;
 }
-
+#about {
+    background-color: #C6B200;
+}
 .stat-result-cont {
     background: #9F9F9F;
     height: 31px;
@@ -495,7 +497,7 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: end;
     align-items: end;
-    height: 100px;
+    height: 61px;
     margin: 5px;
 
 }
@@ -579,7 +581,7 @@ input::-webkit-inner-spin-button {
 
 
 
-.shield-skill-cont {
+.shield-skill-cont, .range-damage-cont, .charge-damage-cont {
     background: #496648;
     border: 2px #073506 solid;
     border-radius: 15px;
@@ -645,7 +647,7 @@ input::-webkit-inner-spin-button {
     transition: 0.3s;
 }
 
-.skill-cont {
+.skill-cont, .control-cont {
     background: #278c0d;
     border-radius: 10px;
     margin-left: 10px;
@@ -657,7 +659,7 @@ input::-webkit-inner-spin-button {
 
 }
 
-.skill-cont p {
+.skill-cont p, .control-cont p {
     font-family: Confetti;
     line-height: 25px;
     text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000, 1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
@@ -668,7 +670,7 @@ input::-webkit-inner-spin-button {
     font-size: 30px;
 }
 
-#shield-skill-input {
+#shield-skill-input{
     flex-grow: 1;
     margin-top: 4px;
     margin-left: 10px;
@@ -711,6 +713,57 @@ input::-webkit-inner-spin-button {
     width: 50px;
     margin-right: 10px;
 }
+
+
+#range-input-id{
+    direction: rtl;
+}
+.control-input{
+    flex-grow: 1;
+    margin-top: 4px;
+    margin-left: 10px;
+    background: #18660B;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 23px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 2px solid #292901;
+   
+}
+
+
+.control-input::-webkit-slider-runnable-track {
+
+    appearance: none;
+    -webkit-appearance: none;
+
+}
+
+.control-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 23px;
+    width: 30px;
+    background: #FBFB1E;
+    border-right: 2px solid #292901;
+    border-radius: 5px;
+    box-shadow: -120px 0 0 95px #fbfb1e;
+    ;
+}
+
+.control-input::-webkit-slider-thumb:hover {
+
+    background: #f8f86e;
+}
+
+.control-input-label {
+    width: 70px;
+    margin-right: 10px;
+}
+
+
 
 
 

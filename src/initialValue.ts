@@ -34,10 +34,10 @@ export const InitialSkills: SkillsType = {
     shield_guard: 1,
     shield_expert: 0,
     attack_booster: 0,
-    warrior_skills: [0,0,0,0,0],
-    archer_skills: [0,0,0],
-    cowboy_skills:  [0,0,0],
-    mage_skills: [0,0,0]
+    warrior_skills: [0, 0, 0, 0, 0],
+    archer_skills: [0, 0, 0],
+    cowboy_skills: [0, 0, 0],
+    mage_skills: [0, 0, 0]
 }
 
 export const InitialBaseStats: BaseStatsType = {
@@ -75,7 +75,12 @@ export const InitialUIState: UIStateType = {
     booster: false,
     enchanted: false,
     all: false,
-    point: false
+    point: false,
+    save: "save",
+    charge: 100,
+    range: 100,
+    current: "",
+    save_session: ""
 }
 
 

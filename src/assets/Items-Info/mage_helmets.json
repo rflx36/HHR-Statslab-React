@@ -205,5 +205,14 @@
         "price": 1261268,
         "url": "Item-Images/mage-helmets/23.webp",
         "class": "mage"
+    },
+    {
+        "name": "Analytic Helmet",
+        "power": 19,
+        "defense": 144,
+        "level": 190,
+        "price": 1435788,
+        "url": "Item-Images/mage-helmets/24.webp",
+        "class": "mage"
     }
 ]

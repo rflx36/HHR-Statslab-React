@@ -1,0 +1,252 @@
+.cont-saving {
+    position: absolute;
+    background: #278C0D;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 2px solid #17590D;
+    width: 936px;
+    height: 486px;
+    display: flex;
+    z-index: 3;
+    flex-direction: row-reverse;
+}
+
+.cont-saving #close-cont-saving {
+    background-image: url(UI/icon-close.png);
+    width: 38px;
+    height: 38px;
+    z-index: 3;
+    background-size: 40px;
+    background-position: center;
+    right: -20px;
+    top: -50px;
+    position: absolute;
+    border-radius: 100px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.cont-saving .save-list {
+    width: 407px;
+    background: #56A043;
+    margin: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    border-radius: 5px;
+    overflow-y: scroll;
+    height: -webkit-fill-available;
+
+}
+
+.cont-saving .save-list #save-data-active {
+    background: #96D719;
+    transform: translateX(10px);
+    width: calc(100% - 70px);
+}
+
+.cont-saving .save-list .saved-data-cont {
+    width: calc(100% - 60px);
+    height: 50px;
+    background: #96DF91;
+    border-radius: 5px;
+    display: flex;
+    margin-bottom: 5px;
+    margin-left: 55px;
+    /* overflow: hidden; */
+    align-items: center;
+    cursor: pointer;
+}
+
+.cont-saving .save-list .saved-data-cont:hover {
+    /* background: #96D719;*/
+    background: #BEF4BB;
+
+}
+
+.cont-saving .save-list .saved-data-cont img {
+    width: 50px;
+    height: 50px;
+    transform: translateX(-55px);
+    border-radius: 5px;
+    background: #96df91;
+}
+
+.cont-saving .save-list .saved-data-cont p {
+    transform: translateX(-40px);
+}
+
+.cont-saving .save-details {
+    width: 500px;
+    height: -webkit-fill-available;
+    /* margin-left: 5px; */
+    margin: 5px;
+    border: 2px solid #083807;
+    border-radius: 5px;
+    background: #3DB81E;
+    position: relative;
+}
+
+
+.cont-saving .save-details p {
+    font-family: confetti;
+    font-size: 25px;
+    color: white;
+    line-height: 25px;
+    text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000, 1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
+    -webkit-text-stroke: 0px;
+
+}
+
+.cont-saving .save-name {
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+}
+
+
+.cont-saving .save-details .save-detail-h {
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+}
+
+
+.cont-saving .save-details .save-detail-h .save-selected-info {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.cont-saving .save-details .save-detail-h .save-selected-info .save-info-type {
+    width: 70px;
+}
+
+.cont-saving .save-details .save-detail-h .save-updated-info {
+    display: flex;
+    width: 50%;
+
+    justify-content: space-between;
+}
+
+
+.cont-saving .save-details .save-detail-h .save-updated-info .save-updated-info-type {
+    width: 30px;
+    text-align: end;
+}
+
+
+
+
+.cont-saving .save-actions {
+
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height: 50px;
+}
+
+.cont-saving .save-details .save-actions .action-cont {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cont-saving .save-details .save-actions .action-cont button {
+    padding-left: 25px;
+
+    padding-right: 25px;
+
+    padding-top: 5px;
+    border-radius: 14px;
+    padding-bottom: 5px;
+    border: 2px solid #001825;
+    margin: 5px;
+    cursor: pointer;
+    transition: .3s cubic-bezier(0.18, 0.85, 0.18, 0.84);
+    position: relative;
+}
+
+.cont-saving .save-details .save-actions .action-cont button p {
+    font-size: 25px;
+    font-family: Comicy;
+    text-align: center;
+    -webkit-text-stroke: 1px black;
+    color: white;
+}
+
+.cont-saving .save-details .save-actions .action-cont button:after {
+    width: calc(100% - 10px);
+    height: 6px;
+    background-color: #ffffff;
+    content: 'w';
+    color: transparent;
+    border-radius: 100px / 30px;
+    position: absolute;
+    left: 0;
+    margin-left: 5px;
+    top: 2px;
+    opacity: 0.1;
+}
+
+
+.cont-saving .save-details .save-actions .action-cont button:before {
+    width: 100%;
+    height: 100%;
+    content: 'w';
+    color: transparent;
+    border-bottom: 3px black solid;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    opacity: 0.15;
+}
+
+
+
+.action-save {
+    background: #C6B200;
+    border: 2px solid #212000;
+}
+
+.action-delete {
+    background: #C60000;
+    border: 2px solid #210000;
+}
+
+.action-load {
+    background: #0096C6;
+    border: 2px solid #001C21;
+}
+
+.action-update {
+    background: #C66400;
+    border: 2px solid #211200;
+}
+
+
+
+#save-name-input {
+    width: 200px;
+    height: 31px;
+    border: 1px solid #535353;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin: 9px;
+    padding-left: 7px;
+    padding-top: 4px;
+    outline: none;
+    font-family: "Confetti";
+    color: #131313;
+    font-size: 20px;
+}
+
+#save-name-input::placeholder {
+    color: #1313136f;
+    font-style: italic;
+    font-family: "Confetti";
+
+}

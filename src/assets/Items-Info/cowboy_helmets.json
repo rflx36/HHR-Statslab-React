@@ -169,6 +169,15 @@
         "price": 1284767,
         "url": "Item-Images/cowboy-helmets/19.webp",
         "class": "cowboy"
+    },
+    {
+        "name": "Calibre Helmet",
+        "power": 18,
+        "defense": 144,
+        "level": 189,
+        "price": 1435234,
+        "url": "Item-Images/cowboy-helmets/20.webp",
+        "class": "cowboy"
     }
     
     

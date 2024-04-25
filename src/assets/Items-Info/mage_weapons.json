@@ -286,5 +286,23 @@
         "twohanded": true,
         "url": "Item-Images/mage-weapons/32.webp",
         "class": "mage"
+    },
+    {
+        "name": "Analytic Wand",
+        "power": 149,
+        "level": 191,   
+        "price": 1564416,
+        "twohanded": false,
+        "url": "Item-Images/mage-weapons/33.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Analytic Staff",
+        "power": 246,
+        "level": 191,
+        "price": 2581287,
+        "twohanded": true,
+        "url": "Item-Images/mage-weapons/34.webp",
+        "class": "mage"
     }
 ]

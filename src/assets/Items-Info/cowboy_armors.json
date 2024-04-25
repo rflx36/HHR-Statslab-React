@@ -97,5 +97,14 @@
         "price": 1284767,
         "url": "Item-Images/cowboy-armors/11.webp",
         "class": "cowboy"
+    },
+    {
+        "name": "Calibre Armor",
+        "power": 18,
+        "defense": 144,
+        "level": 188,
+        "price": 1435234,
+        "url": "Item-Images/cowboy-armors/12.webp",
+        "class": "cowboy"
     }
 ]

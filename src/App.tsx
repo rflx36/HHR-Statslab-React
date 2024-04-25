@@ -10,6 +10,7 @@ import ContainerDetail from "./components/detail_components";
 import ContainerItem from "./components/item_components";
 import ContainerSave from "./components/save_components";
 import ContainerMonster from "./components/monster_component";
+import ContainerHelp from "./components/helpSection";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -33,10 +34,10 @@ function App() {
         ) : (
           <StatProvider>
             <div className="cont">
+              <ContainerMonster />
               <h1 id="cont-title-id">REBORN STAT LAB</h1>
               <AppPages />
             
-              <ContainerMonster />
             </div>
           </StatProvider>
         )
@@ -67,7 +68,8 @@ function AppPages() {
     case "save":
       current_page = ContainerSave();
       break;
-
+    case "help":
+      current_page = ContainerHelp();
   }
   return current_page;
 }

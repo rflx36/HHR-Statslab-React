@@ -22,6 +22,8 @@ export default function ContainerMain() {
             <SetCont />
             <BoosterCont />
             <ShieldCont />
+            <RangeCont />
+            <ChargeCont />
         </div>
     );
 }
@@ -48,6 +50,60 @@ function ShieldCont() {
                 </div>)
             }
         </>
+    )
+}
+
+function RangeCont() {
+    const equips = useContext(ContextEquips);
+    return (
+        <>
+            {
+                (equips?.get.selected_primary_weapon.class == "cowboy" || equips?.get.selected_secondary_weapon.class == "cowboy") &&
+                (
+                    <div className='range-damage-cont' >
+                        <DamageCont min={70} max={100} name='bullet range' />
+                    </div>
+                )
+            }
+        </>
+    )
+}
+function ChargeCont() {
+    const equips = useContext(ContextEquips);
+
+    return (
+        <>
+            {
+                (equips?.get.selected_primary_weapon.class == "archer" || equips?.get.selected_secondary_weapon.class == "archer") &&
+                (
+                    <div className='charge-damage-cont'>
+                        <DamageCont min={60} max={140} name='bow charge' />
+                    </div>
+                )
+            }
+        </>
+    )
+}
+
+function DamageCont(props: { min: number, max: number, name: string }) {
+    const ui_state = useContext(ContextStates);
+
+    let val = (props.name == "bow charge") ? (ui_state?.get.charge || 0) : (ui_state?.get.range);
+
+    const ChangeControl = (e: ChangeEvent<HTMLInputElement>) => {
+        if (props.name == "bow charge") {
+            ui_state?.set(x => ({ ...x, charge: parseInt(e.target.value) }));
+        }
+        else {
+            ui_state?.set(x => ({ ...x, range: parseInt(e.target.value) }));
+        }
+    }
+    return (
+        <div className='control-cont'>
+            <p>{props.name}</p>
+            <input id={(props.name != "bow charge") ? "range-input-id" : ""} className='control-input' type='range' min={props.min} max={props.max} value={val} onChange={ChangeControl}></input>
+            <p className='control-input-label'>{val}%</p>
+        </div>
     )
 }
 
@@ -105,7 +161,7 @@ function ItemsCont() {
         }));
         stat?.set(x => ({ ...x }));
     }
-    
+
     return (
         <div className='cont-items'>
             <div className='item-cont item-sheath'>
@@ -214,7 +270,6 @@ function StatCont() {
     const skills = useContext(ContextSkills);
 
 
-
     const CalculateFinalDefense = () => {
         let n = ((stat?.get.current_def || 0) + 8) * (2 +
             (equips?.get.selected_helmet.defense || 0) +
@@ -298,7 +353,7 @@ function StatCont() {
     }
     const GetCrit = () => {
 
-        
+
         let value = (dex_crit_chance[stat?.get.current_dex || 0] != undefined) ? String(dex_crit_chance[stat?.get.current_dex || 0]) + "x" : "Unknown";
         return value;
     }
@@ -524,11 +579,9 @@ function StatInfo(props: { name: string }) {
                     : { opacity: 0, cursor: 'default', pointerEvents: 'none' }
             }></button>
         </div>
+
     )
 }
-
-
-
 
 
 
@@ -582,6 +635,7 @@ function SetCont() {
                 <SetButton name='Reset Points' />
                 <SetButton name='Change Class' />
                 <SetButton name='Tutorial' />
+                <SetButton name='About' />
                 <ToggleCont />
             </div>
         </div>
@@ -616,10 +670,13 @@ function SetButton(props: { name: string }) {
                 break;
 
             case "Tutorial":
+
                 const win: Window = window;
                 win.open("https://www.youtube.com/watch?v=ILISxC_CF30&ab_channel=BlueHairedDirt");
                 break;
-
+            case "About":
+                page?.set(page => ({ ...page, page: "help" }));
+                break;
             default:
                 break;
         }

@@ -160,5 +160,14 @@
         "price": 1261268,
         "url": "Item-Images/archer-helmets/18.webp",
         "class": "archer"
+    },
+    {
+        "name": "Earth Helmet",
+        "power": 19,
+        "defense": 144,
+        "level": 190,
+        "price": 1435788,
+        "url": "Item-Images/archer-helmets/19.webp",
+        "class": "archer"
     }
 ]

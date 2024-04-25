@@ -439,5 +439,23 @@
         "twohanded": true,
         "url": "Item-Images/warrior-weapons/48.webp",
         "class": "warrior"
+    },
+    {
+        "name": "Supreme Sword",
+        "power": 170,
+        "level": 218,
+        "price": 2204120,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/50.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Blade of the Almighty",
+        "power": 281,
+        "level": 218,
+        "price": 3636798,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/51.webp",
+        "class": "warrior"
     }
 ]
