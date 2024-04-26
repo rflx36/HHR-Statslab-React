@@ -98,7 +98,7 @@ function IndexContainers(props: PVEType) {
     }
     return (
         <div className="monster-index" onClick={ViewDetail}>
-            <div className="monster-image" title={props.name} style={{ backgroundImage: "url(" + props.url + ")" }}></div>
+            <div className="monster-image" title={props.name} style={{ backgroundImage: "url(./src/assets" + props.url + ")" }}></div>
             <div className="monster-stat">
                 {((props.atk || 0) > 0) && (
                     <div className="monster-dmg" title="Damage to you">

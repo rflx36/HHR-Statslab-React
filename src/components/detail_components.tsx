@@ -131,7 +131,7 @@ function SkillCont(props: { class: ClassType, name: string, current_value: numbe
 
     return (
         <div className={class_name}>
-            <img src={props.url}></img>
+            <img src={"./src/assets"+props.url}></img>
             <div className="skill-detail-more-cont">
                 <p>{props.name}</p>
                 <div className="range-level-cont">
@@ -199,7 +199,7 @@ function DamageContainer() {
         <div className="cont-damage">
             <div className="base-damage-detail-cont">
                 <div className="base-info-detail-cont">
-                    <img src={ui_state?.get.monster_detail.url}></img>
+                    <img src={"./src/assets"+ui_state?.get.monster_detail.url}></img>
                     <div className="base-info-detail">
                         <p>{ui_state?.get.monster_detail.name}</p>
                         <p id="hp-val">
