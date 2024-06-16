@@ -105,6 +105,14 @@ function ActionCont(props: { page_state: string }) {
             ui_state?.set(x => ({ ...x, page: "main", current: input, save: "update", save_session: input }));
 
         }
+        const UpdateData = () =>{
+            const base = stat!.get;
+            const equip = equips!.get;
+            const skill = skills!.get;
+            SetUpdate(current_save, base, equip, skill);
+            ui_state?.set(x => ({ ...x, page: "main", current: current_save, save: "update", save_session: current_save }));
+        }
+
         switch (props.page_state) {
 
             case "load":
@@ -124,7 +132,7 @@ function ActionCont(props: { page_state: string }) {
                         <button className="action-delete" onClick={DeleteData}>
                             <p>DELETE</p>
                         </button>
-                        <button className="action-update">
+                        <button className="action-update" onClick={UpdateData}>
                             <p>UPDATE</p>
                         </button>
                     </>
@@ -207,6 +215,8 @@ function SavedDataContainer(props: { save_name: string }) {
 
 }
 
+
+
 function SetSave(name: string, stat: BaseStatsType, equip: EquipsType, skill: SkillsType) {
 
     name = name.trim().toLocaleLowerCase();
@@ -230,4 +240,14 @@ function SetSave(name: string, stat: BaseStatsType, equip: EquipsType, skill: Sk
         skills: skill
     }
     localStorage.setItem(name, JSON.stringify(current_data));
+}
+
+function SetUpdate(name: string, stat: BaseStatsType, equip: EquipsType, skill: SkillsType){
+    const updated_data = {
+        ver: StatlabVersion,
+        stats: stat,
+        equips: equip,
+        skills: skill
+    }
+    localStorage.setItem(name, JSON.stringify(updated_data));
 }
