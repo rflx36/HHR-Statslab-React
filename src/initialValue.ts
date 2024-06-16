@@ -1,5 +1,7 @@
 import { BaseStatsType, EquipsType, ItemType, PVEType, SkillsType, UIStateType } from "./types"
 
+export const StatlabVersion = "2.0+";
+
 
 export const InitialItemTypeValue: ItemType = {
     name: "",

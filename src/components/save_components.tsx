@@ -3,6 +3,7 @@ import "../css/save_components.css"
 import { useContext, useState } from "react";
 import { ContextBaseStats, ContextEquips, ContextSkills, ContextStates } from "../StatContext";
 import { BaseStatsType, EquipsType, SkillsType } from "../types";
+import { StatlabVersion } from "../initialValue";
 
 
 
@@ -168,6 +169,7 @@ function SaveList() {
     return (
         <div className="save-list">
             {keys.map((e, i) => {
+
                 return (
                     <SavedDataContainer
                         save_name={e}
@@ -188,13 +190,21 @@ function SavedDataContainer(props: { save_name: string }) {
     const GetData = () => {
         ui_state?.set(x => ({ ...x, current: props.save_name, save: "load" }));
     }
-    return (
-        <div className="saved-data-cont" onClick={GetData} id={
-            (ui_state?.get.current == props.save_name) ? "save-data-active" : ""}>
-            <img src={"src/assets/" + img}></img>
-            <p>{props.save_name}</p>
-        </ div>
-    )
+    if (dat.ver == StatlabVersion) {
+        return (
+            <div className="saved-data-cont" onClick={GetData} id={
+                (ui_state?.get.current == props.save_name) ? "save-data-active" : ""}>
+                <img src={"src/assets/" + img}></img>
+                <p>{props.save_name}</p>
+            </ div>
+        )
+    }
+    else {
+        return (
+            <></>
+        )
+    }
+
 }
 
 function SetSave(name: string, stat: BaseStatsType, equip: EquipsType, skill: SkillsType) {
@@ -205,10 +215,16 @@ function SetSave(name: string, stat: BaseStatsType, equip: EquipsType, skill: Sk
         return;
     }
     if (localStorage.getItem(name) != null) {
-        alert("name already exist");
-        return;
+        let temp_data = JSON.parse(localStorage.getItem(name) || "");
+        if (temp_data.ver == StatlabVersion) {
+
+            alert("name already exist");
+            return;
+        }
+
     }
     const current_data = {
+        ver: StatlabVersion,
         stats: stat,
         equips: equip,
         skills: skill
