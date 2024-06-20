@@ -329,7 +329,7 @@ function StatCont() {
         if (equips?.get.selected_primary_weapon.class != stat?.get.current_class) {
             primary = Math.floor(primary * 0.25);
         }
-        if (equips?.get.selected_secondary_weapon != stat?.get.current_class) {
+        if (equips?.get.selected_secondary_weapon.class != stat?.get.current_class) {
             secondary = Math.floor(secondary * 0.25);
         }
 

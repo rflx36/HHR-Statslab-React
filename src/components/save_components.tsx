@@ -105,7 +105,7 @@ function ActionCont(props: { page_state: string }) {
             ui_state?.set(x => ({ ...x, page: "main", current: input, save: "update", save_session: input }));
 
         }
-        const UpdateData = () =>{
+        const UpdateData = () => {
             const base = stat!.get;
             const equip = equips!.get;
             const skill = skills!.get;
@@ -193,12 +193,13 @@ function SavedDataContainer(props: { save_name: string }) {
 
     const ui_state = useContext(ContextStates);
     let dat = JSON.parse(localStorage.getItem(props.save_name) || "");
-    let img = (dat.equips.selected_helmet.url != "") ? dat.equips.selected_helmet.url : "UI/icon-helmets.png";
 
-    const GetData = () => {
-        ui_state?.set(x => ({ ...x, current: props.save_name, save: "load" }));
-    }
     if (dat.ver == StatlabVersion) {
+        let img = (dat.equips.selected_helmet.url != "") ? dat.equips.selected_helmet.url : "UI/icon-helmets.png";
+
+        const GetData = () => {
+            ui_state?.set(x => ({ ...x, current: props.save_name, save: "load" }));
+        }
         return (
             <div className="saved-data-cont" onClick={GetData} id={
                 (ui_state?.get.current == props.save_name) ? "save-data-active" : ""}>
@@ -242,7 +243,7 @@ function SetSave(name: string, stat: BaseStatsType, equip: EquipsType, skill: Sk
     localStorage.setItem(name, JSON.stringify(current_data));
 }
 
-function SetUpdate(name: string, stat: BaseStatsType, equip: EquipsType, skill: SkillsType){
+function SetUpdate(name: string, stat: BaseStatsType, equip: EquipsType, skill: SkillsType) {
     const updated_data = {
         ver: StatlabVersion,
         stats: stat,
