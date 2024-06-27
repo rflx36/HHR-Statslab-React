@@ -1,6 +1,6 @@
 
 import { useContext, useEffect, useState } from "react";
-import { ContextStates, StatProvider } from "./StatContext";
+import { AdWallProvider, ContextStates, StatProvider } from "./StatContext";
 import { StartLoading } from "./initialLoad";
 import ContainerMain from "./components/main_components";
 import ContainerClass from "./components/class_components";
@@ -11,6 +11,7 @@ import ContainerItem from "./components/item_components";
 import ContainerSave from "./components/save_components";
 import ContainerMonster from "./components/monster_component";
 import ContainerHelp from "./components/helpSection";
+import PremiumCont, { PremiumBGDarken, PremiumDetail } from "./components/premium_ad";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -37,11 +38,17 @@ function App() {
               <ContainerMonster />
               <h1 id="cont-title-id">REBORN STAT LAB</h1>
               <AppPages />
-            
+
             </div>
           </StatProvider>
         )
       }
+      <AdWallProvider>
+        <PremiumCont />
+        <PremiumDetail />
+        <PremiumBGDarken />
+      </AdWallProvider>
+
     </>
   )
 }

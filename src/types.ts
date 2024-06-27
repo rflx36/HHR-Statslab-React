@@ -87,6 +87,11 @@ export type HanderType = "single handed" | "two handed" | "shielded" | "unequipe
 export type ItemSlot = "primary" | "secondary" | "primary sheated" | "secondary sheated" | "helmet" | "armor" | "pants" | "shoes" | "accessories";
 
 
+export interface PremiumAdType{
+    display:boolean,
+    page: 1 | 2 
+}
+
 export interface BaseContextType {
     get: BaseStatsType,
     set: React.Dispatch<React.SetStateAction<BaseStatsType>>
@@ -106,7 +111,10 @@ export interface UIStateContextType {
     set: React.Dispatch<React.SetStateAction<UIStateType>>
 }
 
-
+export interface AdContextType {
+    get: PremiumAdType,
+    set: React.Dispatch<React.SetStateAction<PremiumAdType>>
+}
 // export interface StatesType {
 //     toggle_enchanted : boolean,
 //     toggle_all :boolean,

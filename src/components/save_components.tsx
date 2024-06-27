@@ -196,7 +196,7 @@ function SavedDataContainer(props: { save_name: string }) {
 
     if (dat.ver == StatlabVersion) {
         let img = (dat.equips.selected_helmet.url != "") ? dat.equips.selected_helmet.url : "UI/icon-helmets.png";
-
+        
         const GetData = () => {
             ui_state?.set(x => ({ ...x, current: props.save_name, save: "load" }));
         }

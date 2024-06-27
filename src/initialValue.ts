@@ -1,4 +1,4 @@
-import { BaseStatsType, EquipsType, ItemType, PVEType, SkillsType, UIStateType } from "./types"
+import { BaseStatsType, EquipsType, ItemType, PremiumAdType, PVEType, SkillsType, UIStateType } from "./types"
 
 export const StatlabVersion = "2.0+";
 
@@ -93,3 +93,8 @@ export const dex_crit_chance = [
     3.89, 3.92, 3.96, 4.00, 4.04, 4.08, "", "", "", "", "", "", "", "", 4.37, "", "", "", "", 4.53, "",
     4.59, "", "", 4.68, "", "", "", "", "", "", "", "", "", "", 5.00
 ];
+
+export const InitialPremiumState: PremiumAdType = {
+    display:false,
+    page:1
+}

@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
-import { InitialBaseStats, InitialEquip, InitialSkills, InitialUIState } from "./initialValue";
-import { BaseContextType, EquipsContextType, SkillsContextType, UIStateContextType } from "./types";
+import { InitialBaseStats, InitialEquip, InitialPremiumState, InitialSkills, InitialUIState } from "./initialValue";
+import { AdContextType, BaseContextType, EquipsContextType, SkillsContextType, UIStateContextType } from "./types";
 
 
 export const ContextBaseStats = createContext<BaseContextType | null>(null);
@@ -8,6 +8,7 @@ export const ContextEquips = createContext<EquipsContextType | null>(null);
 export const ContextSkills = createContext<SkillsContextType | null>(null);
 
 export const ContextStates = createContext<UIStateContextType | null>(null);
+export const ContextAd = createContext<AdContextType | null>(null);
 
 const BaseStatsProvider = (props: React.PropsWithChildren) => {
   const [get, set] = useState(InitialBaseStats);
@@ -57,3 +58,13 @@ export const StatProvider = (props: React.PropsWithChildren) => {
   )
 }
 
+
+export const AdWallProvider = (props: React.PropsWithChildren) => {
+  const [get, set] = useState(InitialPremiumState);
+
+  return (
+    <ContextAd.Provider value={{get,set}}>
+      {props.children}
+    </ContextAd.Provider>
+  )
+}
