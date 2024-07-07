@@ -1,0 +1,86 @@
+.guild-boost-cont {
+    background: #278C0D;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 2px solid #17590D;
+
+    padding: 10px;
+    height: 466px;
+}
+
+.guild-boost-cont .close-button {
+    right: -10px;
+    top: -10px;
+}
+
+
+.guild-boost-cont .guild-boost-input-cont {
+
+    height: 80px;
+    background: #3DB81E;
+    margin: 5px;
+    border-radius: 5px;
+    border: #083807 2px solid;
+    padding: 5px;
+}
+
+
+.guild-boost-cont .guild-boost-input-cont .guild-boost-text {
+    font-family: Confetti;
+
+
+    font-size: 20px;
+    height: 30px;
+    -webkit-text-stroke-width: 0px;
+    color: black;
+    opacity: 0.5;
+    align-content: center;
+}
+
+.guild-boost-cont .guild-boost-input-cont .guild-boost-input-range-cont {
+    display: flex;
+}
+
+.guild-boost-cont .guild-boost-input-cont .guild-boost-input-range-cont input {
+    width: 200px;
+    background: #18660B;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 23px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 2px solid #292901;
+    margin-right: 5px;
+}
+
+.guild-boost-cont .guild-boost-input-cont .guild-boost-input-range-cont ::-webkit-slider-runnable-track{
+    
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+
+.guild-boost-cont .guild-boost-input-cont .guild-boost-input-range-cont ::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 23px;
+    width: 30px;
+    background: #FBFB1E;
+    border-right: 2px solid #292901;
+    border-radius: 5px;
+    box-shadow: -120px 0 0 95px #fbfb1e;
+    
+}
+
+
+.guild-boost-cont .guild-boost-input-cont .guild-boost-input-range-cont ::-webkit-slider-thumb:hover{
+    
+    background: #f8f86e;
+}
+
+
+.guild-boost-cont .guild-boost-input-cont .guild-boost-input-range-cont p{
+    align-content: center;
+}

@@ -12,6 +12,8 @@ import ContainerSave from "./components/save_components";
 import ContainerMonster from "./components/monster_component";
 import ContainerHelp from "./components/helpSection";
 import PremiumCont, { PremiumBGDarken, PremiumDetail } from "./components/premium_ad";
+import ContainerPets, { ContainerPetsSelection } from "./components/pets_components";
+import ContainerGuild from "./components/guild_components";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -77,6 +79,16 @@ function AppPages() {
       break;
     case "help":
       current_page = ContainerHelp();
+      break;
+    case "pets":
+      current_page = ContainerPets();
+      break;
+    case "pets_select":
+      current_page = ContainerPetsSelection();
+      break;
+    case "perk":
+      current_page = ContainerGuild();
+      break;
   }
   return current_page;
 }

@@ -1,6 +1,6 @@
-import { BaseStatsType, EquipsType, ItemType, PremiumAdType, PVEType, SkillsType, UIStateType } from "./types"
+import { BaseStatsType, EquipsType, ItemType, PetStatsType, PremiumAdType, PVEType, SkillsType, UIStateType } from "./types"
 
-export const StatlabVersion = "2.0+";
+export const StatlabVersion = "2.1+";
 
 
 export const InitialItemTypeValue: ItemType = {
@@ -39,7 +39,11 @@ export const InitialSkills: SkillsType = {
     warrior_skills: [0, 0, 0, 0, 0],
     archer_skills: [0, 0, 0],
     cowboy_skills: [0, 0, 0],
-    mage_skills: [0, 0, 0]
+    mage_skills: [0, 0, 0],
+    guild_attack_boost: 0,
+    guild_defense_boost: 0,
+    guild_elemental_boost: 0
+
 }
 
 export const InitialBaseStats: BaseStatsType = {
@@ -57,7 +61,10 @@ export const InitialBaseStats: BaseStatsType = {
     current_fatk_s: 0,
     current_fdef: 16,
     current_class: "warrior",
-    current_hander: "unequiped"
+    current_hander: "unequiped",
+    current_pet_total_cost: 0,
+    current_pet_total_fatk_bonus: 0,
+    current_pet_total_fdef_bonus: 0
 }
 
 
@@ -73,6 +80,8 @@ export const InitialUIState: UIStateType = {
     monster: "hide",
     monster_detail: InitialPVEStat,
     item: "primary",
+    is_pet: false,
+    is_change_pet: false,
     shield: false,
     booster: false,
     enchanted: false,
@@ -82,19 +91,35 @@ export const InitialUIState: UIStateType = {
     charge: 100,
     range: 100,
     current: "",
-    save_session: ""
+    save_session: "",
+    pet_selection: 1,
+    pet_evolution: 1
 }
 
-
-export const dex_crit_chance = [
-    1.00, 1.21, 1.37, 1.50, 1.62, 1.72, 1.82, 1.91, 2.00, 2.08, 2.16, 2.23, 2.30, 2.37, 2.44,
-    2.50, 2.56, 2.62, 2.68, 2.74, 2.79, 2.85, 2.90, 2.95, 3.00, 3.05, 3.10, 3.15, 3.19, 3.24,
-    3.28, 3.33, 3.37, 3.42, 3.46, 3.50, 3.54, 3.58, 3.62, 3.66, 3.70, 3.74, 3.78, 3.82, 3.85,
-    3.89, 3.92, 3.96, 4.00, 4.04, 4.08, "", "", "", "", "", "", "", "", 4.37, "", "", "", "", 4.53, "",
-    4.59, "", "", 4.68, "", "", "", "", "", "", "", "", "", "", 5.00
-];
 
 export const InitialPremiumState: PremiumAdType = {
-    display:false,
-    page:1
+    display: false,
+    page: 1
 }
+
+export const InitialPetStats: PetStatsType = {
+    name: "",
+    evolution: 1,
+    hp: 0,
+    atk: 0,
+    def: 0,
+    dex: 0,
+    price: 0,
+    type: "warrior",
+    level: 1,
+    points: 0,
+    selected_helmet: InitialItemTypeValue,
+    selected_shoes: InitialItemTypeValue,
+    fatk: 0,
+    fdef: 0,
+    url: "",
+    color: "ffffff"
+}
+
+export const InitialPetStatSlots: Array<PetStatsType> =
+    [InitialPetStats, InitialPetStats, InitialPetStats, InitialPetStats, InitialPetStats, InitialPetStats];

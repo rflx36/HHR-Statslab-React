@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ContextBaseStats, ContextStates } from "../StatContext";
+import { ContextBaseStats, ContextPetStats, ContextStates } from "../StatContext";
 import { data_items } from "../initialLoad";
 import "../css/monster_component.css"
 import { PVEType } from "../types";
@@ -15,6 +15,7 @@ export default function ContainerMonster() {
 
 function MonsterCont() {
     const ui_state = useContext(ContextStates);
+    const pet_stat = useContext(ContextPetStats);
     let data = [];
     switch (ui_state?.get.monster) {
         case "show":
@@ -25,13 +26,20 @@ function MonsterCont() {
             break;
         case "environment":
             data = data_items[24];
-            break;
+            break;  
     }
+    if (pet_stat?.get != undefined) {
+
+        if ((pet_stat!.get[0].name == "" && ui_state!.get.is_pet)) {
+            return <></>;
+        }
+    }
+
     return (
         <>
-            {(data.length > 0 && ui_state?.get.page != "class" && ui_state?.get.page != "save" && ui_state?.get.page != "help") && (
+            {((data.length > 0 && ui_state?.get.page != "class" && ui_state?.get.page != "save" && ui_state?.get.page != "help")) && (
                 <div className="monster-stat-cont">
-                    <div className="monster-cont">
+                    <div className="monster-cont" >
                         {data.map((e, i) => {
                             return (
                                 <IndexContainers
@@ -57,6 +65,9 @@ function MonsterCont() {
 function IndexContainers(props: PVEType) {
     const stat = useContext(ContextBaseStats);
     const ui_state = useContext(ContextStates);
+    const pet_stat = useContext(ContextPetStats);
+    const current_pet_selected = ui_state!.get.pet_selection - 1;
+    const current_pet_info = pet_stat!.get[current_pet_selected];
 
     let damage = (props.atk || 0) * ((props.atk || 0) + (props.variant_atk || 0));
     let defense = (props.def || 0) * ((props.def || 0) + (props.variant_def || 0));
@@ -64,6 +75,10 @@ function IndexContainers(props: PVEType) {
     if (props.name.includes("Sasquatch")) {
         damage *= 2.5;
     }
+    if (props.name.includes("Fishurn")) {
+        damage *= 0.7
+    }
+
     let fatk = stat?.get.current_fatk_p || 0;
 
     if (stat?.get.current_class == "archer") {
@@ -73,8 +88,11 @@ function IndexContainers(props: PVEType) {
         fatk *= ((ui_state?.get.range || 0) / 100); // bullet damage reduced based off distance travel
     }
 
-    let dmg = GetDamage(damage, (stat?.get.current_fdef || 0));
-    let def = GetDamage(fatk, defense);
+    const defender = (ui_state!.get.is_pet) ? current_pet_info.fdef : stat!.get.current_fdef;
+    const attacker = (ui_state!.get.is_pet) ? current_pet_info.fatk : fatk;
+
+    let dmg = GetDamage(damage, defender);
+    let def = GetDamage(attacker, defense);
 
 
     const pve_damage = AbbrevFormat(dmg);
@@ -82,13 +100,18 @@ function IndexContainers(props: PVEType) {
 
     const col = ((dmg >= 0) ? ' linear-gradient(rgb(236, 0, 2) 0%, rgb(169, 0, 11) 100%)' : '#00EA00');
 
-
+    const info_monster_damage = (ui_state!.get.is_pet) ? "Damage to pet" : "Damage to you";
+    const info_monster_defend = (ui_state!.get.is_pet) ? "Pet Damage Dealt" : "Your Damage Dealt";
 
     const ViewDetail = () => {
-        if (props.name == ui_state?.get.monster_detail.name && ui_state.get.page == "detail" ) {
+
+        if (ui_state!.get.is_pet) {
             return;
         }
-        if (ui_state?.get.monster == "environment"){
+        if (props.name == ui_state?.get.monster_detail.name && ui_state.get.page == "detail") {
+            return;
+        }
+        if (ui_state?.get.monster == "environment") {
             return;
         }
         const PVEDetail = { ...props };
@@ -97,18 +120,18 @@ function IndexContainers(props: PVEType) {
 
     }
     return (
-        <div className="monster-index" onClick={ViewDetail}>
-            <div className="monster-image" title={props.name} style={{ backgroundImage: "url(./src/assets" + props.url + ")" }}></div>
+        <div className="monster-index" onClick={ViewDetail} style={(ui_state!.get.is_pet) ? { background: "#" + current_pet_info.color, borderColor: "#000000b8" } : {}}>
+            <div className="monster-image" title={props.name} style={(ui_state!.get.is_pet) ? { backgroundColor: "#00000030", backgroundImage: "url(./src/assets" + props.url + ")" } : { backgroundImage: "url(./src/assets" + props.url + ")" }}></div>
             <div className="monster-stat">
                 {((props.atk || 0) > 0) && (
-                    <div className="monster-dmg" title="Damage to you">
+                    <div className="monster-dmg" title={info_monster_damage} style={(ui_state!.get.is_pet) ? { background: "#00000030" } : {}}>
                         <div className="monster-dmg-icon"></div>
                         <p style={{ background: col }} >{pve_damage}</p>
                     </div>
                 )}
 
                 {((props.def || 0) > 0) && (
-                    <div className="monster-def" title="Your Damage Dealt">
+                    <div className="monster-def" title={info_monster_defend} style={(ui_state!.get.is_pet) ? { background: "#00000030" } : {}}>
                         <div className="monster-def-icon"></div>
                         <p>{pve_def}</p>
                     </div>

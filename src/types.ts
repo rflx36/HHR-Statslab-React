@@ -9,6 +9,7 @@ export interface ItemType {
     url: string,
     level: number,
     weapon_type?: HanderType,
+    rpm?: number,
     enchanted?: boolean
 }
 
@@ -32,7 +33,10 @@ export interface SkillsType {
     warrior_skills: Array<number>,
     archer_skills: Array<number>,
     cowboy_skills: Array<number>,
-    mage_skills: Array<number>
+    mage_skills: Array<number>,
+    guild_attack_boost : number,
+    guild_defense_boost :number,
+    guild_elemental_boost: number,
 }
 
 export interface BaseStatsType {
@@ -51,14 +55,18 @@ export interface BaseStatsType {
     current_fatk_s: number,
     current_fdef: number,
     current_class: ClassType,
-    current_hander: HanderType
-
+    current_hander: HanderType,
+    current_pet_total_cost: number,
+    current_pet_total_fatk_bonus:number,
+    current_pet_total_fdef_bonus:number
 }
 export interface UIStateType {
-    page: "main" | "item" | "save" | "detail" | "class" | "help",
+    page: "main" | "item" | "save" | "detail" | "class" | "help" | "pets" | "pets_select" | "perk",
     monster: "hide" | "show" | "show variants" | "environment",
     monster_detail: PVEType
     item: ItemSlot,
+    is_pet: boolean,
+    is_change_pet: boolean,
     shield: boolean,
     booster: boolean,
     enchanted: boolean,
@@ -69,6 +77,9 @@ export interface UIStateType {
     range: number,
     current: string,
     save_session: string,
+    pet_selection: 1 | 2 | 3 | 4 | 5 | 6,
+    pet_evolution : 1 | 2 | 3
+    
 }
 
 
@@ -81,6 +92,26 @@ export interface PVEType {
     variant_atk?: number,
     variant_def?: number
 }
+
+export interface PetStatsType {
+    name : string,
+    evolution: 1 | 2 | 3,
+    hp: number,
+    atk: number,
+    def: number,
+    dex: number,
+    price: number,
+    type: ClassType,
+    level: number,
+    points: number,
+    selected_helmet: ItemType,
+    selected_shoes: ItemType,
+    fatk: number,
+    fdef: number,
+    url: string,
+    color: string
+}
+
 
 export type ClassType = "archer" | "cowboy" | "mage" | "warrior";
 export type HanderType = "single handed" | "two handed" | "shielded" | "unequiped";
@@ -115,6 +146,8 @@ export interface AdContextType {
     get: PremiumAdType,
     set: React.Dispatch<React.SetStateAction<PremiumAdType>>
 }
-// export interface StatesType {
-//     toggle_enchanted : boolean,
-//     toggle_all :boolean,
+
+export interface PetsContextType{
+    get: Array<PetStatsType>,
+    set: React.Dispatch<React.SetStateAction<Array<PetStatsType>>>
+}

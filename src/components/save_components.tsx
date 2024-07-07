@@ -1,9 +1,10 @@
 
 import "../css/save_components.css"
 import { useContext, useState } from "react";
-import { ContextBaseStats, ContextEquips, ContextSkills, ContextStates } from "../StatContext";
-import { BaseStatsType, EquipsType, SkillsType } from "../types";
-import { StatlabVersion } from "../initialValue";
+import { ContextBaseStats, ContextEquips, ContextPetStats, ContextSkills, ContextStates } from "../StatContext";
+import { BaseStatsType, EquipsType, PetStatsType, SkillsType } from "../types";
+import { InitialBaseStats, InitialEquip, InitialPetStatSlots, InitialSkills, StatlabVersion } from "../initialValue";
+
 
 
 
@@ -68,7 +69,7 @@ function ActionCont(props: { page_state: string }) {
     const stat = useContext(ContextBaseStats);
     const equips = useContext(ContextEquips);
     const skills = useContext(ContextSkills);
-
+    const pet_stat = useContext(ContextPetStats);
     const ui_state = useContext(ContextStates);
     const [input, setInput] = useState("");
     const current_save = ui_state!.get.current;
@@ -80,16 +81,24 @@ function ActionCont(props: { page_state: string }) {
             interface saveDataType {
                 stats: BaseStatsType,
                 equips: EquipsType,
-                skills: SkillsType
+                skills: SkillsType,
+                pets_stat: Array<PetStatsType>
             }
 
             const save_data: saveDataType = JSON.parse(localStorage.getItem(current_save) || "");
 
-            stat?.set(save_data.stats);
-            equips?.set(save_data.equips);
-            skills?.set(save_data.skills);
+            const data_stat = (save_data.stats != undefined) ? save_data.stats : InitialBaseStats;
+            const data_equips = (save_data.equips != undefined) ? save_data.equips : InitialEquip;
+            const data_skills = (save_data.skills != undefined) ? save_data.skills : InitialSkills;
+            const data_pet_stat = (save_data.pets_stat != undefined) ? save_data.pets_stat : InitialPetStatSlots;
+          
 
-            ui_state?.set(x => ({ ...x, page: "main", save: "update", save_session: current_save }));
+            stat?.set(data_stat);
+            equips?.set(data_equips);
+            skills?.set(data_skills);
+            pet_stat?.set(data_pet_stat);
+            ui_state?.set(x => ({ ...x, page: "main", save: "update", save_session: current_save, pet_selection: 1 }));
+
         }
 
         const DeleteData = () => {
@@ -101,7 +110,8 @@ function ActionCont(props: { page_state: string }) {
             const base = stat!.get;
             const equip = equips!.get;
             const skill = skills!.get;
-            SetSave(input, base, equip, skill);
+            const pets = pet_stat!.get;
+            SetSave(input, base, equip, skill, pets);
             ui_state?.set(x => ({ ...x, page: "main", current: input, save: "update", save_session: input }));
 
         }
@@ -109,7 +119,8 @@ function ActionCont(props: { page_state: string }) {
             const base = stat!.get;
             const equip = equips!.get;
             const skill = skills!.get;
-            SetUpdate(current_save, base, equip, skill);
+            const pets = pet_stat!.get
+            SetUpdate(current_save, base, equip, skill, pets);
             ui_state?.set(x => ({ ...x, page: "main", current: current_save, save: "update", save_session: current_save }));
         }
 
@@ -196,7 +207,7 @@ function SavedDataContainer(props: { save_name: string }) {
 
     if (dat.ver == StatlabVersion) {
         let img = (dat.equips.selected_helmet.url != "") ? dat.equips.selected_helmet.url : "UI/icon-helmets.png";
-        
+
         const GetData = () => {
             ui_state?.set(x => ({ ...x, current: props.save_name, save: "load" }));
         }
@@ -209,6 +220,9 @@ function SavedDataContainer(props: { save_name: string }) {
         )
     }
     else {
+
+        console.log("[NO LONGER SUPPORTED] removed saved data : "+ props.save_name);
+        localStorage.removeItem(props.save_name);
         return (
             <></>
         )
@@ -218,7 +232,7 @@ function SavedDataContainer(props: { save_name: string }) {
 
 
 
-function SetSave(name: string, stat: BaseStatsType, equip: EquipsType, skill: SkillsType) {
+function SetSave(name: string, stat: BaseStatsType, equip: EquipsType, skill: SkillsType, pet_stat: Array<PetStatsType>) {
 
     name = name.trim().toLocaleLowerCase();
     if (name == "") {
@@ -238,17 +252,19 @@ function SetSave(name: string, stat: BaseStatsType, equip: EquipsType, skill: Sk
         ver: StatlabVersion,
         stats: stat,
         equips: equip,
-        skills: skill
+        skills: skill,
+        pets_stat: pet_stat
     }
     localStorage.setItem(name, JSON.stringify(current_data));
 }
 
-function SetUpdate(name: string, stat: BaseStatsType, equip: EquipsType, skill: SkillsType) {
+function SetUpdate(name: string, stat: BaseStatsType, equip: EquipsType, skill: SkillsType, pet_stat: Array<PetStatsType>) {
     const updated_data = {
         ver: StatlabVersion,
         stats: stat,
         equips: equip,
-        skills: skill
+        skills: skill,
+        pets_stat: pet_stat
     }
     localStorage.setItem(name, JSON.stringify(updated_data));
 }

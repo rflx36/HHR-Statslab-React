@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
-import { InitialBaseStats, InitialEquip, InitialPremiumState, InitialSkills, InitialUIState } from "./initialValue";
-import { AdContextType, BaseContextType, EquipsContextType, SkillsContextType, UIStateContextType } from "./types";
+import { InitialBaseStats, InitialEquip, InitialPetStatSlots, InitialPremiumState, InitialSkills, InitialUIState } from "./initialValue";
+import { AdContextType, BaseContextType, EquipsContextType, PetsContextType, SkillsContextType, UIStateContextType } from "./types";
 
 
 export const ContextBaseStats = createContext<BaseContextType | null>(null);
@@ -8,7 +8,9 @@ export const ContextEquips = createContext<EquipsContextType | null>(null);
 export const ContextSkills = createContext<SkillsContextType | null>(null);
 
 export const ContextStates = createContext<UIStateContextType | null>(null);
+export const ContextPetStats = createContext<PetsContextType | null>(null);
 export const ContextAd = createContext<AdContextType | null>(null);
+
 
 const BaseStatsProvider = (props: React.PropsWithChildren) => {
   const [get, set] = useState(InitialBaseStats);
@@ -43,15 +45,28 @@ const UIStateProvider = (props: React.PropsWithChildren) => {
     </ContextStates.Provider>
   )
 }
+
+const PetStatProvider = (props: React.PropsWithChildren) => {
+  const [get, set] = useState(InitialPetStatSlots)
+  return (
+    <ContextPetStats.Provider value={{ get, set }}>
+      {props.children}
+    </ContextPetStats.Provider>
+  )
+}
+
+
 export const StatProvider = (props: React.PropsWithChildren) => {
   return (
     <UIStateProvider>
       <BaseStatsProvider>
-        <EquipsProvider>
-          <SkillsProvider>
-            {props.children}
-          </SkillsProvider>
-        </EquipsProvider>
+        <PetStatProvider>
+          <EquipsProvider>
+            <SkillsProvider>
+              {props.children}
+            </SkillsProvider>
+          </EquipsProvider>
+        </PetStatProvider>
       </BaseStatsProvider>
     </UIStateProvider>
 
@@ -63,7 +78,7 @@ export const AdWallProvider = (props: React.PropsWithChildren) => {
   const [get, set] = useState(InitialPremiumState);
 
   return (
-    <ContextAd.Provider value={{get,set}}>
+    <ContextAd.Provider value={{ get, set }}>
       {props.children}
     </ContextAd.Provider>
   )

@@ -1,7 +1,3 @@
-@font-face {
-    font-family: Confetti;
-    src: url(src/assets/Fonts/PartyConfettiRegular.ttf);
-}
 
 
 .cont-items {
@@ -290,6 +286,15 @@
     margin-right: 10px;
 }
 
+.stat-result-cont-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-result-cont-div .stat-result-cont{
+    width: calc(50% - 6px);
+}
+
 .stat-enchantment-cont {
     background: #3DB81E;
     height: 31px;
@@ -499,10 +504,32 @@ input::-webkit-inner-spin-button {
     align-items: end;
     height: 61px;
     margin: 5px;
+    position: relative;
 
 }
 
 .toggle-guard-button {
+    background-image: url(src/assets/UI/button.png);
+    width: 40px;
+    height: 34px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    border-left: 2px solid #0a370f;
+    border-right: 2px solid #0a370f;
+    left: -45px;
+    border-radius: 4px;
+    margin-bottom: 1px;
+}
+
+.toggle-guard-button:hover {
+    background-image: url(src/assets/UI/button-hovered.png);
+}
+
+
+
+.toggle-perks-button {
     background-image: url(src/assets/UI/button.png);
     width: 65px;
     height: 35px;
@@ -511,7 +538,20 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.toggle-guard-button:hover {
+.toggle-perks-button:hover {
+    background-image: url(src/assets/UI/button-hovered.png);
+}
+
+.toggle-pets-button {
+    background-image: url(src/assets/UI/button.png);
+    width: 65px;
+    height: 35px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.toggle-pets-button:hover {
     background-image: url(src/assets/UI/button-hovered.png);
 }
 
@@ -544,13 +584,34 @@ input::-webkit-inner-spin-button {
 }
 
 .toggle-guard-image {
-    width: 65px;
+    width: 41px;
     height: 31px;
     background-repeat: no-repeat;
     background-position: center;
 
     margin-top: 2px;
     background-image: url(src/assets/UI/icon-guard.png);
+}
+
+.toggle-perks-image {
+    width: 67px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-top: 2px;
+    background-image: url(src/assets/UI/icon-perks.png);
+}
+.toggle-pets-image {
+    width: 60px;
+    height: 30px;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 3px;
+    
+    background-image: url(src/assets/UI/icon-pets.png);
 }
 
 .toggle-saves-image {
@@ -701,7 +762,7 @@ input::-webkit-inner-spin-button {
     border-right: 2px solid #292901;
     border-radius: 5px;
     box-shadow: -120px 0 0 95px #fbfb1e;
-    ;
+    
 }
 
 #shield-skill-input::-webkit-slider-thumb:hover {

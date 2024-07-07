@@ -5,7 +5,7 @@ import { ChangeEvent, useContext, useEffect, useMemo, } from 'react';
 import '../css/main_components.css';
 import { ContextBaseStats, ContextEquips, ContextSkills, ContextStates } from '../StatContext';
 import { ItemSlot } from '../types';
-import { dex_crit_chance, InitialItemTypeValue, InitialWeaponTypeValue } from '../initialValue';
+import { InitialItemTypeValue, InitialWeaponTypeValue } from '../initialValue';
 
 
 
@@ -284,10 +284,12 @@ function StatCont() {
 
             (Math.floor(Math.floor((equips?.get.sheated_primary_weapon.defense || 0) * 0.35) * ((skills?.get.shield_guard || 0) + (((skills?.get.shield_expert || 0) * 5) / 100))))
         );
+        n += stat!.get.current_pet_total_fdef_bonus;
         if (skills?.get.is_shield_guarded && (equips?.get.selected_secondary_weapon.defense || 0) > 0) {
             n = Math.floor(n * (1 + (skills.get.shield_guard * 0.03)));
         }
-        n = Math.floor(n);
+        const guild_perk_bonus = skills!.get.guild_defense_boost;
+        n = Math.floor(n * (1+ ((guild_perk_bonus * 5)/100)));
         return n;
     }
 
@@ -325,8 +327,10 @@ function StatCont() {
         let primary = (equips?.get.selected_primary_weapon.power || 0) * base_damage;
         let secondary = (equips?.get.selected_secondary_weapon.power || 0) * base_damage;
 
-        primary = Math.floor(primary * (1 + ((skills?.get.attack_booster || 0) / 100)));
-        secondary = Math.floor(secondary * (1 + ((skills?.get.attack_booster || 0) / 100)));
+        const pet_orb_bonus =  stat!.get.current_pet_total_fatk_bonus;
+        const guild_perk_bonus = skills!.get.guild_attack_boost;
+        primary = Math.floor((primary + ((equips!.get.selected_primary_weapon.name != "")?pet_orb_bonus:0)  ) * (1 + (((skills?.get.attack_booster || 0)+ (guild_perk_bonus * 5) )/ 100)));
+        secondary = Math.floor((secondary + ((equips!.get.selected_secondary_weapon.name != "")?pet_orb_bonus:0)) * (1 + (((skills?.get.attack_booster || 0)+ (guild_perk_bonus * 5)) / 100)));
 
 
         if (equips?.get.selected_primary_weapon.class != stat?.get.current_class) {
@@ -343,21 +347,28 @@ function StatCont() {
             return secondary;
         }
     }
-    const CalculateSpeed = () => {
-        let speed = 100;
+    const GetSheathBonusSpeed = () => {
+        let bonus = 0;
 
         if (equips?.get.sheated_primary_weapon.name != "" && equips?.get.sheated_primary_weapon.weapon_type != "two handed") {
-            speed += 5;
+            bonus += 5;
         }
         if (equips?.get.sheated_secondary_weapon.name != "") {
-            speed += 5;
+            bonus += 5;
         }
-        return String(speed) + "%";
+        return bonus;
     }
+    const CalculateSpeed = (sheat_bonus: number) => {
+        let speed = 100;
+        return speed + sheat_bonus;
+    }
+    const CalculateMoveSpeed = (sheath_bonus: number) => {
+        return ((1000 + Math.round((stat!.get.current_dex + 1) * 3.1185)) / 10) + sheath_bonus
+    }
+
     const GetCrit = () => {
 
-
-        let value = (dex_crit_chance[stat?.get.current_dex || 0] != undefined) ? String(dex_crit_chance[stat?.get.current_dex || 0]) + "x" : "Unknown";
+        let value = String((Math.round(((Math.sqrt(stat!.get.current_dex + 1) / 2) + 0.5) * 100)) / 100 + "x");
         return value;
     }
     const CalculateTotalPrice = () => {
@@ -376,7 +387,8 @@ function StatCont() {
             weap_1 +
             weap_2 +
             sheath_1 +
-            sheath_2
+            sheath_2 +
+            stat!.get.current_pet_total_cost
 
         return cost.toLocaleString('en-US');
     }
@@ -399,7 +411,9 @@ function StatCont() {
     const fdef = useMemo(() => CalculateFinalDefense(), [stat?.get]); // cache unchanged properties
     const fatk_p = useMemo(() => CalculateFinalAttack("p"), [stat?.get]);
     const fatk_s = useMemo(() => CalculateFinalAttack("s"), [stat?.get]);
-    const speed = CalculateSpeed();
+    const sheath_bonus_speed = GetSheathBonusSpeed();
+    const speed = CalculateSpeed(sheath_bonus_speed);
+    const move_speed = CalculateMoveSpeed(sheath_bonus_speed);
     const crit = GetCrit();
     const total_price = CalculateTotalPrice();
     const total_enchantment = CalculateTotalEnchantment();
@@ -425,7 +439,7 @@ function StatCont() {
             <StatInfo name='dex' />
             <div className='stat-br'></div>
             <StatResult name='crit multiplier' value={crit} />
-            <StatResult name='speed' value={speed} />
+            <StatResult name='speed' value={String(speed) + "%"} movementSpeed={String(move_speed) + "%"} />
             <StatResult name='final attack' value={fatk_display} />
             <StatResult name='final defense' value={fdef.toLocaleString('en-US')} />
             <StatResult name='total' isCost={true} value={total_price} />
@@ -439,7 +453,7 @@ function StatCont() {
 
 
 
-function StatResult(props: { name: string, value: string, isCost?: boolean }) {
+function StatResult(props: { name: string, value: string, isCost?: boolean, movementSpeed?: string }) {
     let cont_name = "stat-result-cont";
     let text_name = props.name;
     let img_display;
@@ -449,6 +463,16 @@ function StatResult(props: { name: string, value: string, isCost?: boolean }) {
         text_name = ((cost) ? "total" : "enchantment") + " cost";
         img_display = ((cost) ? "coin" : "fish") + "-bg";
     }
+    if (props.name == "speed") {
+        return (
+            <div className='stat-result-cont' >
+                <p>speed:</p>
+                <p>{props.movementSpeed} {props.value}</p>
+            </div>
+
+        )
+    }
+
     return (
         <div className={cont_name}>
             <p>{text_name}:</p>
@@ -568,7 +592,7 @@ function StatInfo(props: { name: string }) {
 
     return (
         <div className='stat-info-cont'>
-            <p>{props.name.toLocaleUpperCase()}:</p>
+            <p>{props.name.toLocaleLowerCase()}:</p>
 
             <input id={input_name} type='number' onBlur={UpdateValue} defaultValue={GetEncoded()} ></input>
             <button className='icon-minus' onClick={() => ModifyStat(false)} style={
@@ -600,8 +624,10 @@ function SetCont() {
         if (level_value === 0) {
             return;
         }
-        let points_value = (parseInt(event.target.value) * 3) - 3;
-        if (isNaN(points_value)) {
+
+
+        let points_value = (level_value * 3) - 3;
+        if (isNaN(points_value) || points_value < 0) {
             points_value = 0;
         }
 
@@ -615,6 +641,8 @@ function SetCont() {
             current_def: 0,
             current_dex: 0
         }));
+
+
         //console.log(level_value); disable equip items if level is NAN
         ui_state?.set(ui => ({ ...ui, point: false }));// on interaction of stat 
 
@@ -703,6 +731,8 @@ function ToggleCont() {
     return (
         <div className='toggle-cont'>
             <ToggleButton name='guard' />
+            <ToggleButton name='perks' />
+            <ToggleButton name='pets' />
             <ToggleButton name='saves' />
             <ToggleButton name='monster' />
         </div>
@@ -747,6 +777,13 @@ function ToggleButton(props: { name: string }) {
                     ui_state?.set(x => ({ ...x, monster: "hide" }));
                     break;
             }
+        }
+        else if (props.name == "pets") {
+            ui_state?.set(x => ({ ...x, page: "pets", is_pet: true }));
+        }
+        else if (props.name == "perks"){
+            
+            ui_state?.set(x => ({ ...x, page: "perk" }));
         }
     }
     if (props.name == "monster") {

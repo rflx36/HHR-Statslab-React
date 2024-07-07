@@ -2,7 +2,7 @@ import { ChangeEvent, useContext } from "react";
 import CloseButton from "./closeButton";
 import { GetDamage } from "./monster_component";
 import { ContextBaseStats, ContextEquips, ContextSkills, ContextStates } from "../StatContext";
-import { dex_crit_chance } from "../initialValue";
+
 import "../css/detail_components.css";
 import { data_items } from "../initialLoad";
 import { ClassType } from "../types";
@@ -43,7 +43,6 @@ function SkillsContainer() {
             skill_stat = skills?.get.mage_skills || [];
 
     }
-
     return (
         <div className="cont-skills">
 
@@ -53,6 +52,11 @@ function SkillsContainer() {
 
                     let enable = true;
                     if (stat?.get.current_class == "cowboy") {
+                        if (!(equips?.get.selected_primary_weapon.name != "" || equips.get.selected_secondary_weapon.name != "")) {
+                            enable = false;
+                        }
+                    }
+                    else if (e.weapon_type == "any" && stat?.get.current_class == "mage") {
                         if (!(equips?.get.selected_primary_weapon.name != "" || equips.get.selected_secondary_weapon.name != "")) {
                             enable = false;
                         }
@@ -73,8 +77,15 @@ function SkillsContainer() {
                             }
                         }
                         else {
+
                             enable = false;
                         }
+                    }
+                    let mp = e.base_mp + (e.mp_increase * skill_stat[i]);
+                    if (stat!.get.current_class == "cowboy") {
+
+                        const mp_multiplier = 128 / (equips?.get.selected_primary_weapon.rpm || 128)
+                        mp = Math.round(mp * mp_multiplier);
                     }
                     return (
                         <SkillCont
@@ -82,7 +93,7 @@ function SkillsContainer() {
                             name={e.name}
                             current_value={skill_stat[i]}
                             max_value={e.max_level}
-                            current_mana={e.base_mp + (e.mp_increase * skill_stat[i])}
+                            current_mana={mp}
                             enabled={enable}
                             url={e.url}
                             key={i}
@@ -131,7 +142,7 @@ function SkillCont(props: { class: ClassType, name: string, current_value: numbe
 
     return (
         <div className={class_name}>
-            <img src={"./src/assets"+props.url}></img>
+            <img src={"./src/assets" + props.url}></img>
             <div className="skill-detail-more-cont">
                 <p>{props.name}</p>
                 <div className="range-level-cont">
@@ -164,9 +175,9 @@ function DamageContainer() {
         player_fatk *= ((ui_state?.get.range || 0) / 100); // bullet damage reduced based off distance travel
     }
     player_fatk = Math.round(player_fatk);
-    
+
     const monster_fdef = (ui_state?.get.monster_detail.def || 0) * ((ui_state?.get.monster_detail.def || 0) + (ui_state?.get.monster_detail.variant_def || 0));
-    const crit_multiplier = parseInt(String(dex_crit_chance[stat?.get.current_dex || 0]));
+    const crit_multiplier = Math.round((Math.sqrt(stat!.get.current_dex) / 2) + 0.5);
     const base_damage = GetDamage(player_fatk, monster_fdef);
     const base_damage_crit = Math.floor(base_damage * crit_multiplier);
 
@@ -199,7 +210,7 @@ function DamageContainer() {
         <div className="cont-damage">
             <div className="base-damage-detail-cont">
                 <div className="base-info-detail-cont">
-                    <img src={"./src/assets"+ui_state?.get.monster_detail.url}></img>
+                    <img src={"./src/assets" + ui_state?.get.monster_detail.url}></img>
                     <div className="base-info-detail">
                         <p>{ui_state?.get.monster_detail.name}</p>
                         <p id="hp-val">
@@ -274,6 +285,12 @@ function DamageContainer() {
                 {
                     skills_data.map((e, i) => {
                         if (stat?.get.current_class == "cowboy") {
+
+                            if (!(equips?.get.selected_primary_weapon.name != "" || equips.get.selected_secondary_weapon.name != "")) {
+                                return;
+                            }
+                        }
+                        if (e.weapon_type == "any" && stat?.get.current_class == "mage") {
 
                             if (!(equips?.get.selected_primary_weapon.name != "" || equips.get.selected_secondary_weapon.name != "")) {
                                 return;
@@ -360,8 +377,6 @@ function ElementCont(props: { type: string, title: string, damage: number, b_enc
             } else {
                 damage = GetDamage(fatk, 0);
             }
-            console.log("hp: " + props.m_hp);
-            console.log("sunder: " + (IcePercentSunder * 100) + "%");
             break;
     }
 

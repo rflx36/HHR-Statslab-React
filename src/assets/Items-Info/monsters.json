@@ -544,5 +544,23 @@
         "url": "/Item-Images/monsters/59.png",
         "variant_def": 103,
         "variant_atk": 8
+    },
+    {
+        "name": "Leaflet",
+        "hp": 28,
+        "power": 33,
+        "defense": 55,
+        "variant": false,
+        "url": "/Item-Images/monsters/60.png"
+        
+    },
+    {
+        "name": "Leafling",
+        "hp": 220,
+        "power": 110,
+        "defense": 55,
+        "variant": false,
+        "url": "/Item-Images/monsters/61.png"
+        
     }
 ]

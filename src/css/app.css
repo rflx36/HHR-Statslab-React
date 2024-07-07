@@ -8,6 +8,11 @@
     font-family: Comicy;
     src: url(/Fonts/Comicy.ttf);
 }
+@font-face {
+    font-family: Confetti;
+    src: url(src/assets/Fonts/PartyConfettiRegular.ttf);
+}
+
 
 body {
     background-color: #2F3136;

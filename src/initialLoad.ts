@@ -39,7 +39,7 @@ function Load() {
 
         }
     }
-    let _others = ["accessories", "skills", "monsters", "environment"];
+    let _others = ["accessories", "skills", "monsters", "environment","pets"];
     for (let i = 0; i < _others.length ; i++) {
 
         _file_locations.push("./src/assets/Items-Info/"+_others[i] +".json");
