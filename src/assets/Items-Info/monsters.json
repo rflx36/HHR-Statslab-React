@@ -542,8 +542,18 @@
         "defense": 100,
         "variant": true,
         "url": "/Item-Images/monsters/59.png",
-        "variant_def": 103,
+        "variant_def": 102,
         "variant_atk": 8
+    },
+    {
+        "name": "Fishurn Deep Protector Helmet",
+        "hp": 120,
+        "power": 75,
+        "defense": 100,
+        "variant": true,
+        "url": "/Item-Images/monsters/60.png",
+        "variant_def": 68,
+        "variant_atk": 10
     },
     {
         "name": "Leaflet",
@@ -551,8 +561,7 @@
         "power": 33,
         "defense": 55,
         "variant": false,
-        "url": "/Item-Images/monsters/60.png"
-        
+        "url": "/Item-Images/monsters/61.png"
     },
     {
         "name": "Leafling",
@@ -560,7 +569,6 @@
         "power": 110,
         "defense": 55,
         "variant": false,
-        "url": "/Item-Images/monsters/61.png"
-        
+        "url": "/Item-Images/monsters/62.png"
     }
 ]

@@ -187,6 +187,8 @@ function DamageContainer() {
     let bonus_enchant = 1;
     bonus_enchant += (equips?.get.sheated_primary_weapon.enchanted) ? 0.125 : 0;
     bonus_enchant += (equips?.get.sheated_secondary_weapon.enchanted) ? 0.125 : 0;
+
+    bonus_enchant += ((skills!.get.guild_elemental_boost * 5) / 100);
     let skill_stat: Array<number> = [];
     switch (stat?.get.current_class) {
         case "warrior":
