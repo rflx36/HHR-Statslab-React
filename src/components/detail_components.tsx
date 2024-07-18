@@ -292,7 +292,7 @@ function DamageContainer() {
                                 return;
                             }
                         }
-                        if (e.weapon_type == "any" && stat?.get.current_class == "mage") {
+                        else if (e.weapon_type == "any" && stat?.get.current_class == "mage") {
 
                             if (!(equips?.get.selected_primary_weapon.name != "" || equips.get.selected_secondary_weapon.name != "")) {
                                 return;
