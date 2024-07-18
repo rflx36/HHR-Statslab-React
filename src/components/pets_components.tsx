@@ -392,7 +392,11 @@ function PetStatCont() {
 
     const GetCrit = () => {
 
-        let value = String((Math.round(((Math.sqrt(current_pet_info.dex + 1) / 2) + 0.5) * 100)) / 100 + "x");
+        let pet_data = data_items[25];
+        let pet_data_type = pet_data.find((arr: any) => arr.name.includes(current_pet_info.name));
+
+        let pet_dex_modifier = pet_data_type.dex;
+        let value = String((Math.round(((Math.sqrt((current_pet_info.dex + 1)* pet_dex_modifier) / 2) + 0.5) * 100)) / 100 + "x");
         return value;
     }
 
@@ -487,6 +491,10 @@ function PetStatInfo(props: { name: string }) {
     const current_pet_selected = ui_state!.get.pet_selection - 1;
     const current_pet_info = pet_stat!.get[current_pet_selected];
 
+    const pet_data = data_items[25];
+    const pet_data_type = pet_data.find((arr: any) => arr.name.includes(current_pet_info.name));
+    const pet_hp_modifier = pet_data_type.hp;
+     
     const GetPetStatValue = (): number => {
         switch (props.name) {
             case "hp":
@@ -501,9 +509,10 @@ function PetStatInfo(props: { name: string }) {
         return 0;
     }
     const GetPetEncoded = () => {
+
         switch (props.name) {
             case "hp":
-                return (GetPetStatValue() + 3) * 5;
+                return Math.floor(((GetPetStatValue() + 3) * pet_hp_modifier ) * 5);
             default:
                 return GetPetStatValue() + 1;
         }
@@ -511,7 +520,7 @@ function PetStatInfo(props: { name: string }) {
     const GetPetDecoded = (n: number) => {
         switch (props.name) {
             case "hp":
-                return Math.floor((n / 5) - 3);
+                return Math.floor(((n / 5)/pet_hp_modifier) - 3)  ;
             default:
                 return n - 1;
         }

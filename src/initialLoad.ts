@@ -1,3 +1,5 @@
+import { UIcache } from "./initialValue";
+
 let reloads = 0;
 let startTime = 0, endTime = 0;
 
@@ -75,6 +77,10 @@ function ParsedData(data: Array<Array<any>>) {
             for (let item of items) {
                 images += `<img src='./src/assets/${item.url}'>`;
             }
+        }
+
+        for (let i = 0 ; i < UIcache.length; i++){
+            images += `<img src='./src/assets/UI/${UIcache[i]}.png`;
         }
     }
     catch (err) {

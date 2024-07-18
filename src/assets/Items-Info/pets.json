@@ -57,7 +57,7 @@
             "/Item-Images/pets/8.png",
             "/Item-Images/pets/9.png"
         ],
-        "description": "Attacks slowly and weakly.  Picks up only coins, but coins are worth 35% more.  Attacks are poison based."
+        "description": "Attacks slowly and weakly.  Picks up only coins, but coins are worth 25% more.  Attacks are poison based."
     },
     {
         "name": [
@@ -77,7 +77,7 @@
             "/Item-Images/pets/11.png",
             "/Item-Images/pets/12.png"
         ],
-        "description": "Gives you a 20% chance of doubling any fish caught."
+        "description": "Gives you a 35% chance of doubling any fish caught."
     },
     {
         "name": [
@@ -117,7 +117,7 @@
             "/Item-Images/pets/17.png",
             "/Item-Images/pets/18.png"
         ],
-        "description": "Increases your drop chance for items by 10%.  Increases your crit chance by 4%."
+        "description": "Increases your drop chance for items by 15%.  "
     },
     {
         "name": [
@@ -177,7 +177,7 @@
             "/Item-Images/pets/23.png",
             "/Item-Images/pets/24.png"
         ],
-        "description": "The attacks it deals are fired based."
+        "description": "The attacks it deals are fired based. if your element is fire. your total final power will be increased by 20% of this pet's final power"
     },
     {
         "name": [

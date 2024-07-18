@@ -345,7 +345,7 @@ function DamageContainer() {
 
 
 
-function ElementCont(props: { type: string, title: string, damage: number, b_enchant: number, is_skill: boolean, m_hp: number, fatk?: number, m_fdef?: number, base_val?: number, val_increase?: number, skill_lvl?: number }) {
+function ElementCont(props: { type: string, title: string, damage: number, b_enchant: number, is_skill: boolean, m_hp: number, fatk?: number, m_fdef?: number, base_val?: number, val_increase?: number, skill_lvl?: number, is_multiply?: boolean }) {
 
     let damage = 0;
     let fdef = props.m_fdef || 0;
@@ -358,19 +358,14 @@ function ElementCont(props: { type: string, title: string, damage: number, b_enc
             damage = (props.damage * 0.35) * (props.b_enchant || 1);
             break;
         case "poison":
-            let PoisonDamage = GetDamage((fatk), Math.floor((props.m_fdef || 0) / 6));
+            let PoisonDamage = GetDamage(fatk, Math.floor(fdef / 6));
             PoisonDamage = Math.round(Math.sqrt(PoisonDamage) / 2);
 
-            damage = PoisonDamage;
-            // if (props.is_skill) {
-            //     damage = Math.round(damage * ((props.base_val || 0) + ((props.val_increase || 0) * (props.skill_lvl || 0))));
-            // }
+            let dmg_multiplier = ((props.base_val || 0) + ((props.val_increase || 0) * (props.skill_lvl || 0)));
 
+            damage = (!props.is_skill) ? PoisonDamage : Math.round(PoisonDamage * ((props.is_multiply) ? 1 : dmg_multiplier));
             break;
         case "ice":
-            // let IcePercentSunder = Math.round(100 * (GetDamage((props.fatk || 0), props.m_fdef || 0) / props.m_hp)) / 100;
-            // let IceDamage = GetDamage((props.fatk || 0), IcePercentSunder * (props.m_fdef || 0));
-            // damage = IceDamage;
 
             let IcePercentSunder = Math.round(100 * (GetDamage(fatk, fdef) / props.m_hp)) / 100;
             if (IcePercentSunder < 1) {
@@ -468,11 +463,12 @@ function SkillDamageCont(props: { p_fatk?: number, m_fdef?: number, p_enchanted:
                             b_enchant={props.b_enchant}
                             is_skill={true}
                             m_hp={props.m_hp}
-                            fatk={base_damage}
+                            fatk={props.p_fatk}
                             m_fdef={props.m_fdef || 0}
                             base_val={props.base_value}
                             val_increase={props.value_increase}
                             skill_lvl={props.skill_level}
+                            is_multiply={props.is_multiply}
                         />
                         <ElementCont
                             type="ice"

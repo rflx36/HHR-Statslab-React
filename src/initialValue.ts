@@ -123,3 +123,53 @@ export const InitialPetStats: PetStatsType = {
 
 export const InitialPetStatSlots: Array<PetStatsType> =
     [InitialPetStats, InitialPetStats, InitialPetStats, InitialPetStats, InitialPetStats, InitialPetStats];
+
+
+
+
+
+
+export const UIcache = [
+    "button-hovered",
+    "button",
+    "enchanted",
+    "guard-skill",
+    "icon-accessories",
+    "icon-archer",
+    "icon-armor",
+    "icon-base-damage-crit",
+    "icon-base-damage",
+    "icon-bullorn",
+    "icon-character",
+    "icon-checked",
+    "icon-close",
+    "icon-coin",
+    "icon-cowboy",
+    "icon-element-electric",
+    "icon-element-fire",
+    "icon-element-ice",
+    "icon-element-poison",
+    "icon-equipped",
+    "icon-fish",
+    "icon-guard",
+    "icon-helmets",
+    "icon-mage",
+    "icon-mana",
+    "icon-minus",
+    "icon-monster-def",
+    "icon-monster-dmg",
+    "icon-pants",
+    "icon-perks",
+    "icon-pets",
+    "icon-plus",
+    "icon-remove",
+    "icon-shoes",
+    "icon-single-handed",
+    "icon-title",
+    "icon-two-handed",
+    "icon-unchecked",
+    "icon-warrior",
+    "monster-toggle-hide",
+    "monster-toggle-show",
+    "monster-toggle-variant"
+]

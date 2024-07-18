@@ -251,10 +251,10 @@
     },
     {
         "name": "Calibre Cannon",
-        "power": 252,
-        "level": 191,
-        "rpm": 125,
-        "price": 2599979,
+        "power": 226,
+        "level": 192,
+        "rpm": 140,
+        "price": 2619464,
         "twohanded": true,
         "url": "Item-Images/cowboy-weapons/26.webp",
         "class": "cowboy"
