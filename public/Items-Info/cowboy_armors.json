@@ -1,0 +1,137 @@
+[
+    {
+        "name": "Salsa Shirt",
+        "power": 1,
+        "defense": 10,
+        "level": 7,
+        "price": 1395,
+        "url": "Item-Images/cowboy-armors/1.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Trench Coat",
+        "power": 1,
+        "defense": 12,
+        "level": 10,
+        "price": 2240,
+        "url": "Item-Images/cowboy-armors/2.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Coon Outfit",
+        "power": 1,
+        "defense": 13,
+        "level": 11,
+        "price": 2758,
+        "url": "Item-Images/cowboy-armors/3.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Body Wrap",
+        "power": 2,
+        "defense": 13,
+        "level": 12,
+        "price": 2768,
+        "url": "Item-Images/cowboy-armors/4.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Cowboy Jacket",
+        "power": 5,
+        "defense": 17,
+        "level": 20,
+        "price": 5668,
+        "url": "Item-Images/cowboy-armors/5.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Pirate Vest",
+        "power": 6,
+        "defense": 21,
+        "level": 26,
+        "price": 9801,
+        "url": "Item-Images/cowboy-armors/6.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Aluminum cowboy-Armor",
+        "power": 7,
+        "defense": 52,
+        "level": 65,
+        "price": 101631,
+        "url": "Item-Images/cowboy-armors/7.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Chemical Armor",
+        "power": 8,
+        "defense": 61,
+        "level": 77,
+        "price": 153881,
+        "url": "Item-Images/cowboy-armors/8.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Industrial Armor",
+        "power": 9,
+        "defense": 71,
+        "level": 90,
+        "price": 228293,
+        "url": "Item-Images/cowboy-armors/9.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Solar Armor",
+        "power": 11,
+        "defense": 95,
+        "level": 121,
+        "price": 486476,
+        "url": "Item-Images/cowboy-armors/10.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Valor Armor",
+        "power": 16,
+        "defense": 126,
+        "level": 164,
+        "price": 1014355,
+        "url": "Item-Images/cowboy-armors/11.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Guard Armor",
+        "power": 17,
+        "defense": 138,
+        "level": 180,
+        "price": 1284767,
+        "url": "Item-Images/cowboy-armors/12.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Calibre Armor",
+        "power": 18,
+        "defense": 144,
+        "level": 188,
+        "price": 1435234,
+        "url": "Item-Images/cowboy-armors/13.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Bumblebee Armor",
+        "power": 20,
+        "defense": 169,
+        "level": 221,
+        "price": 2175396,
+        "url": "Item-Images/cowboy-armors/14.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Plague Armor",
+        "power": 21,
+        "defense": 182,
+        "level": 238,
+        "price": 2637285,
+        "url": "Item-Images/cowboy-armors/15.webp",
+        "class": "cowboy"
+    }
+]

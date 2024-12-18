@@ -1,0 +1,155 @@
+[
+    {
+        "name": "Green Pants",
+        "power": 0,
+        "defense": 5,
+        "level": 1,
+        "price": 230,
+        "url": "Item-Images/archer-pants/1.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Archer Pants",
+        "power": 1,
+        "defense": 10,
+        "level": 7,
+        "price": 1395,
+        "url": "Item-Images/archer-pants/2.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Elf Pants",
+        "power": 1,
+        "defense": 11,
+        "level": 8,
+        "price": 1787,
+        "url": "Item-Images/archer-pants/3.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Leather Archer Legs",
+        "power": 4,
+        "defense": 21,
+        "level": 24,
+        "price": 9664,
+        "url": "Item-Images/archer-pants/4.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Leather Legs",
+        "power": 3,
+        "defense": 23,
+        "level": 25,
+        "price": 12184,
+        "url": "Item-Images/archer-pants/5.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Apollos Legs",
+        "power": 5,
+        "defense": 36,
+        "level": 43,
+        "price": 39077,
+        "url": "Item-Images/archer-pants/6.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Fish Scale Legs",
+        "power": 8,
+        "defense": 53,
+        "level": 67,
+        "price": 106905,
+        "url": "Item-Images/archer-pants/7.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Strong Legs",
+        "power": 9,
+        "defense": 63,
+        "level": 80,
+        "price": 167466,
+        "url": "Item-Images/archer-pants/8.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Protector Legs",
+        "power": 10,
+        "defense": 68,
+        "level": 88,
+        "price": 204309,
+        "url": "Item-Images/archer-pants/9.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Reinforced Bush Legs",
+        "power": 11,
+        "defense": 73,
+        "level": 95,
+        "price": 245762,
+        "url": "Item-Images/archer-pants/10.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Biological Legs",
+        "power": 15,
+        "defense": 106,
+        "level": 139,
+        "price": 647736,
+        "url": "Item-Images/archer-pants/11.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Achilles legs",
+        "power": 16,
+        "defense": 114,
+        "level": 150,
+        "price": 782570,
+        "url": "Item-Images/archer-pants/12.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Archaic legs",
+        "power": 17,
+        "defense": 126,
+        "level": 166,
+        "price": 1014816,
+        "url": "Item-Images/archer-pants/13.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Reef legs",
+        "power": 18,
+        "defense": 137,
+        "level": 180,
+        "price": 1261268,
+        "url": "Item-Images/archer-pants/14.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Earth legs",
+        "power": 19,
+        "defense": 144,
+        "level": 190,
+        "price": 1435788,
+        "url": "Item-Images/archer-pants/15.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Glacial legs",
+        "power": 20,
+        "defense": 169,
+        "level": 221,
+        "price": 2175396,
+        "url": "Item-Images/archer-pants/16.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Cyborgs legs",
+        "power": 21,
+        "defense": 182,
+        "level": 238,
+        "price": 2637285,
+        "url": "Item-Images/archer-pants/17.webp",
+        "class": "archer"
+    }
+]

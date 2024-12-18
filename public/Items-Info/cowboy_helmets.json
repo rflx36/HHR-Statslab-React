@@ -1,0 +1,211 @@
+[
+    {
+        "name": "Eye Patch",
+        "power": 1,
+        "defense": 1,
+        "level": 1,
+        "price": 6,
+        "url": "Item-Images/cowboy-helmets/1.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Paper Hat",
+        "power": 0,
+        "defense": 4,
+        "level": 1,
+        "price": 129,
+        "url": "Item-Images/cowboy-helmets/2.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Detective Hat",
+        "power": 3,
+        "defense": 10,
+        "level": 10,
+        "price": 1428,
+        "url": "Item-Images/cowboy-helmets/3.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Coon Hat",
+        "power": 1,
+        "defense": 13,
+        "level": 11,
+        "price": 2758,
+        "url": "Item-Images/cowboy-helmets/4.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Head Wrap",
+        "power": 2,
+        "defense": 13,
+        "level": 12,
+        "price": 2768,
+        "url": "Item-Images/cowboy-helmets/5.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Oriental Hat",
+        "power": 4,
+        "defense": 12,
+        "level": 13,
+        "price": 2312,
+        "url": "Item-Images/cowboy-helmets/6.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "cowboy-Hat",
+        "power": 5,
+        "defense": 14,
+        "level": 17,
+        "price": 3473,
+        "url": "Item-Images/cowboy-helmets/7.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Sombrero",
+        "power": 5,
+        "defense": 16,
+        "level": 19,
+        "price": 4860,
+        "url": "Item-Images/cowboy-helmets/8.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "cowboy-Belt Hat",
+        "power": 5,
+        "defense": 17,
+        "level": 20,
+        "price": 5668,
+        "url": "Item-Images/cowboy-helmets/9.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Laser Shades",
+        "power": 4,
+        "defense": 20,
+        "level": 23,
+        "price": 8521,
+        "url": "Item-Images/cowboy-helmets/10.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Masked cowboy-Hat",
+        "power": 5,
+        "defense": 23,
+        "level": 28,
+        "price": 12281,
+        "url": "Item-Images/cowboy-helmets/11.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Pirate Hat",
+        "power": 6,
+        "defense": 26,
+        "level": 32,
+        "price": 16922,
+        "url": "Item-Images/cowboy-helmets/12.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Pointed Pirate Hat",
+        "power": 6,
+        "defense": 31,
+        "level": 38,
+        "price": 26611,
+        "url": "Item-Images/cowboy-helmets/13.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Aluminum cowboy-Hat",
+        "power": 7,
+        "defense": 52,
+        "level": 65,
+        "price": 101631,
+        "url": "Item-Images/cowboy-helmets/14.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Chemical Mask",
+        "power": 8,
+        "defense": 61,
+        "level": 77,
+        "price": 153881,
+        "url": "Item-Images/cowboy-helmets/15.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Industrial Helmet",
+        "power": 9,
+        "defense": 71,
+        "level": 90,
+        "price": 228293,
+        "url": "Item-Images/cowboy-helmets/16.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Solar Helmet",
+        "power": 11,
+        "defense": 95,
+        "level": 121,
+        "price": 486476,
+        "url": "Item-Images/cowboy-helmets/17.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Deep Sea Helmet",
+        "power": 8,
+        "defense": 102,
+        "level": 126,
+        "price": 584467,
+        "url": "Item-Images/cowboy-helmets/18.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Valor Helmet",
+        "power": 16,
+        "defense": 126,
+        "level": 164,
+        "price": 1014355,
+        "url": "Item-Images/cowboy-helmets/19.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Guard Helmet",
+        "power": 17,
+        "defense": 138,
+        "level": 180,
+        "price": 1284767,
+        "url": "Item-Images/cowboy-helmets/20.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Calibre Helmet",
+        "power": 18,
+        "defense": 144,
+        "level": 188,
+        "price": 1435234,
+        "url": "Item-Images/cowboy-helmets/21.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Bumblebee Helmet",
+        "power": 20,
+        "defense": 169,
+        "level": 221,
+        "price": 2175396,
+        "url": "Item-Images/cowboy-helmets/22.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Plague Helmet",
+        "power": 21,
+        "defense": 182,
+        "level": 238,
+        "price": 2637285,
+        "url": "Item-Images/cowboy-helmets/23.webp",
+        "class": "cowboy"
+    }
+    
+    
+]

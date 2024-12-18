@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Green Shoes",
+        "power": 0,
+        "defense": 5,
+        "level": 2,
+        "price": 230,
+        "url": "Item-Images/archer-shoes/1.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Elf Shoes",
+        "power": 1,
+        "defense": 10,
+        "level": 11,
+        "price": 1395,
+        "url": "Item-Images/archer-shoes/2.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Elf Bell Shoes",
+        "power": 3,
+        "defense": 13,
+        "level": 20,
+        "price": 2791,
+        "url": "Item-Images/archer-shoes/3.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Fish Shoes",
+        "power": 5,
+        "defense": 37,
+        "level": 67,
+        "price": 41952,
+        "url": "Item-Images/archer-shoes/4.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Reinforced Bush Boots",
+        "power": 5,
+        "defense": 50,
+        "level": 91,
+        "price": 91625,
+        "url": "Item-Images/archer-shoes/5.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Biological Shoes",
+        "power": 6,
+        "defense": 72,
+        "level": 133,
+        "price": 236331,
+        "url": "Item-Images/archer-shoes/6.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Achilles Boots",
+        "power": 7,
+        "defense": 75,
+        "level": 140,
+        "price": 262874,
+        "url": "Item-Images/archer-shoes/7.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Archaic Boots",
+        "power": 8,
+        "defense": 83,
+        "level": 156,
+        "price": 342166,
+        "url": "Item-Images/archer-shoes/8.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Reef Boots",
+        "power": 9,
+        "defense": 91,
+        "level": 173,
+        "price": 434691,
+        "url": "Item-Images/archer-shoes/9.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Earth Shoes",
+        "power": 10,
+        "defense": 95,
+        "level": 182,
+        "price": 486252,
+        "url": "Item-Images/archer-shoes/10.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Glacial Skates",
+        "power": 10,
+        "defense": 109,
+        "level": 207,
+        "price": 694824,
+        "url": "Item-Images/archer-shoes/11.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Cyborg Boots",
+        "power": 10,
+        "defense": 120,
+        "level": 227,
+        "price": 891923,
+        "url": "Item-Images/archer-shoes/12.webp",
+        "class": "archer"
+    }
+]

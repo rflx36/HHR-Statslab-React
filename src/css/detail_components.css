@@ -20,9 +20,12 @@
     margin: 5px;
     border-radius: 5px;
     border: #083807 2px solid;
-
+    overflow-y: scroll;
 }
 
+.cont-detailed-damage .cont-damage::-webkit-scrollbar {
+    width: 0px;
+}
 .cont-detailed-damage .cont-damage .base-damage-detail-cont {
     height: 95px;
 }
@@ -54,7 +57,7 @@
     margin-left: 0px;
     padding: 5px;
     border-radius: 5px;
-
+    position: relative;
 }
 
 .cont-detailed-damage .cont-damage .base-damage-detail-cont .base-info-detail-cont .base-info-detail p span {
@@ -346,7 +349,7 @@
     background-size: contain;
     height: 25px;
     background-position: center;
-    background-image: url(src/assets/UI/icon-mana.png);
+    background-image: url(/UI/icon-mana.png);
     background-repeat: no-repeat;   
 }
 

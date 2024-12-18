@@ -1,0 +1,137 @@
+[
+    {
+        "name": "Salsa Pants",
+        "power": 1,
+        "defense": 10,
+        "level": 7,
+        "price": 1395,
+        "url": "Item-Images/cowboy-pants/1.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Cargo Pants",
+        "power": 1,
+        "defense": 12,
+        "level": 10,
+        "price": 2240,
+        "url": "Item-Images/cowboy-pants/2.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Coon Pants",
+        "power": 1,
+        "defense": 13,
+        "level": 11,
+        "price": 2758,
+        "url": "Item-Images/cowboy-pants/3.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Wrapped Legs",
+        "power": 2,
+        "defense": 13,
+        "level": 12,
+        "price": 2768,
+        "url": "Item-Images/cowboy-pants/4.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Cowboy Pants",
+        "power": 5,
+        "defense": 17,
+        "level": 20,
+        "price": 5668,
+        "url": "Item-Images/cowboy-pants/5.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Pirate Pants",
+        "power": 6,
+        "defense": 21,
+        "level": 26,
+        "price": 9801,
+        "url": "Item-Images/cowboy-pants/6.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Aluminum cowboy-Legs",
+        "power": 7,
+        "defense": 52,
+        "level": 65,
+        "price": 101631,
+        "url": "Item-Images/cowboy-pants/7.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Chemical Legs",
+        "power": 8,
+        "defense": 61,
+        "level": 77,
+        "price": 153881,
+        "url": "Item-Images/cowboy-pants/8.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Industrial Legs",
+        "power": 9,
+        "defense": 71,
+        "level": 90,
+        "price": 228293,
+        "url": "Item-Images/cowboy-pants/9.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Solar Legs",
+        "power": 11,
+        "defense": 95,
+        "level": 121,
+        "price": 486476,
+        "url": "Item-Images/cowboy-pants/10.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Valor Legs",
+        "power": 16,
+        "defense": 126,
+        "level": 164,
+        "price": 1014355,
+        "url": "Item-Images/cowboy-pants/11.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Guard Legs",
+        "power": 17,
+        "defense": 138,
+        "level": 180,
+        "price": 1284767,
+        "url": "Item-Images/cowboy-pants/12.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Calibre Legs",
+        "power": 18,
+        "defense": 143,
+        "level": 187,
+        "price": 1409530,
+        "url": "Item-Images/cowboy-pants/13.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Bumblebee Legs",
+        "power": 20,
+        "defense": 169,
+        "level": 221,
+        "price": 2175396,
+        "url": "Item-Images/cowboy-pants/14.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Plague Legs",
+        "power": 21,
+        "defense": 182,
+        "level": 238,
+        "price": 2637285,
+        "url": "Item-Images/cowboy-pants/15.webp",
+        "class": "cowboy"
+    }
+]

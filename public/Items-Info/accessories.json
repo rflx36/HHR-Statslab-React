@@ -1,0 +1,81 @@
+[
+    {
+        "name": "Pink Balloon",
+        "power": 1,
+        "defense": 4,
+        "level": 1,
+        "price": 131,
+        "ticket_price": 75,
+        "url": "Item-Images/accessories/1.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Monkey Tail",
+        "power": 0,
+        "defense": 3,
+        "level": 1,
+        "price": 61,
+        "url": "Item-Images/accessories/2.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Balloon Pack",
+        "power": 2,
+        "defense": 13,
+        "level": 12,
+        "price": 2768,
+        "ticket_price": 75,
+        "url": "Item-Images/accessories/3.webp",
+        "class": "mage"
+    },
+    {
+        "name": "Red Cape",
+        "power": 3,
+        "defense": 16,
+        "level": 17,
+        "price": 4764,
+        "ticket_price": 75,
+        "url": "Item-Images/accessories/4.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Santa Sack",
+        "power": 2,
+        "defense": 20,
+        "level": 20,
+        "price": 8460,
+        "ticket_price": 75,
+        "url": "Item-Images/accessories/5.webp",
+        "class": "archer"
+    },
+    {
+        "name": "White Wings",
+        "power": 3,
+        "defense": 21,
+        "level": 23,
+        "price": 9625,
+        "ticket_price": 75,
+        "url": "Item-Images/accessories/6.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Magnet",
+        "power": 3,
+        "defense": 60,
+        "level": 70,
+        "price": 147016,
+        "ticket_price": 75,
+        "url": "Item-Images/accessories/7.webp",
+        "class": "cowboy"
+    },
+    {
+        "name": "Dino Scale Tail",
+        "power": 21,
+        "defense": 192,
+        "level": 250,
+        "price": 3029964,
+        "ticket_price": 75,
+        "url": "Item-Images/accessories/8.webp",
+        "class": "warrior"
+    }
+]

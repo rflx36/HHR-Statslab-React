@@ -76,9 +76,13 @@ function IndexContainers(props: PVEType) {
         damage *= 2.5;
     }
     if (props.name.includes("Fishurn")) {
-        damage *= 0.7
+        damage *= 0.7;
     }
 
+    if (props.name.includes("Block Bot")){
+        damage *= 0.4;
+    }
+    
     let fatk = stat?.get.current_fatk_p || 0;
 
     if (stat?.get.current_class == "archer") {
@@ -90,7 +94,7 @@ function IndexContainers(props: PVEType) {
 
     const defender = (ui_state!.get.is_pet) ? current_pet_info.fdef : stat!.get.current_fdef;
     const attacker = (ui_state!.get.is_pet) ? current_pet_info.fatk : fatk;
-
+    
     let dmg = GetDamage(damage, defender);
     let def = GetDamage(attacker, defense);
 
@@ -121,7 +125,7 @@ function IndexContainers(props: PVEType) {
     }
     return (
         <div className="monster-index" onClick={ViewDetail} style={(ui_state!.get.is_pet) ? { background: "#" + current_pet_info.color, borderColor: "#000000b8" } : {}}>
-            <div className="monster-image" title={props.name} style={(ui_state!.get.is_pet) ? { backgroundColor: "#00000030", backgroundImage: "url(./src/assets" + props.url + ")" } : { backgroundImage: "url(./src/assets" + props.url + ")" }}></div>
+            <div className="monster-image" title={props.name} style={(ui_state!.get.is_pet) ? { backgroundColor: "#00000030", backgroundImage: "url(" + props.url + ")" } : { backgroundImage: "url(" + props.url + ")" }}></div>
             <div className="monster-stat">
                 {((props.atk || 0) > 0) && (
                     <div className="monster-dmg" title={info_monster_damage} style={(ui_state!.get.is_pet) ? { background: "#00000030" } : {}}>

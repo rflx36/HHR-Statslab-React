@@ -59,19 +59,19 @@
 
 
 .class-warrior {
-    background-image: url(src/assets/UI/icon-warrior.png);
+    background-image: url(/UI/icon-warrior.png);
 }
 
 .class-archer {
-    background-image: url(src/assets/UI/icon-archer.png);
+    background-image: url(/UI/icon-archer.png);
 }
 
 .class-cowboy {
-    background-image: url(src/assets/UI/icon-cowboy.png);
+    background-image: url(/UI/icon-cowboy.png);
 }
 
 .class-mage {
-    background-image: url(src/assets/UI/icon-mage.png);
+    background-image: url(/UI/icon-mage.png);
 }
 
 /* 
