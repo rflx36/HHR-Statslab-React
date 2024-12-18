@@ -13,9 +13,9 @@
         "type": "archer",
         "color":"B3751A",
         "url": [
-            "/Item-Images/pets/1.png",
-            "/Item-Images/pets/2.png",
-            "/Item-Images/pets/3.png"
+            "Item-Images/pets/1.png",
+            "Item-Images/pets/2.png",
+            "Item-Images/pets/3.png"
         ],
         "description": "Attacks enemies at an average rate, with average force.  Picks up loot.  3rd evolution can be ridden."
     },
@@ -33,9 +33,9 @@
         "type": "warrior",
         "color":"0F6FCE",
         "url": [
-            "/Item-Images/pets/4.png",
-            "/Item-Images/pets/5.png",
-            "/Item-Images/pets/6.png"
+            "Item-Images/pets/4.png",
+            "Item-Images/pets/5.png",
+            "Item-Images/pets/6.png"
         ],
         "description": "Attacks at a slightly slower rate.  20% of damage done to this pet is given back to you as health."
     },
@@ -53,9 +53,9 @@
         "type": "archer",
         "color":"07AB17",
         "url": [
-            "/Item-Images/pets/7.png",
-            "/Item-Images/pets/8.png",
-            "/Item-Images/pets/9.png"
+            "Item-Images/pets/7.png",
+            "Item-Images/pets/8.png",
+            "Item-Images/pets/9.png"
         ],
         "description": "Attacks slowly and weakly.  Picks up only coins, but coins are worth 25% more.  Attacks are poison based."
     },
@@ -73,9 +73,9 @@
         "type": "mage",
         "color":"3C3C3C",
         "url": [
-            "/Item-Images/pets/10.png",
-            "/Item-Images/pets/11.png",
-            "/Item-Images/pets/12.png"
+            "Item-Images/pets/10.png",
+            "Item-Images/pets/11.png",
+            "Item-Images/pets/12.png"
         ],
         "description": "Gives you a 35% chance of doubling any fish caught. Attacks are weak but rapid, and are ice based."
     },
@@ -93,9 +93,9 @@
         "type": "warrior",
         "color":"73D015",
         "url": [
-            "/Item-Images/pets/13.png",
-            "/Item-Images/pets/14.png",
-            "/Item-Images/pets/15.png"
+            "Item-Images/pets/13.png",
+            "Item-Images/pets/14.png",
+            "Item-Images/pets/15.png"
         ],
         "description": "Gives you a defense boost, relative to the pet current health. Offers a 15% of the pet final defense at full health. 3rd evolution can be ridden."
     },
@@ -113,9 +113,9 @@
         "type": "archer",
         "color":"9D371E",
         "url": [
-            "/Item-Images/pets/16.png",
-            "/Item-Images/pets/17.png",
-            "/Item-Images/pets/18.png"
+            "Item-Images/pets/16.png",
+            "Item-Images/pets/17.png",
+            "Item-Images/pets/18.png"
         ],
         "description": "Increases your drop chance for items by 15%.  "
     },
@@ -153,9 +153,9 @@
         "type": "cowboy",
         "color":"CD7218",
         "url": [
-            "/Item-Images/pets/19.png",
-            "/Item-Images/pets/20.png",
-            "/Item-Images/pets/21.png"
+            "Item-Images/pets/19.png",
+            "Item-Images/pets/20.png",
+            "Item-Images/pets/21.png"
         ],
         "description": "It’s attacks do a random type of elemental damage 80% of the time. If you are dealt a killing blow this pet will die instead, saving you from death."
     },
@@ -173,9 +173,9 @@
         "type": "cowboy",
         "color":"A70C0C",
         "url": [
-            "/Item-Images/pets/22.png",
-            "/Item-Images/pets/23.png",
-            "/Item-Images/pets/24.png"
+            "Item-Images/pets/22.png",
+            "Item-Images/pets/23.png",
+            "Item-Images/pets/24.png"
         ],
         "description": "The attacks it deals are fired based. if your element is fire. your total final power will be increased by 20% of this pet's final power, factoring your current weapon."
     },
@@ -193,9 +193,9 @@
         "type": "archer",
         "color":"5B5146",
         "url": [
-            "/Item-Images/pets/25.png",
-            "/Item-Images/pets/26.png",
-            "/Item-Images/pets/27.png"
+            "Item-Images/pets/25.png",
+            "Item-Images/pets/26.png",
+            "Item-Images/pets/27.png"
         ],
         "description": "Attacks at a faster rate, with less power.  Increases your critical chance when active, and picks up loot."
     },
@@ -213,9 +213,9 @@
         "type": "mage",
         "color":"7BCD29",
         "url": [
-            "/Item-Images/pets/28.png",
-            "/Item-Images/pets/29.png",
-            "/Item-Images/pets/30.png"
+            "Item-Images/pets/28.png",
+            "Item-Images/pets/29.png",
+            "Item-Images/pets/30.png"
         ],
         "description": "Attacks are poison based. Any time you heal passively health using the HP Restore Skill, you heal an additional amount equal to 5% of this pets total health"
     },
@@ -233,9 +233,9 @@
         "type": "mage",
         "color":"D5D5D5",
         "url": [
-            "/Item-Images/pets/31.png",
-            "/Item-Images/pets/32.png",
-            "/Item-Images/pets/33.png"
+            "Item-Images/pets/31.png",
+            "Item-Images/pets/32.png",
+            "Item-Images/pets/33.png"
         ],
         "description": "Has a 15% chance of avoiding enemy attacks. Increases your chance of avoiding an attack by 5%."
     },
@@ -253,9 +253,9 @@
         "type": "warrior",
         "color":"3C77B3",
         "url": [
-            "/Item-Images/pets/34.png",
-            "/Item-Images/pets/35.png",
-            "/Item-Images/pets/36.png"
+            "Item-Images/pets/34.png",
+            "Item-Images/pets/35.png",
+            "Item-Images/pets/36.png"
         ],
         "description": "Has triple the chance of dealing a critical hit compared to other pets."
     },
@@ -273,9 +273,9 @@
         "type": "mage",
         "color":"803C80",
         "url": [
-            "/Item-Images/pets/37.png",
-            "/Item-Images/pets/38.png",
-            "/Item-Images/pets/39.png"
+            "Item-Images/pets/37.png",
+            "Item-Images/pets/38.png",
+            "Item-Images/pets/39.png"
         ],
         "description": "Deals low power, rapid attacks.  Every 13 seconds you will heal MP equal to 5% of this pet health."
     },
@@ -293,9 +293,9 @@
         "type": "cowboy",
         "color":"ABAB10",
         "url": [
-            "/Item-Images/pets/40.png",
-            "/Item-Images/pets/41.png",
-            "/Item-Images/pets/42.png"
+            "Item-Images/pets/40.png",
+            "Item-Images/pets/41.png",
+            "Item-Images/pets/42.png"
         ],
         "description": "It’s attack’s are lightning based. Picks up coins"
     },
@@ -333,8 +333,8 @@
         "type": "mage",
         "color":"E7CF07",
         "url": [
-            "/Item-Images/pets/43.png",
-            "/Item-Images/pets/44.png",
+            "Item-Images/pets/43.png",
+            "Item-Images/pets/44.png",
             ""
         ],
         "description": "Its cute face makes you happier, giving you 5% more XP when defeating enemies. Picks up coins."
@@ -353,8 +353,8 @@
         "type": "cowboy",
         "color":"367010",
         "url": [
-            "/Item-Images/pets/46.png",
-           "/Item-Images/pets/47.png",
+            "Item-Images/pets/46.png",
+           "Item-Images/pets/47.png",
             ""
         ],
         "description":"If it kills an enemy, coins are worth 35% more. Picks up items."
@@ -373,8 +373,8 @@
         "type": "warrior",
         "color":"C6CED2",
         "url": [
-            "/Item-Images/pets/49.png",
-            "/Item-Images/pets/50.png",
+            "Item-Images/pets/49.png",
+            "Item-Images/pets/50.png",
             ""
         ],
         "description":"It’s attacks are ice based. Picks up coins and items."

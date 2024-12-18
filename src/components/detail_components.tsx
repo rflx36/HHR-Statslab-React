@@ -142,7 +142,7 @@ function SkillCont(props: { class: ClassType, name: string, current_value: numbe
 
     return (
         <div className={class_name}>
-            <img src={"" + props.url}></img>
+            <img src={props.url}></img>
             <div className="skill-detail-more-cont">
                 <p>{props.name}</p>
                 <div className="range-level-cont">
