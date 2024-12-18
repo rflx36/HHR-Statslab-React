@@ -73,11 +73,11 @@ function ParsedData(data: Array<Array<any>>) {
     let loader_img_cache_container = document.getElementById("loading-cache-cont");
     let images = ``;
     try {
-        // for (let items of data) {
-        //     for (let item of items) {
-        //         images += `<img src='/${item.url}'>`;
-        //     }
-        // }
+        for (let items of data) {
+            for (let item of items) {
+                images += `<img src='/${item.url}'>`;
+            }
+        }
 
         for (let i = 0 ; i < UIcache.length; i++){
             images += `<img src='/UI/${UIcache[i]}.png`;
