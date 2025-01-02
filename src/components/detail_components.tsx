@@ -142,7 +142,7 @@ function SkillCont(props: { class: ClassType, name: string, current_value: numbe
 
     return (
         <div className={class_name}>
-            <img src={"./src/assets" + props.url}></img>
+            <img src={props.url}></img>
             <div className="skill-detail-more-cont">
                 <p>{props.name}</p>
                 <div className="range-level-cont">
@@ -212,7 +212,7 @@ function DamageContainer() {
         <div className="cont-damage">
             <div className="base-damage-detail-cont">
                 <div className="base-info-detail-cont">
-                    <img src={"./src/assets" + ui_state?.get.monster_detail.url}></img>
+                    <img src={ ui_state?.get.monster_detail.url}></img>
                     <div className="base-info-detail">
                         <p>{ui_state?.get.monster_detail.name}</p>
                         <p id="hp-val">
@@ -275,12 +275,12 @@ function DamageContainer() {
                 <div className="damage-dealt-m-cont">
                     <div className="dealt-cont">
                         <label>Base Damage</label>
-                        <img src="src/assets/UI/icon-base-damage.png"></img>
+                        <img src="/UI/icon-base-damage.png"></img>
                         <p>{base_damage}</p>
                     </div>
                     <div className="dealt-cont">
                         <label style={{ textAlign: "center", width: "100%" }}>Base Damage Crit</label>
-                        <img src="src/assets/UI/icon-base-damage-crit.png"></img>
+                        <img src="/UI/icon-base-damage-crit.png"></img>
                         <p>{base_damage_crit}</p>
                     </div>
                 </div>
@@ -352,14 +352,14 @@ function ElementCont(props: { type: string, title: string, damage: number, b_enc
     let fatk = props.fatk || 0;
     switch (props.type) {
         case "fire":
-            damage = (props.damage * 0.1) * (props.b_enchant || 1);
+            damage = (props.damage * 0.15) * (props.b_enchant || 1);
             break;
         case "electric":
-            damage = (props.damage * 0.35) * (props.b_enchant || 1);
+            damage = (props.damage * 0.40) * (props.b_enchant || 1);
             break;
         case "poison":
             let PoisonDamage = GetDamage(fatk, Math.floor(fdef / 6));
-            PoisonDamage = Math.round(Math.sqrt(PoisonDamage) / 2);
+            PoisonDamage = Math.round((Math.sqrt(PoisonDamage) / 2 ) )* 1.15 ;
 
             let dmg_multiplier = ((props.base_val || 0) + ((props.val_increase || 0) * (props.skill_lvl || 0)));
 
@@ -367,7 +367,7 @@ function ElementCont(props: { type: string, title: string, damage: number, b_enc
             break;
         case "ice":
 
-            let IcePercentSunder = Math.round(100 * (GetDamage(fatk, fdef) / props.m_hp)) / 100;
+            let IcePercentSunder = Math.round(85 * (GetDamage(fatk, fdef) / props.m_hp)) / 100;
             if (IcePercentSunder < 1) {
                 let IceDamage = GetDamage(fatk, fdef - (fdef * IcePercentSunder));
                 damage = IceDamage;
@@ -383,7 +383,7 @@ function ElementCont(props: { type: string, title: string, damage: number, b_enc
 
     return (
         <div className={cont_name} title={props.title}>
-            <img src={"src/assets/UI/icon-element-" + props.type + ".png"} ></img>
+            <img src={"/UI/icon-element-" + props.type + ".png"} ></img>
             <div className="display-one-hit">{(damage >= props.m_hp) && "1 Hit"}</div>
             <p className={"element-" + props.type}>{damage}</p>
         </div>
@@ -491,13 +491,13 @@ function SkillDamageCont(props: { p_fatk?: number, m_fdef?: number, p_enchanted:
                 <label>{props.skill_name}
                     <span >{display_multiplier}</span>
                 </label>
-                <img src="src/assets/UI/icon-base-damage.png"></img>
+                <img src="/UI/icon-base-damage.png"></img>
                 <div className="display-one-hit">{hit_identifier}</div>
                 <p>{skill_damage}{multiply_text_display}</p>
             </div>
             <div className="dealt-cont">
                 <label style={{ textAlign: "center", width: "100%" }}>{crit_text_display}</label>
-                <img src="src/assets/UI/icon-base-damage-crit.png"></img>
+                <img src="/UI/icon-base-damage-crit.png"></img>
                 <div className="display-one-hit">{hit_identifier_crit}</div>
                 <p>{skill_damage_crit}</p>
             </div>

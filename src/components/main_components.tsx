@@ -47,7 +47,7 @@ function ShieldCont() {
                 (((equips?.get.selected_secondary_weapon.defense || 0) > 0) ||
                     ((equips?.get.sheated_primary_weapon.defense || 0) > 0)) &&
                 (<div className='shield-skill-cont'>
-                    <SkillCont name='Shield' max={15} />
+                    <SkillCont name='Shield' max={25} />
                 </div>)
             }
         </>
@@ -254,10 +254,10 @@ function ItemCont(props: { id: string, slot: ItemSlot, hasEnchants?: boolean, ur
     }
     let bg_style = {};
     if (props.url != "") {
-        bg_style = { backgroundImage: "url(./src/assets/" + props.url + ")" };
+        bg_style = { backgroundImage: "url(/" + props.url + ")" };
 
         if (props.isEligible != true) {
-            bg_style = { filter: "grayscale(1)", backgroundImage: "url(./src/assets/" + props.url + ")" };
+            bg_style = { filter: "grayscale(1)", backgroundImage: "url(/" + props.url + ")" };
         }
 
     }
@@ -283,7 +283,7 @@ function StatCont() {
             (equips?.get.selected_accessories.defense || 0) +
             Math.floor((equips?.get.selected_secondary_weapon.defense || 0) * ((skills?.get.shield_guard || 0) + (((skills?.get.shield_expert || 0) * 5) / 100))) +
 
-            (Math.floor(Math.floor((equips?.get.sheated_primary_weapon.defense || 0) * 0.35) * ((skills?.get.shield_guard || 0) + (((skills?.get.shield_expert || 0) * 5) / 100))))
+            (Math.floor(Math.floor((equips?.get.sheated_primary_weapon.defense || 0) * 0.5) * ((skills?.get.shield_guard || 0) + (((skills?.get.shield_expert || 0) * 5) / 100))))
         );
         n += stat!.get.current_pet_total_fdef_bonus;
         if (skills?.get.is_shield_guarded && (equips?.get.selected_secondary_weapon.defense || 0) > 0) {
@@ -328,10 +328,10 @@ function StatCont() {
         let primary = (equips?.get.selected_primary_weapon.power || 0) * base_damage;
         let secondary = (equips?.get.selected_secondary_weapon.power || 0) * base_damage;
 
-        const pet_orb_bonus = stat!.get.current_pet_total_fatk_bonus;
+        const pet_orb_bonus =  stat!.get.current_pet_total_fatk_bonus;
         const guild_perk_bonus = skills!.get.guild_attack_boost;
-        primary = Math.floor((primary + ((equips!.get.selected_primary_weapon.name != "") ? pet_orb_bonus : 0)) * (1 + (((skills?.get.attack_booster || 0) + (guild_perk_bonus * 5)) / 100)));
-        secondary = Math.floor((secondary + ((equips!.get.selected_secondary_weapon.name != "") ? pet_orb_bonus : 0)) * (1 + (((skills?.get.attack_booster || 0) + (guild_perk_bonus * 5)) / 100)));
+        primary = Math.floor((primary + ((equips!.get.selected_primary_weapon.name != "")?pet_orb_bonus:0)  ) * (1 + (((skills?.get.attack_booster || 0)+ (guild_perk_bonus * 5) )/ 100)));
+        secondary = Math.floor((secondary + ((equips!.get.selected_secondary_weapon.name != "")?pet_orb_bonus:0)) * (1 + (((skills?.get.attack_booster || 0)+ (guild_perk_bonus * 5)) / 100)));
 
 
         if (equips?.get.selected_primary_weapon.class != stat?.get.current_class) {
@@ -341,6 +341,8 @@ function StatCont() {
             secondary = Math.floor(secondary * 0.25);
         }
 
+        primary += ((equips!.get.selected_primary_weapon.name != "") ? pet_orb_bonus : 0);
+        secondary += ((equips!.get.selected_secondary_weapon.name != "") ? pet_orb_bonus : 0);
         if (type == "p") {
             return primary;
         }
@@ -797,16 +799,16 @@ function ToggleButton(props: { name: string }) {
     if (props.name == "monster") {
         switch (ui_state?.get.monster) {
             case "hide":
-                bg = { backgroundImage: "url(src/assets/UI/monster-toggle-hide.png)" };
+                bg = { backgroundImage: "url(/UI/monster-toggle-hide.png)" };
                 break;
             case "show":
-                bg = { backgroundImage: "url(src/assets/UI/monster-toggle-show.png)" };
+                bg = { backgroundImage: "url(/UI/monster-toggle-show.png)" };
                 break;
             case "show variants":
-                bg = { backgroundImage: "url(src/assets/UI/monster-toggle-variant.png)" };
+                bg = { backgroundImage: "url(/UI/monster-toggle-variant.png)" };
                 break;
             case "environment":
-                bg = { backgroundImage: "url(src/assets/UI/pve-toggle.png)" };
+                bg = { backgroundImage: "url(/UI/pve-toggle.png)" };
                 break;
         }
     }

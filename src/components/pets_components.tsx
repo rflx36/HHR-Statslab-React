@@ -1,6 +1,6 @@
 import { ChangeEvent, useContext, useEffect, useMemo } from "react";
 import { ClassType, ItemSlot, PetStatsType } from "../types";
-import { ContextBaseStats, ContextPetStats, ContextStates } from "../StatContext";
+import { ContextBaseStats, ContextEquips, ContextPetStats, ContextStates } from "../StatContext";
 import '../css/pets_components.css';
 import { data_items } from "../initialLoad";
 import CloseButton from "./closeButton";
@@ -100,11 +100,11 @@ function PetRemoveSlotCont() {
         temp.push(InitialPetStats);;
 
         pet_stat!.set(temp);
-        ui_state!.set(ui => ({ ...ui, page: "pets", pet_selection:1 }));
+        ui_state!.set(ui => ({ ...ui, page: "pets", pet_selection: 1 }));
     }
     return (
         <div className="pet-remove-selection-slot-cont" onClick={RemovePet}>
-            <img src="/src/assets/UI/icon-remove.png"></img>
+            <img src="/UI/icon-remove.png"></img>
         </div>
     )
 }
@@ -119,7 +119,7 @@ function PetSelectionSlotCont(props: {
     type: ClassType,
     url: Array<string>,
     desc: string,
-    color:string
+    color: string
 }) {
     const ui_state = useContext(ContextStates);
     const pet_stat = useContext(ContextPetStats);
@@ -154,9 +154,9 @@ function PetSelectionSlotCont(props: {
         ui_state!.set(ui => ({ ...ui, page: "pets" }));
     }
 
-    let pet_image = "./src/assets/" + props.url[evolution];
+    let pet_image = props.url[evolution];
     if (props.url[evolution] == "") {
-        pet_image = "./src/assets/Item-Images/pets/0.png";
+        pet_image = "/Item-Images/pets/0.png";
     }
     return (
         <>
@@ -167,11 +167,11 @@ function PetSelectionSlotCont(props: {
                     <p>name: {props.name[ui_state!.get.pet_evolution - 1]}</p>
                     <p>hp: {Math.floor(props.hp * 100)}%</p>
                     <p>atk: {Math.floor(props.atk * 100)}%</p>
-                    <p>def: {Math.floor(props.def * 100)}%</p>
+                    <p>def: {Math.round(props.def * 100)}%</p>
                     <p>dex: {Math.floor(props.dex * 100)}%</p>
                     <p>price: {props.price.toLocaleString('en-US')}</p>
                     <p>equips type: {props.type}</p>
-                    
+
                     <div className="pet-description-cont">
                         <p>{props.desc}</p>
                     </div>
@@ -181,18 +181,40 @@ function PetSelectionSlotCont(props: {
     )
 }
 
+
+
 function PetsCont() {
     const pet_stat = useContext(ContextPetStats);
     const ui_state = useContext(ContextStates);
+    const equips = useContext(ContextEquips);
     const current_pet_selected = ui_state!.get.pet_selection - 1;
     const current_pet_info = pet_stat!.get[current_pet_selected];
-    
+
+    console.log(ui_state!.get.pet_evolution);
+    const orb_bonus_modifier = 0.1
+
+    const total_player_raw_defense = ((equips?.get.selected_helmet.defense || 0) + (equips?.get.selected_armor.defense || 0) + (equips?.get.selected_pants.defense || 0) + (equips?.get.selected_shoes.defense || 0) + (equips?.get.selected_accessories.defense || 0))
+    const total_player_raw_power = equips?.get.selected_primary_weapon.power || 0;
+
+    const CalculateAtkBonus = (fatk_value: number) => {
+        return Math.floor(Math.sqrt(fatk_value) * total_player_raw_power * orb_bonus_modifier);
+    }
+    const CalculateDefBonus = (fdef_value: number) => {
+        return Math.floor(Math.sqrt(fdef_value) * Math.floor(total_player_raw_defense / 6) * orb_bonus_modifier);
+    }
+
     const total_pet_cost = pet_stat!.get.reduce((sum, item) => sum + item.price, 0);
     const total_pet_helmet_cost = pet_stat!.get.reduce((sum, item) => sum + item.selected_helmet.price, 0);
     const total_pet_shoes_cost = pet_stat!.get.reduce((sum, item) => sum + item.selected_shoes.price, 0);
-    const total_pet_orb_atk_bonus = pet_stat!.get.reduce((sum, item) => sum + Math.round(item.fatk / 20), 0);
-    const total_pet_orb_def_bonus = pet_stat!.get.reduce((sum, item) => sum + Math.round(item.fdef / 20), 0);
+    const total_pet_orb_atk_bonus = pet_stat!.get.reduce((sum, item) => sum + CalculateAtkBonus(item.fatk), 0);
+    const total_pet_orb_def_bonus = pet_stat!.get.reduce((sum, item) => sum + CalculateDefBonus(item.fdef), 0);
+
     const total_cost = (total_pet_cost + total_pet_helmet_cost + total_pet_shoes_cost);
+
+    const current_pet_orb_atk_bonus = CalculateAtkBonus(current_pet_info.fatk);
+    const current_pet_orb_def_bonus = CalculateDefBonus(current_pet_info.fdef);
+    // const current_pet_orb_atk_bonus = Math.sqrt(current_pet_info.fatk) * (equips?.get.selected_primary_weapon.power || 0) * orb_bonus_modifier;
+    // const current_pet_orb_def_bonus = Math.floor(Math.sqrt(current_pet_info.fdef)) * Math.floor(total_player_raw_defense / 6) * orb_bonus_modifier;
 
     return (
         <div className="pet-cont">
@@ -208,8 +230,8 @@ function PetsCont() {
                         <PetStatCont />
                         <PetInfo
                             total={total_cost}
-                            atk_bonus={(Math.round(current_pet_info.fatk / 20))}
-                            def_bonus={(Math.round(current_pet_info.fdef / 20))}
+                            atk_bonus={current_pet_orb_atk_bonus}
+                            def_bonus={current_pet_orb_def_bonus}
                             total_atk_bonus={total_pet_orb_atk_bonus}
                             total_def_bonus={total_pet_orb_def_bonus}
                             type={current_pet_info.type}
@@ -247,7 +269,7 @@ function PetInfo(props: { total: number, atk_bonus: number, def_bonus: number, t
                 <div className="pet-total-info-cont">
                     <div className="pet-total-cost-cont">
                         <p style={{ marginRight: "5px" }}>{props.total.toLocaleString('en-US')}</p>
-                        <img src="src/assets/UI/icon-coin.png"></img>
+                        <img src="/UI/icon-coin.png"></img>
                     </div>
                 </div>
             </div>
@@ -273,10 +295,10 @@ function PetItemCont(props: { slot: ItemSlot, url?: string, isEligible: boolean 
     }
     let bg_style = {};
     if (props.url != "") {
-        bg_style = { backgroundImage: "url(./src/assets/" + props.url + ")" };
+        bg_style = { backgroundImage: "url(/" + props.url + ")" };
 
         if (props.isEligible != true) {
-            bg_style = { filter: "grayscale(1)", backgroundImage: "url(./src/assets/" + props.url + ")" };
+            bg_style = { filter: "grayscale(1)", backgroundImage: "url(/" + props.url + ")" };
         }
 
     }
@@ -378,7 +400,7 @@ function PetDisplay() {
 
     return (
         <>
-            <img src={"./src/assets/" + pet_slot_bg}></img>
+            <img src={pet_slot_bg}></img>
             {(pet_slot_bg_is_empty) && (<p>{current_pet_info.name}</p>)}
         </>
     )
@@ -396,20 +418,32 @@ function PetStatCont() {
         let pet_data_type = pet_data.find((arr: any) => arr.name.includes(current_pet_info.name));
 
         let pet_dex_modifier = pet_data_type.dex;
-        let value = String((Math.round(((Math.sqrt((current_pet_info.dex + 1)* pet_dex_modifier) / 2) + 0.5) * 100)) / 100 + "x");
-        return value;
+
+
+        const multiplier = (current_pet_info.evolution > 0) ? 125 : 100; 
+
+        let value = (Math.round( ((Math.sqrt((current_pet_info.dex + 1) * pet_dex_modifier) / 2) + 0.5) * multiplier)) / 100
+
+
+
+        // value = 
+        // if (current_pet_info.evolution > 0) {
+        //     value = (value * 125) / 100;
+        // }
+        const result = String(value + "x");
+        return result;
     }
 
     const CalculateFinalAttack = () => {
-        let helmet_def = current_pet_info.selected_helmet.defense;
-        let shoes_def = current_pet_info.selected_shoes.defense;
+        let helmet_atk = current_pet_info.selected_helmet.power;
+        let shoes_atk = current_pet_info.selected_shoes.power;
 
         if (current_pet_info.selected_helmet.class != current_pet_info.type) {
-            helmet_def = Math.floor(helmet_def * 0.25);
+            helmet_atk = Math.floor(helmet_atk * 0.25);
         }
 
         if (current_pet_info.selected_shoes.class != current_pet_info.type) {
-            shoes_def = Math.floor(shoes_def * 0.25);
+            shoes_atk = Math.floor(shoes_atk * 0.25);
         }
 
         let pet_data = data_items[25];
@@ -417,7 +451,13 @@ function PetStatCont() {
         let pet_data_type = pet_data.find((arr: any) => arr.name.includes(current_pet_info.name));
         let pet_atk_modifier = pet_data_type.atk
         let pet_atk_stat = current_pet_info.atk + 1;
-        let pet_final_atk = Math.floor(pet_atk_modifier * (pet_atk_stat * (pet_atk_stat + helmet_def + shoes_def)))
+        let pet_final_atk = Math.floor(pet_atk_modifier * Math.floor(pet_atk_stat * (pet_atk_stat + helmet_atk + shoes_atk)));
+
+
+        if (current_pet_info.evolution > 0) {
+            pet_final_atk = Math.floor(pet_final_atk * 1.25);
+        }
+
 
         return pet_final_atk;
     }
@@ -432,7 +472,9 @@ function PetStatCont() {
         let pet_def_stat = current_pet_info.def + 1;
         let pet_final_def = Math.ceil(pet_def_modifier * Math.round(pet_def_stat * ((0.6 * pet_def_stat) + helmet_def + shoes_def)));
 
-
+        if (current_pet_info.evolution > 0) {
+            pet_final_def = Math.floor(pet_final_def * 1.25);
+        }
 
         return pet_final_def;
     }
@@ -494,7 +536,7 @@ function PetStatInfo(props: { name: string }) {
     const pet_data = data_items[25];
     const pet_data_type = pet_data.find((arr: any) => arr.name.includes(current_pet_info.name));
     const pet_hp_modifier = pet_data_type.hp;
-     
+
     const GetPetStatValue = (): number => {
         switch (props.name) {
             case "hp":
@@ -509,21 +551,39 @@ function PetStatInfo(props: { name: string }) {
         return 0;
     }
     const GetPetEncoded = () => {
-
+        let value = 0;
         switch (props.name) {
             case "hp":
-                return Math.floor(((GetPetStatValue() + 3) * pet_hp_modifier ) * 5);
+                value = Math.floor(((GetPetStatValue() + 3) * pet_hp_modifier) * 5);
+                break;
             default:
-                return GetPetStatValue() + 1;
+                value = GetPetStatValue() + 1;
+                break;
         }
+        if (current_pet_info.evolution > 0 && props.name == "hp") {
+            value = Math.floor(value * 1.25);
+        }
+        return value;
+
+        // value * 1.25
     }
     const GetPetDecoded = (n: number) => {
+        let value = 0;
         switch (props.name) {
             case "hp":
-                return Math.floor(((n / 5)/pet_hp_modifier) - 3)  ;
+                value = Math.floor(((n / 5) / pet_hp_modifier) - 3);
+                break;
             default:
-                return n - 1;
+                value = n - 1;
+                break;
+
         }
+
+        if (current_pet_info.evolution > 0 && props.name == "hp") {
+            value = Math.ceil(value * 0.8);
+        }
+        return value;
+        // value * 0.8
     }
 
 
@@ -657,7 +717,7 @@ function PetSlotCont(props: { index: number, name: string, url: string, is_add: 
     }
     if (props.name == "" && props.is_add) {
         return <div className="pet-slot-add-cont" onClick={SelectPet}>
-            <img className="item-display" src="./src/assets/UI/icon-remove.png"></img>
+            <img className="item-display" src="/UI/icon-remove.png"></img>
         </div>
     }
 
@@ -680,7 +740,7 @@ function PetSlotCont(props: { index: number, name: string, url: string, is_add: 
     }
     return (
         <div className="pet-slot-cont" id={id} style={bg} onClick={() => (current_selected) ? ChangePet() : ChangePetSelection()}>
-            <img src={"./src/assets/" + pet_slot_bg}></img>
+            <img src={ pet_slot_bg}></img>
 
         </div>)
 }

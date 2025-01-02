@@ -194,14 +194,14 @@
 
 .pet-cont .pet-details-cont .cont-pet-set .pet-display-cont .pet-item-set #helmet {
 
-    background-image: url(src/assets/UI/icon-helmets.png);
+    background-image: url(/UI/icon-helmets.png);
 
     background-position: center;
 }
 
 .pet-cont .pet-details-cont .cont-pet-set .pet-display-cont .pet-item-set #shoes {
 
-    background-image: url(src/assets/UI/icon-shoes.png);
+    background-image: url(/UI/icon-shoes.png);
 
     background-position: center;
 }

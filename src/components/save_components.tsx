@@ -214,7 +214,7 @@ function SavedDataContainer(props: { save_name: string }) {
         return (
             <div className="saved-data-cont" onClick={GetData} id={
                 (ui_state?.get.current == props.save_name) ? "save-data-active" : ""}>
-                <img src={"src/assets/" + img}></img>
+                <img src={ img}></img>
                 <p>{props.save_name}</p>
             </ div>
         )

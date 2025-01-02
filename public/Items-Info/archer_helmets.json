@@ -1,0 +1,200 @@
+[
+    {
+        "name": "Green Beanie",
+        "power": 0,
+        "defense": 5,
+        "level": 1,
+        "price": 230,
+        "url": "Item-Images/archer-helmets/1.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Clover Hat",
+        "power": 1,
+        "defense": 10,
+        "level": 7,
+        "price": 1395,
+        "url": "Item-Images/archer-helmets/2.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Elf Hat",
+        "power": 1, 
+        "defense": 11,
+        "level": 8,
+        "price": 1787,
+        "url": "Item-Images/archer-helmets/3.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Cat Hat",
+        "power": 1,
+        "defense": 13,
+        "level": 11,
+        "price": 2758,
+        "url": "Item-Images/archer-helmets/4.webp",
+        "class": "archer"
+    },
+    {
+        "name": "archer-Hat",
+        "power": 3,
+        "defense": 12,
+        "level": 12,
+        "price": 2273,
+        "url": "Item-Images/archer-helmets/5.webp",
+        "class": "archer"
+    },
+    {
+        "name": "archer-Patches Hat",
+        "power": 5,
+        "defense": 21,
+        "level": 25,
+        "price": 9722,
+        "url": "Item-Images/archer-helmets/6.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Ghost Mask",
+        "power": 5,
+        "defense": 23,
+        "level": 28,
+        "price": 12281,
+        "url": "Item-Images/archer-helmets/7.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Mushroom Helmet",
+        "power": 5,
+        "defense": 29,
+        "level": 35,
+        "price": 22329,
+        "url": "Item-Images/archer-helmets/8.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Apollos Helmet",
+        "power": 7,
+        "defense": 37,
+        "level": 47,
+        "price": 42136,
+        "url": "Item-Images/archer-helmets/9.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Army Helmet",
+        "power": 6,
+        "defense": 53,
+        "level": 65,
+        "price": 106671,
+        "url": "Item-Images/archer-helmets/10.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Strong Basket Helmet",
+        "power": 8,
+        "defense": 59,
+        "level": 74,
+        "price": 141142,
+        "url": "Item-Images/archer-helmets/11.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Strong Full Helmet",
+        "power": 9,
+        "defense": 63,
+        "level": 80,
+        "price": 167466,
+        "url": "Item-Images/archer-helmets/12.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Protector Helmet",
+        "power": 10,
+        "defense": 68,
+        "level": 88,
+        "price": 204309,
+        "url": "Item-Images/archer-helmets/13.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Green Face Helmet",
+        "power": 11,
+        "defense": 75,
+        "level": 97,
+        "price": 263579,
+        "url": "Item-Images/archer-helmets/14.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Shell Helmet",
+        "power": 12,
+        "defense": 88,
+        "level": 114,
+        "price": 399132,
+        "url": "Item-Images/archer-helmets/15.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Biological Helmet",
+        "power": 15,
+        "defense": 106,
+        "level": 139,
+        "price": 647736,
+        "url": "Item-Images/archer-helmets/16.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Achilles Helmet",
+        "power": 16,
+        "defense": 114,
+        "level": 150,
+        "price": 782570,
+        "url": "Item-Images/archer-helmets/17.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Archaic Helmet",
+        "power": 17,
+        "defense": 126,
+        "level": 166,
+        "price": 1014816,
+        "url": "Item-Images/archer-helmets/18.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Reef Helmet",
+        "power": 18,
+        "defense": 137,
+        "level": 180,
+        "price": 1261268,
+        "url": "Item-Images/archer-helmets/19.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Earth Helmet",
+        "power": 19,
+        "defense": 144,
+        "level": 190,
+        "price": 1435788,
+        "url": "Item-Images/archer-helmets/20.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Glacial Helmet",
+        "power": 20,
+        "defense": 169,
+        "level": 221,
+        "price": 2175396,
+        "url": "Item-Images/archer-helmets/21.webp",
+        "class": "archer"
+    },
+    {
+        "name": "Cyborg Helmet",
+        "power": 21,
+        "defense": 182,
+        "level": 238,
+        "price": 2637285,
+        "url": "Item-Images/archer-helmets/22.webp",
+        "class": "archer"
+    }
+]

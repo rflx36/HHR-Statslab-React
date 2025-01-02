@@ -26,6 +26,14 @@ function App() {
 
   return (
     <>
+
+      <header>
+        <a href="https://hhr-bot.xyz/home" className="button">Home</a>
+        <a href="https://hhr-bot.xyz/play" className="button">Play</a>
+        <a href="#" className="button active">Stats(RFLX)</a>
+        <a href="https://hhr-bot.xyz/leaderboards" className="button">Leaderboards</a>
+
+      </header>
       {
         !loading ? (
           <>

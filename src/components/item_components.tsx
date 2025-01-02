@@ -234,13 +234,13 @@ function Item(props: PrequisitesType) {
         <div className={isEligible ? "item" : "item-underleveled"} onClick={isEligible ? SetItem : () => { return }} >
             {(isEnchantable) &&
                 (<div className="item-enchanted-cont">
-                    <img className="item-enchanted" src="./src/assets/UI/enchanted.png"></img>
+                    <img className="item-enchanted" src="/UI/enchanted.png"></img>
                 </div>)}
-            <img className="item-display" src={"./src/assets/" + props.url}></img>
+            <img className="item-display" src={props.url}></img>
             <div className="item-details">
                 <p className="details-title">{props.name}</p>
 
-                <img className="details-img" src={"./src/assets/" + props.url}></img>
+                <img className="details-img" src={ props.url}></img>
                 {(ui_state?.get.all) && (<p className="details-p" id={(class_valid) ? "class-valid" : "class-invalid"}>Class: {props.class}</p>)}
                 {(props.defense != undefined) && (<p className="details-p" >Defense: {props.defense}</p>)}
                 {(props.power != undefined) && (<p className="details-p">{(isPow) ? "Power" : "Attack"}: {props.power}</p>)}
@@ -326,7 +326,7 @@ function ItemRemove(props: { slot: ItemSlot }) {
 
     return (
         <div className="item-remove" onClick={RemoveItem}>
-            <img className="item-display" src="./src/assets/UI/icon-remove.png"></img>
+            <img className="item-display" src="/UI/icon-remove.png"></img>
         </div>
     )
 }
@@ -339,8 +339,8 @@ function ItemsInfo() {
     const ToggleEnchant = () => {
         ui_state?.set(x => ({ ...x, enchanted: !x.enchanted }));
     }
-    const link_checked = "src/assets/UI/icon-checked.png";
-    const link_unchecked = "src/assets/UI/icon-unchecked.png";
+    const link_checked = "UI/icon-checked.png";
+    const link_unchecked = "UI/icon-unchecked.png";
     let weapon_slots = ["primary", "secondary", "primary sheated", "secondary sheated"];
     return (
         <div className="cont-items-info">

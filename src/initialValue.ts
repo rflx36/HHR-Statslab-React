@@ -1,6 +1,6 @@
 import { BaseStatsType, EquipsType, ItemType, PetStatsType, PremiumAdType, PVEType, SkillsType, UIStateType } from "./types"
 
-export const StatlabVersion = "2.1+";
+export const StatlabVersion = "2.2+";
 
 
 export const InitialItemTypeValue: ItemType = {
@@ -36,7 +36,7 @@ export const InitialSkills: SkillsType = {
     shield_guard: 1,
     shield_expert: 0,
     attack_booster: 0,
-    warrior_skills: [0, 0, 0, 0, 0],
+    warrior_skills: [0, 0, 0, 0, 0, 0],
     archer_skills: [0, 0, 0],
     cowboy_skills: [0, 0, 0],
     mage_skills: [0, 0, 0],

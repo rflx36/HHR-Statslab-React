@@ -1,0 +1,173 @@
+[
+    {
+        "name": "White Shirt",
+        "defense": 4,
+        "power": 0,
+        "level": 1,
+        "price": 1,
+        "url": "Item-Images/warrior-armors/1.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Red Shirt",
+        "defense": 7,
+        "power": 0,
+        "level": 2,
+        "price": 551,
+        "url": "Item-Images/warrior-armors/2.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Super Hero Shirt",
+        "defense": 4,
+        "power": 3,
+        "level": 2,
+        "price": 163,
+        "url": "Item-Images/warrior-armors/3.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Suit",
+        "defense": 9,
+        "power": 1,
+        "level": 6,
+        "price": 1061,
+        "url": "Item-Images/warrior-armors/4.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Roman Robe",
+        "defense": 14,
+        "power": 3,
+        "level": 14,
+        "price": 3377,
+        "url": "Item-Images/warrior-armors/5.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Coconut Armor",
+        "defense": 31,
+        "power": 3,
+        "level": 35,
+        "price": 26435,
+        "url": "Item-Images/warrior-armors/6.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Chainmail",
+        "defense": 39,
+        "power": 3,
+        "level": 44,
+        "price": 47990,
+        "url": "Item-Images/warrior-armors/7.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Bronze Plate Armor",
+        "defense": 65,
+        "power": 6,
+        "level": 79,
+        "price": 181196,
+        "url": "Item-Images/warrior-armors/8.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Knight Armor",
+        "defense": 80,
+        "power": 8,
+        "level": 100,
+        "price": 310975,
+        "url": "Item-Images/warrior-armors/9.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Stone Armor",
+        "defense": 86,
+        "power": 9,
+        "level": 108,
+        "price": 375375,
+        "url": "Item-Images/warrior-armors/10.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Gold Armor",
+        "defense": 93,
+        "power": 10,
+        "level": 118,
+        "price": 460125,
+        "url": "Item-Images/warrior-armors/11.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Samurai Armor",
+        "defense": 109,
+        "power": 13,
+        "level": 140,
+        "price": 695603,
+        "url": "Item-Images/warrior-armors/12.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Cobalt Armor",
+        "defense": 118,
+        "power": 14,
+        "level": 152,
+        "price": 854934,
+        "url": "Item-Images/warrior-armors/13.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Magnesium Armor",
+        "defense": 135,
+        "power": 15,
+        "level": 174,
+        "price": 1212704,
+        "url": "Item-Images/warrior-armors/14.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Zinc Armor",
+        "defense": 145,
+        "power": 16,
+        "level": 187,
+        "price": 1460257,
+        "url": "Item-Images/warrior-armors/15.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Ancient Armor",
+        "defense": 165,
+        "power": 17,
+        "level": 212,
+        "price": 2042676,
+        "url": "Item-Images/warrior-armors/16.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Chain Armor",
+        "defense": 170,
+        "power": 18,
+        "level": 220,
+        "price": 2207791,
+        "url": "Item-Images/warrior-armors/17.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Armor of Hatred",
+        "defense": 169,
+        "power": 20,
+        "level": 234,
+        "price": 2562097,
+        "url": "Item-Images/warrior-armors/18.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Dino Scale Armor",
+        "defense": 192,
+        "power": 21,
+        "level": 250,
+        "price": 3029964,
+        "url": "Item-Images/warrior-armors/19.webp",
+        "class": "warrior"
+    }
+]

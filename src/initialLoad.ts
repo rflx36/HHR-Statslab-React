@@ -37,14 +37,14 @@ function Load() {
             if (i == 5 && j != 0) {
                 continue;
             }
-            _file_locations.push("./src/assets/Items-Info/" + _class[j] + "_" + _equips[i] + ".json");
+            _file_locations.push("/Items-Info/" + _class[j] + "_" + _equips[i] + ".json");
 
         }
     }
     let _others = ["accessories", "skills", "monsters", "environment","pets"];
     for (let i = 0; i < _others.length ; i++) {
 
-        _file_locations.push("./src/assets/Items-Info/"+_others[i] +".json");
+        _file_locations.push("/Items-Info/"+_others[i] +".json");
     }
     RequestItems(_file_locations);
 }
@@ -75,12 +75,12 @@ function ParsedData(data: Array<Array<any>>) {
     try {
         for (let items of data) {
             for (let item of items) {
-                images += `<img src='./src/assets/${item.url}'>`;
+                images += `<img src='/${item.url}'>`;
             }
         }
 
         for (let i = 0 ; i < UIcache.length; i++){
-            images += `<img src='./src/assets/UI/${UIcache[i]}.png`;
+            images += `<img src='/UI/${UIcache[i]}.png`;
         }
     }
     catch (err) {

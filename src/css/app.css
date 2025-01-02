@@ -6,16 +6,20 @@
 
 @font-face {
     font-family: Comicy;
+    /* src: url(s/Fonts/Comicy.ttf) format('truetype'); */
     src: url(/Fonts/Comicy.ttf);
 }
+
 @font-face {
     font-family: Confetti;
-    src: url(src/assets/Fonts/PartyConfettiRegular.ttf);
+    src: url(/Fonts/PartyConfettiRegular.ttf);
 }
 
 
 body {
     background-color: #2F3136;
+    background-image: url(/UI/bg-snowflake.png);
+    background-size: 300px;
 }
 
 
@@ -30,6 +34,32 @@ p {
 }
 
 
+header {
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+header .button {
+    display: inline-block;
+    background-color: #7289da;
+    color: #000000c0;
+    padding: 7px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: confetti, sans-serif;
+    font-size: 20px;
+}
+
+header .button.active{
+    background-color: #6a7b8d;
+}
 .loader-cont {
     background: #575757;
     border: 2px #272827 solid;
@@ -103,7 +133,7 @@ p {
 
 
 .close-button {
-    background-image: url(/src/assets/UI/icon-close.png);
+    background-image: url(/UI/icon-close.png);
     width: 38px;
     height: 38px;
     z-index: 3;

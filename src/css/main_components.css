@@ -142,7 +142,7 @@
 
 .icon-minus {
     width: 50px;
-    background-image: url(src/assets/UI/icon-minus.png);
+    background-image: url(/UI/icon-minus.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
@@ -159,7 +159,7 @@
 
 .icon-plus {
     width: 60px;
-    background-image: url(src/assets/UI/icon-plus.png);
+    background-image: url(/UI/icon-plus.png);
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
@@ -342,7 +342,7 @@
 }
 
 #fish-bg {
-    background-image: url(src/assets/UI/icon-fish.png);
+    background-image: url(/UI/icon-fish.png);
     width: 30px;
     height: 30px;
     background-repeat: no-repeat;
@@ -352,7 +352,7 @@
 }
 
 #coin-bg {
-    background-image: url(src/assets/UI/icon-coin.png);
+    background-image: url(/UI/icon-coin.png);
     width: 30px;
     height: 30px;
     background-repeat: no-repeat;
@@ -366,7 +366,7 @@
 }
 
 #close-item-selection {
-    background-image: url(src/assets/UI/icon-close.png);
+    background-image: url(/UI/icon-close.png);
     width: 38px;
     height: 38px;
     z-index: 3;
@@ -386,7 +386,7 @@
 
 
 #close-detailed-damage {
-    background-image: url(src/assets/UI/icon-close.png);
+    background-image: url(/UI/icon-close.png);
     width: 38px;
     height: 38px;
     z-index: 3;
@@ -405,14 +405,14 @@
 }
 
 #item-sheath-primary {
-    background-image: url(src/assets/UI/icon-single-handed.png);
+    background-image: url(/UI/icon-single-handed.png);
     background-size: contain;
     background-position: center;
     transform: rotateZ(180deg) scaleX(-1);
 }
 
 #item-sheath-secondary {
-    background-image: url(src/assets/UI/icon-single-handed.png);
+    background-image: url(/UI/icon-single-handed.png);
 
     background-size: contain;
     background-position: center;
@@ -422,41 +422,41 @@
 
 
 #item-accessories {
-    background-image: url(src/assets/UI/icon-accessories.png);
+    background-image: url(/UI/icon-accessories.png);
 }
 
 #item-helmet {
-    background-image: url(src/assets/UI/icon-helmets.png);
+    background-image: url(/UI/icon-helmets.png);
 
     background-position: center;
 }
 
 #item-armor {
-    background-image: url(src/assets/UI/icon-armor.png);
+    background-image: url(/UI/icon-armor.png);
 
     background-position: center;
 }
 
 #item-pants {
-    background-image: url(src/assets/UI/icon-pants.png);
+    background-image: url(/UI/icon-pants.png);
 
     background-position: center;
 }
 
 #item-shoes {
-    background-image: url(src/assets/UI/icon-shoes.png);
+    background-image: url(/UI/icon-shoes.png);
 
     background-position: center;
 }
 
 #item-weapon-primary {
-    background-image: url(src/assets/UI/icon-single-handed.png);
+    background-image: url(/UI/icon-single-handed.png);
     background-position: center;
     background-size: contain;
 }
 
 #item-weapon-secondary {
-    background-image: url(src/assets/UI/icon-single-handed.png);
+    background-image: url(/UI/icon-single-handed.png);
     background-position: center;
     background-size: contain;
     margin-left: 5px;
@@ -509,7 +509,7 @@ input::-webkit-inner-spin-button {
 }
 
 .toggle-guard-button {
-    background-image: url(src/assets/UI/button.png);
+    background-image: url(/UI/button.png);
     width: 40px;
     height: 34px;
     background-position: center;
@@ -524,13 +524,13 @@ input::-webkit-inner-spin-button {
 }
 
 .toggle-guard-button:hover {
-    background-image: url(src/assets/UI/button-hovered.png);
+    background-image: url(/UI/button-hovered.png);
 }
 
 
 
 .toggle-perks-button {
-    background-image: url(src/assets/UI/button.png);
+    background-image: url(/UI/button.png);
     width: 65px;
     height: 35px;
     background-position: center;
@@ -539,11 +539,11 @@ input::-webkit-inner-spin-button {
 }
 
 .toggle-perks-button:hover {
-    background-image: url(src/assets/UI/button-hovered.png);
+    background-image: url(/UI/button-hovered.png);
 }
 
 .toggle-pets-button {
-    background-image: url(src/assets/UI/button.png);
+    background-image: url(/UI/button.png);
     width: 65px;
     height: 35px;
     background-position: center;
@@ -552,11 +552,11 @@ input::-webkit-inner-spin-button {
 }
 
 .toggle-pets-button:hover {
-    background-image: url(src/assets/UI/button-hovered.png);
+    background-image: url(/UI/button-hovered.png);
 }
 
 .toggle-saves-button {
-    background-image: url(src/assets/UI/button.png);
+    background-image: url(/UI/button.png);
     width: 65px;
     height: 35px;
     background-position: center;
@@ -565,11 +565,11 @@ input::-webkit-inner-spin-button {
 }
 
 .toggle-saves-button:hover {
-    background-image: url(src/assets/UI/button-hovered.png);
+    background-image: url(/UI/button-hovered.png);
 }
 
 .toggle-monster-button {
-    background-image: url(src/assets/UI/button.png);
+    background-image: url(/UI/button.png);
     width: 65px;
     height: 35px;
     background-position: center;
@@ -580,7 +580,7 @@ input::-webkit-inner-spin-button {
 
 
 .toggle-monster-button:hover {
-    background-image: url(src/assets/UI/button-hovered.png);
+    background-image: url(/UI/button-hovered.png);
 }
 
 .toggle-guard-image {
@@ -590,7 +590,7 @@ input::-webkit-inner-spin-button {
     background-position: center;
 
     margin-top: 2px;
-    background-image: url(src/assets/UI/icon-guard.png);
+    background-image: url(/UI/icon-guard.png);
 }
 
 .toggle-perks-image {
@@ -600,7 +600,7 @@ input::-webkit-inner-spin-button {
     background-position: center;
 
     margin-top: 2px;
-    background-image: url(src/assets/UI/icon-perks.png);
+    background-image: url(/UI/icon-perks.png);
 }
 .toggle-pets-image {
     width: 60px;
@@ -611,7 +611,7 @@ input::-webkit-inner-spin-button {
     background-size: contain;
     margin: 3px;
     
-    background-image: url(src/assets/UI/icon-pets.png);
+    background-image: url(/UI/icon-pets.png);
 }
 
 .toggle-saves-image {
@@ -621,7 +621,7 @@ input::-webkit-inner-spin-button {
     background-position: center;
     background-size: contain;
     margin-top: 2px;
-    background-image: url(src/assets/UI/icon-character.png);
+    background-image: url(/UI/icon-character.png);
 }
 
 .toggle-monster-image {
@@ -630,7 +630,7 @@ input::-webkit-inner-spin-button {
     background-repeat: no-repeat;
     background-position-x: center;
     margin-top: 2px;
-    background-image: url(src/assets/UI/monster-toggle-hide.png);
+    background-image: url(/UI/monster-toggle-hide.png);
 }
 
 
@@ -924,7 +924,7 @@ input::-webkit-inner-spin-button {
 .weapon-enchanted {
     height: 46px;
     width: 46px;
-    background: url(src/assets/UI/enchanted.png);
+    background: url(/UI/enchanted.png);
     z-index: 2;
     position: absolute;
     top: 0;
@@ -938,7 +938,7 @@ input::-webkit-inner-spin-button {
     height: 20px;
     background: #56a043;
 
-    background-image: url(./src/assets/UI/icon-remove.png);
+    background-image: url(/UI/icon-remove.png);
     position: absolute;
     background-position: center;
     background-size: 30px;
@@ -956,7 +956,7 @@ input::-webkit-inner-spin-button {
 
     background: #6abc55;
     
-    background-image: url(./src/assets/UI/icon-remove.png);
+    background-image: url(/UI/icon-remove.png);
     background-size: 45px;
     background-position: center;
     width: 30px;

@@ -1,0 +1,524 @@
+[
+    {
+        "name": "Stick",
+        "power": 1,
+        "level": 1,
+        "price": 4,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/1.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Big Stick",
+        "power": 3,
+        "level": 1,
+        "price": 60,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/2.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Red Plastic Sword",
+        "power": 4,
+        "level": 2,
+        "price": 129,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/3.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Blue Plastic Sword",
+        "power": 5,
+        "level": 4,
+        "price": 230,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/4.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Plastic Saber",
+        "power": 7,
+        "level": 6,
+        "price": 551,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/5.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Umbrella",
+        "power": 13,
+        "level": 7,
+        "price": 1287,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/6.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Hammer",
+        "power": 10,
+        "level": 10,
+        "price": 1393,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/7.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Sickle",
+        "power": 12,
+        "level": 13,
+        "price": 2238,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/8.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Cricket Paddle",
+        "power": 20,
+        "level": 13,
+        "price": 3693,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/9.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Bone",
+        "power": 13,
+        "level": 14,
+        "price": 2755,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/10.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Bronze Dagger",
+        "power": 14,
+        "level": 15,
+        "price": 3342,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/11.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Hockey Stick",
+        "power": 23,
+        "level": 15,
+        "price": 5514,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/12.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Sai",
+        "power": 16,
+        "level": 18,
+        "price": 4729,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/13.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Wooden Bat",
+        "power": 26,
+        "level": 18,
+        "price": 7803,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/14.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Short Sword",
+        "power": 17,
+        "level": 19,
+        "price": 5536,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/15.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Meat Cleaver",
+        "power": 18,
+        "level": 20,
+        "price": 6424,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/16.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Shovel",
+        "power": 30,
+        "level": 20,
+        "price": 10599,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/17.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Hatchet",
+        "power": 21,
+        "level": 24,
+        "price": 9590,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/18.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Sledgehammer",
+        "power": 33,
+        "level": 23,
+        "price": 13939,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/19.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Log Splitting Axe",
+        "power": 35,
+        "level": 24,
+        "price": 15824,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/20.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Machete",
+        "power": 22,
+        "level": 26,
+        "price": 10823,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/21.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Pickaxe",
+        "power": 36,
+        "level": 26,
+        "price": 17859,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/22.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Rusty Scimitar",
+        "power": 25,
+        "level": 30,
+        "price": 15091,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/23.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Wooden Spear",
+        "power": 41,
+        "level": 30,
+        "price": 24900,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/24.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Scythe",
+        "power": 48,
+        "level": 35,
+        "price": 36626,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/25.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Mini Battle Axe",
+        "power": 30,
+        "level": 36,
+        "price": 24243,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/26.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Scalp Spear",
+        "power": 54,
+        "level": 40,
+        "price": 51249,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/27.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Teardrop Blade",
+        "power": 58,
+        "level": 43,
+        "price": 59721,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/28.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Small Mace",
+        "power": 38,
+        "level": 46,
+        "price": 44823,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/29.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Large Mace",
+        "power": 63,
+        "level": 46,
+        "price": 73959,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/30.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Claw",
+        "power": 40,
+        "level": 49,
+        "price": 389988,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/31.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Skull Spear",
+        "power": 69,
+        "level": 52,
+        "price": 95940,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/32.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Exquisite Sword",
+        "power": 47,
+        "level": 58,
+        "price": 77897,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/33.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Exquisite Spear",
+        "power": 78,
+        "level": 58,
+        "price": 128531,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/34.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Halberd",
+        "power": 84,
+        "level": 63,
+        "price": 158940,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/35.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Mega Sword",
+        "power": 94,
+        "level": 71,
+        "price": 212240,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/36.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Demons Fury",
+        "power": 59,
+        "level": 74,
+        "price": 140696,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/37.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Death Bringer",
+        "power": 107,
+        "level": 82,
+        "price": 298625,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/38.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Crystalized Hammer",
+        "power": 65,
+        "level": 82,
+        "price": 180985,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/39.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Great Two Hander",
+        "power": 117,
+        "level": 89,
+        "price": 375685,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/40.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Infuriator",
+        "power": 76,
+        "level": 96,
+        "price": 271759,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/41.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Warhammer",
+        "power": 125,
+        "level": 96,
+        "price": 448402,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/42.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Araceli Sword",
+        "power": 83,
+        "level": 105,
+        "price": 341721,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/43.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Axe Of Minions",
+        "power": 147,
+        "level": 113,
+        "price": 676030,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/44.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Blood Sword",
+        "power": 158,
+        "level": 122,
+        "price": 823109,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/45.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Light Sword",
+        "power": 98,
+        "level": 124,
+        "price": 526327,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/46.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Great Katana",
+        "power": 178,
+        "level": 137,
+        "price": 1118031,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/47.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Trident",
+        "power": 191,
+        "level": 148,
+        "price": 1346303,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/48.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Paladins Edge",
+        "power": 140,
+        "level": 179,
+        "price": 1330457,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/49.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Elder Scythe",
+        "power": 233,
+        "level": 180,
+        "price": 2236257,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/50.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Ancient Axe",
+        "power": 161,
+        "level": 206,
+        "price": 1913442,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/51.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Ancient Glaive",
+        "power": 266,
+        "level": 206,
+        "price": 3157179,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/52.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Supreme Sword",
+        "power": 170,
+        "level": 218,
+        "price": 2204120,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/53.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Blade of the Almighty",
+        "power": 281,
+        "level": 218,
+        "price": 3636798,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/54.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Hatred Scimitar",
+        "power": 182,
+        "level": 234,
+        "price": 2631805,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/55.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Blade of Hatred",
+        "power": 300,
+        "level": 234,
+        "price": 4342478,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/56.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Dino Short Blade",
+        "power": 194,
+        "level": 249,
+        "price": 3107081,
+        "twohanded": false,
+        "url": "Item-Images/warrior-weapons/57.webp",
+        "class": "warrior"
+    },
+    {
+        "name": "Dino Blade",
+        "power": 320,
+        "level": 249,
+        "price": 5126683,
+        "twohanded": true,
+        "url": "Item-Images/warrior-weapons/58.webp",
+        "class": "warrior"
+    }
+]
