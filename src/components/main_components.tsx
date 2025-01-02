@@ -6,6 +6,7 @@ import '../css/main_components.css';
 import { ContextBaseStats, ContextEquips, ContextSkills, ContextStates } from '../StatContext';
 import { ItemSlot } from '../types';
 import { InitialItemTypeValue, InitialWeaponTypeValue } from '../initialValue';
+import { AbbrevFormat } from './monster_component';
 
 
 
@@ -289,7 +290,7 @@ function StatCont() {
             n = Math.floor(n * (1 + (skills.get.shield_guard * 0.03)));
         }
         const guild_perk_bonus = skills!.get.guild_defense_boost;
-        n = Math.floor(n * (1+ ((guild_perk_bonus * 5)/100)));
+        n = Math.floor(n * (1 + ((guild_perk_bonus * 5) / 100)));
         return n;
     }
 
@@ -327,10 +328,10 @@ function StatCont() {
         let primary = (equips?.get.selected_primary_weapon.power || 0) * base_damage;
         let secondary = (equips?.get.selected_secondary_weapon.power || 0) * base_damage;
 
-        const pet_orb_bonus =  stat!.get.current_pet_total_fatk_bonus;
+        const pet_orb_bonus = stat!.get.current_pet_total_fatk_bonus;
         const guild_perk_bonus = skills!.get.guild_attack_boost;
-        primary = Math.floor((primary + ((equips!.get.selected_primary_weapon.name != "")?pet_orb_bonus:0)  ) * (1 + (((skills?.get.attack_booster || 0)+ (guild_perk_bonus * 5) )/ 100)));
-        secondary = Math.floor((secondary + ((equips!.get.selected_secondary_weapon.name != "")?pet_orb_bonus:0)) * (1 + (((skills?.get.attack_booster || 0)+ (guild_perk_bonus * 5)) / 100)));
+        primary = Math.floor((primary + ((equips!.get.selected_primary_weapon.name != "") ? pet_orb_bonus : 0)) * (1 + (((skills?.get.attack_booster || 0) + (guild_perk_bonus * 5)) / 100)));
+        secondary = Math.floor((secondary + ((equips!.get.selected_secondary_weapon.name != "") ? pet_orb_bonus : 0)) * (1 + (((skills?.get.attack_booster || 0) + (guild_perk_bonus * 5)) / 100)));
 
 
         if (equips?.get.selected_primary_weapon.class != stat?.get.current_class) {
@@ -363,7 +364,9 @@ function StatCont() {
         return speed + sheat_bonus;
     }
     const CalculateMoveSpeed = (sheath_bonus: number) => {
-        return ((1000 + Math.round((stat!.get.current_dex + 1) * 3.1185)) / 10) + sheath_bonus
+        const max_dex = 150;
+        const dex_amount = (stat!.get.current_dex >= max_dex) ? max_dex : stat!.get.current_dex + 1;
+        return ((1000 + Math.round((dex_amount) * 3.1185)) / 10) + sheath_bonus
     }
 
     const GetCrit = () => {
@@ -427,7 +430,10 @@ function StatCont() {
             current_fatk_s: fatk_s
         }));
     }, [fdef, fatk_p, fatk_s]);
-    const fatk_display = (equips?.get.selected_primary_weapon.weapon_type == "two handed") ? fatk_p.toLocaleString('en-US') : (fatk_p.toLocaleString('en-US') + " & " + fatk_s.toLocaleString('en-US'));
+
+    const is_two_handed = equips?.get.selected_primary_weapon.weapon_type == "two handed";
+    const fatk_display= (is_two_handed)?AbbrevFormat(fatk_p): AbbrevFormat(fatk_p) +" & "+ AbbrevFormat(fatk_s);
+    const fatk_true_value = (is_two_handed) ? fatk_p.toLocaleString('en-US') : (fatk_p.toLocaleString('en-US') + " & " + fatk_s.toLocaleString('en-US'));
 
 
     return (
@@ -440,7 +446,7 @@ function StatCont() {
             <div className='stat-br'></div>
             <StatResult name='crit multiplier' value={crit} />
             <StatResult name='speed' value={String(speed) + "%"} movementSpeed={String(move_speed) + "%"} />
-            <StatResult name='final attack' value={fatk_display} />
+            <StatResult name='final attack' value={fatk_display} trueValue={fatk_true_value} />
             <StatResult name='final defense' value={fdef.toLocaleString('en-US')} />
             <StatResult name='total' isCost={true} value={total_price} />
             <StatResult name='enchantment' isCost={false} value={total_enchantment} />
@@ -453,11 +459,13 @@ function StatCont() {
 
 
 
-function StatResult(props: { name: string, value: string, isCost?: boolean, movementSpeed?: string }) {
+function StatResult(props: { name: string, value: string, isCost?: boolean, movementSpeed?: string, trueValue?:string }) {
     let cont_name = "stat-result-cont";
     let text_name = props.name;
     let img_display;
     let cost = props.isCost;
+    let value = props.value;
+   
     if (cost != undefined) {
         cont_name = "stat-" + ((cost) ? "cost" : "enchantment") + "-cont";
         text_name = ((cost) ? "total" : "enchantment") + " cost";
@@ -467,7 +475,7 @@ function StatResult(props: { name: string, value: string, isCost?: boolean, move
         return (
             <div className='stat-result-cont' >
                 <p>speed:</p>
-                <p>{props.movementSpeed} {props.value}</p>
+                <p>{props.movementSpeed} {value}</p>
             </div>
 
         )
@@ -478,9 +486,9 @@ function StatResult(props: { name: string, value: string, isCost?: boolean, move
             <p>{text_name}:</p>
 
             {(cost == undefined) ?
-                (<p>{props.value}</p>) :
+                (<p title={props.trueValue} >{value}</p>) :
                 (<div>
-                    <p>{props.value}</p>
+                    <p>{value}</p>
                     <div id={img_display}></div>
                 </div>)
             }
@@ -781,8 +789,8 @@ function ToggleButton(props: { name: string }) {
         else if (props.name == "pets") {
             ui_state?.set(x => ({ ...x, page: "pets", is_pet: true }));
         }
-        else if (props.name == "perks"){
-            
+        else if (props.name == "perks") {
+
             ui_state?.set(x => ({ ...x, page: "perk" }));
         }
     }

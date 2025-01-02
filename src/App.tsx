@@ -14,7 +14,8 @@ import ContainerHelp from "./components/helpSection";
 import PremiumCont, { PremiumBGDarken, PremiumDetail } from "./components/premium_ad";
 import ContainerPets, { ContainerPetsSelection } from "./components/pets_components";
 import ContainerGuild from "./components/guild_components";
-
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 function App() {
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -45,6 +46,8 @@ function App() {
           </StatProvider>
         )
       }
+      <SpeedInsights/>
+      <Analytics/>
       <AdWallProvider>
         <PremiumCont />
         <PremiumDetail />

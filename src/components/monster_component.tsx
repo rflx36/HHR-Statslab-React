@@ -146,7 +146,7 @@ export function GetDamage(attacker: number, defender: number) {
     return Math.round(5 * ((attacker + 30) / (defender + 30)));
 }
 
-function AbbrevFormat(num: number) {
+export function AbbrevFormat(num: number) {
     if (num < 1000) {
         return num.toString();
     } else if (num < 1000000) {
